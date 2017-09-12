@@ -1,0 +1,84 @@
+/* jQuery UI Tabs */
+
+.ui-tabs-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-bottom: 1px solid transparent;
+  li {
+    > a {
+      line-height: 32px;
+      height: 32px;
+      margin-right: 5px;
+      padding: 0 20px;
+      border-bottom: 0;
+    }
+    margin-bottom: -1px;
+  }
+}
+
+.ui-tabs-panel {
+  display: block;
+  padding: 15px;
+  background: none;
+  &:last-child {
+    border-bottom: 0 !important;
+  }
+}
+
+.ui-tabs-nav > li {
+  position: relative;
+  float: left;
+  > a {
+    position: relative;
+    float: left;
+    .float-left.glyph-icon {
+      float: none !important;
+      margin-right: 5px;
+    }
+    .float-right.glyph-icon {
+      float: none !important;
+      margin-right: 0;
+      margin-left: 5px;
+    }
+  }
+}
+
+/* Alternate tabs */
+
+.tabs-navigation > ul {
+  margin: 0;
+  padding: 0;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 0;
+  background: #fff;
+  li {
+    margin: 0;
+    > a {
+      font-size: 20px;
+      line-height: 64px;
+      height: 64px;
+      margin: 0 !important;
+      padding: 0 35px;
+      border-right-width: 1px;
+      border-right-style: solid;
+      border-radius: 0;
+      background: transparent;
+    }
+    &.ui-tabs-active a {
+      line-height: 64px;
+      height: 64px;
+      margin: 0 !important;
+      padding-bottom: 0;
+      color: #000 !important;
+      background: #eff4f6;
+      &:hover {
+        background: #eff4f6;
+      }
+    }
+    > a:hover {
+      background: #eff4f6;
+    }
+  }
+}

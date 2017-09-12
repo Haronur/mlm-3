@@ -1,0 +1,35 @@
+/* User profile */
+
+.user-profile-sm {
+  padding: 5px;
+  text-align: left;
+  img {
+    float: left;
+  }
+  .user-welcome {
+    font-size: 12px;
+    float: left;
+    padding: 3px 0 0 15px;
+    b {
+      font-size: 13px;
+      display: block;
+      color: #d6d6d6;
+    }
+  }
+  .btn-sm {
+    float: right;
+    margin-top: 8px;
+  }
+}
+
+/* Complete profile */
+
+.complete-user-profile {
+  h4 {
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  .progressbar {
+    margin: 10px 0;
+  }
+}

@@ -1,0 +1,37 @@
+/* Progress List */
+
+.progress-box {
+  li {
+    font-size: 12px;
+    white-space: nowrap;
+    border-bottom: #ddd solid 1px;
+    a {
+      padding: 10px 15px 15px !important;
+    }
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+  .progress-title {
+    margin: 0 0 5px;
+    color: #888;
+  }
+  li a:hover {
+    text-decoration: none !important;
+  }
+  .progress-title b {
+    float: right;
+    color: #666;
+  }
+  .progress-time {
+    float: right;
+    opacity: .70;
+    -moz-opacity: .70;
+    filter: alpha(opacity = 70);
+  }
+}
+
+.progress-box-alt li {
+  padding: 10px 0;
+  border: 0;
+}

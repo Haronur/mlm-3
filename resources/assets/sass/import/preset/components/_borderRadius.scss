@@ -1,0 +1,303 @@
+/* Border radius */
+
+.sb-slidebar {
+  .chat-box li a, .popover-title {
+    border-radius: 3px;
+  }
+}
+
+.ui-menu-item, div.dataTables_filter input {
+  border-radius: 3px;
+}
+
+.main-header .main-nav.nav-alt li {
+  &.sf-mega-menu .sf-mega a, > ul li a {
+    border-radius: 3px;
+  }
+}
+
+.ui-accordion, .ui-accordion-header, .panel-group .panel, .ui-editRangeSlider-inputValue, .ui-rangeSlider-withArrows .ui-rangeSlider-container, .ui-rangeSlider-noArrow .ui-rangeSlider-container, .ui-rangeSlider-bar, .ui-rangeSlider-label, .ui-corner-all, .image-box, .ui-dialog .ui-dialog-titlebar-close, .ui-dialog-buttonset button, .input-group-addon.addon-inside, .ms-list li, .chosen-container-single .chosen-search input, div[id^='uniform-'] span, .nav-tabs.nav-justified > li > a, .nav > li > a, .alert-icon, .progressbar, .progressbar-value, .pagination, .icon-boxed, .hero-btn, .main-nav ul li ul li a {
+  border-radius: 3px;
+}
+
+.daterangepicker {
+  td, th, .ranges li, .calendar-date {
+    border-radius: 3px;
+  }
+  border-radius: 3px;
+}
+
+.ui-datepicker td {
+  span, a {
+    border-radius: 3px;
+  }
+}
+
+.bsdatepicker {
+  border-radius: 3px;
+  td, th, td span {
+    border-radius: 3px;
+  }
+}
+
+.todo-box li, .tile-button, .dropzone, .btn, .ui-button, .ui-tabs, .ui-dialog, .ui-dialog-titlebar-close, .ui-datepicker, .ui-datepicker-prev, .ui-datepicker-next, .ui-datepicker-buttonpane button, .jGrowl-notification, .input, .form-control, .dropdown-menu, .popover, .minicolors-panel, .chosen-container, .chosen-choices li.search-choice, .chosen-single, .chosen-choices, .chosen-results li.highlighted, .ui-menu li a, .selector, .tile-box, .dashboard-box, .panel-layout, .panel-box, .panel-content, .content-box {
+  border-radius: 3px;
+}
+
+.content-box-closed {
+  border-radius: 3px;
+  .content-box-header {
+    border-radius: 3px;
+  }
+}
+
+.form-input-icon .glyph-icon, .content-box .ui-widget-overlay.loader, .bootstrap-timepicker-widget table td input, .button-pane, .alert, .tooltip-inner, .table-rounded, .info-box-alt, .notifications-box {
+  border-radius: 3px;
+}
+
+.ui-toolbar {
+  select, input {
+    border-radius: 3px;
+  }
+}
+
+.info-box, .dropdown-submenu.float-left > .dropdown-menu, .nav-list, .nav-list-horizontal-alt li a {
+  border-radius: 3px;
+}
+
+.ui-datepicker-title, .panel > .list-group:first-child .list-group-item:first-child, .panel-heading, .tile-header, .list-group-item:first-child, .pricing-title, .ui-dialog .ui-dialog-titlebar, .ui-datepicker-header, .content-box .content-box-header, .ui-tabs-nav, .btn-group-vertical > .btn:first-child, .notifications-box li:first-child, .ui-tabs-nav li > a, .nav-list li:first-child a, .post-box textarea, .popover-title {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.panel > .list-group:last-child .list-group-item:last-child, .panel-footer, .popover-content, .list-group-item:last-child, .ui-tabs-nav.tabs-bottom {
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.irs-line-left, .ui-tabs-nav li:first-child {
+  border-top-left-radius: 3px;
+}
+
+.table-rounded thead tr:first-child {
+  th:first-child, td:first-child {
+    border-top-left-radius: 3px;
+  }
+}
+
+.fc-state-default.fc-corner-left, .ui-tabs-nav.tabs-bottom li:first-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 3px;
+}
+
+.header-buttons-separator .icon-separator:last-child, .ui-tabs-nav li.float-right:not(:last-child) {
+  border-top-right-radius: 3px;
+}
+
+.table-rounded thead tr:first-child {
+  th:last-child, td:last-child {
+    border-top-right-radius: 3px;
+  }
+}
+
+.fc-state-default.fc-corner-right, .ui-tabs-nav.tabs-bottom li.float-right:not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 3px;
+}
+
+.table-rounded tbody tr:last-child {
+  th:last-child, td:last-child {
+    border-bottom-right-radius: 3px;
+  }
+}
+
+.irs-line-left, .input-group-addon.addon-inside + .form-control {
+  border-bottom-left-radius: 3px;
+}
+
+.table-rounded tbody tr:last-child {
+  th:first-child, td:first-child {
+    border-bottom-left-radius: 3px;
+  }
+}
+
+.nav-tabs-bottom > li > a, .main-nav ul li ul, .ui-dialog .ui-dialog-buttonpane, .ui-datepicker-buttonpane, .chosen-drop, .chosen-results li.no-results, .ui-menu, .content-box .content-box-wrapper, .btn-group-vertical > .btn:last-of-type, .info-box, .notifications-box li:last-child, .nav-list li:last-child a {
+  border-bottom-right-radius: 3px !important;
+  border-bottom-left-radius: 3px !important;
+}
+
+.nav-tabs-left > li > a {
+  border-radius: 0;
+  border-top-left-radius: 3px !important;
+  border-bottom-left-radius: 3px !important;
+}
+
+.pagination > li:first-child > {
+  a, span {
+    border-radius: 0;
+    border-top-left-radius: 3px !important;
+    border-bottom-left-radius: 3px !important;
+  }
+}
+
+.fc-corner-left, .input-append-wrapper .input-append {
+  border-radius: 0;
+  border-top-left-radius: 3px !important;
+  border-bottom-left-radius: 3px !important;
+}
+
+.panel-box[class*=' col-xs'] + .panel-box[class*=' col-xs'], .nav-tabs-right > li > a {
+  border-radius: 0;
+  border-top-right-radius: 3px !important;
+  border-bottom-right-radius: 3px !important;
+}
+
+.chosen-container-single {
+  .chosen-search i, .chosen-single div {
+    border-radius: 0;
+    border-top-right-radius: 3px !important;
+    border-bottom-right-radius: 3px !important;
+  }
+}
+
+.selector i {
+  border-radius: 0;
+  border-top-right-radius: 3px !important;
+  border-bottom-right-radius: 3px !important;
+}
+
+.pagination > li:last-child > {
+  a, span {
+    border-radius: 0;
+    border-top-right-radius: 3px !important;
+    border-bottom-right-radius: 3px !important;
+  }
+}
+
+.fc-corner-right, .input-append-right .input-append {
+  border-radius: 0;
+  border-top-right-radius: 3px !important;
+  border-bottom-right-radius: 3px !important;
+}
+
+.irs-line-right {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.btn-group .btn:last-of-type {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  .icon-separator {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+  }
+}
+
+.icon-separator.float-right {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.ui-spinner-up {
+  border-top-left-radius: 0;
+  border-top-right-radius: 3px !important;
+}
+
+.ui-spinner-down {
+  border-bottom-right-radius: 3px !important;
+  border-bottom-left-radius: 0;
+}
+
+.btn-group-vertical > .btn {
+  &:not(:first-child):not(:last-child) {
+    border-radius: 0;
+  }
+  &:first-child:not(:last-child) {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  &:last-child:not(:first-child) {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 3px;
+  }
+}
+
+.btn-group > {
+  .btn-group:not(:first-child):not(:last-child) > .btn, .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+    border-radius: 0;
+  }
+}
+
+.btn-group-vertical > .btn-group {
+  &:not(:first-child):not(:last-child) > .btn {
+    border-radius: 0;
+  }
+  &:first-child:not(:last-child) > {
+    .btn:last-child, .dropdown-toggle {
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+}
+
+.ui-autocomplete, .btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.btn-group > {
+  .btn-group:first-child > {
+    .btn:last-child, .dropdown-toggle {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+  .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .btn-group:last-child > .btn:first-child, .btn:last-child:not(:first-child), .dropdown-toggle:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+.input-group-addon.addon-inside + .form-control {
+  border-top-left-radius: 3px;
+}
+
+.corner-ribbon {
+  border-top-left-radius: 3px;
+  > {
+    div, a {
+      border-top-left-radius: 3px;
+    }
+  }
+}
+
+.content-box-header > .icon-separator {
+  border-top-left-radius: 3px;
+}
+
+.corner-ribbon-tr {
+  border-top-right-radius: 3px;
+  > {
+    div, a {
+      border-top-right-radius: 3px;
+    }
+  }
+}
+
+.bootstrap-switch {
+  .bootstrap-switch-handle-on {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+  }
+  .bootstrap-switch-handle-off {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+  }
+}

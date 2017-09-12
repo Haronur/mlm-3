@@ -1,0 +1,231 @@
+/* Chosen Select */
+
+.chosen-container {
+  position: relative;
+  display: inline-block;
+  zoom: 1;
+  width: 100% !important;
+  vertical-align: middle;
+  border-width: 1px;
+  border-style: solid;
+  *display: inline;
+  .chosen-drop {
+    position: absolute;
+    z-index: 1010;
+    top: 38px;
+    left: -9999px;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    border-top: 0;
+    background: #fff;
+  }
+  &.chosen-with-drop .chosen-drop {
+    right: -1px;
+    left: -1px;
+    width: auto;
+    padding: 10px;
+  }
+}
+
+.chosen-container-single {
+  .chosen-single {
+    line-height: 38px;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    height: 38px;
+    margin: 0;
+    padding: 0 10px !important;
+    cursor: pointer;
+    white-space: nowrap;
+    text-decoration: none;
+    span {
+      display: block;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+  .chosen-single-with-deselect span {
+    margin-right: 38px;
+  }
+  .chosen-single abbr {
+    font-size: 9px;
+    font-weight: bold;
+    line-height: 16px;
+    position: absolute;
+    top: 9px;
+    right: 26px;
+    display: block;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+  }
+  .chosen-search {
+    position: relative;
+    z-index: 1010;
+    margin: 0 0 10px;
+    white-space: nowrap;
+    i {
+      line-height: 38px;
+      position: absolute;
+      z-index: 4;
+      top: 50%;
+      right: 0;
+      display: block;
+      width: 38px;
+      height: 38px;
+      margin-top: -19px;
+      text-align: center;
+      border-left: 1px solid transparent;
+    }
+  }
+  .chosen-single div {
+    line-height: 38px;
+    position: absolute;
+    z-index: 4;
+    top: 50%;
+    right: 0;
+    display: block;
+    width: 38px;
+    height: 38px;
+    margin-top: -19px;
+    text-align: center;
+    border-left: 1px solid transparent;
+  }
+}
+
+.chosen-container-active.chosen-with-drop .chosen-single div {
+  border-bottom: 1px solid transparent;
+  border-bottom-right-radius: 0;
+}
+
+.chosen-container-single {
+  .chosen-search {
+    i {
+      margin-top: -19px;
+      padding: 0 !important;
+    }
+    input {
+      width: 100%;
+      padding: 0 38px 0 5px;
+    }
+  }
+  &.chosen-container-single-nosearch .chosen-search {
+    position: absolute;
+    left: -9999px;
+  }
+}
+
+.chosen-container .chosen-results {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 240px;
+  -webkit-overflow-scrolling: touch;
+  li {
+    line-height: 20px;
+    margin: 5px 0;
+    padding: 3px 10px;
+    list-style: none;
+    &.group-result {
+      font-weight: bold;
+      margin: 0;
+      text-transform: uppercase;
+    }
+    &.active-result {
+      display: list-item;
+      cursor: pointer;
+    }
+    &.disabled-result {
+      display: list-item;
+      cursor: default;
+      color: #ccc;
+    }
+    &.no-results {
+      display: list-item;
+      margin: 0;
+      text-align: center;
+      span {
+        font-weight: bold;
+      }
+    }
+    &.group-option {
+      padding-left: 15px;
+    }
+    em {
+      font-style: normal;
+      text-decoration: underline;
+    }
+  }
+}
+
+/* Chosen multi */
+
+.chosen-container-multi {
+  height: auto;
+  min-height: 38px;
+  padding: 0;
+  .chosen-choices {
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto !important;
+    height: 1%;
+    margin: 0;
+    padding: 0;
+    cursor: text;
+    li {
+      float: left;
+      list-style: none;
+      &.search-field {
+        margin: 0;
+        padding: 0 10px;
+        white-space: nowrap;
+        input {
+          width: 100%;
+          height: 38px;
+          padding: 0;
+          border: 0 !important;
+          outline: 0;
+          background: transparent !important;
+          -webkit-box-shadow: none;
+          -moz-box-shadow: none;
+          box-shadow: none;
+        }
+        .default {
+          color: #999;
+        }
+      }
+      &.search-choice {
+        position: relative;
+        margin: 6px 0 6px 6px;
+        padding: 3px 25px 3px 5px;
+        cursor: default;
+        border-width: 1px;
+        border-style: solid;
+        .search-choice-close {
+          line-height: 12px;
+          position: absolute;
+          top: 5px;
+          right: 5px;
+          display: block;
+          width: 12px;
+          height: 12px;
+          cursor: pointer;
+          text-align: center;
+          opacity: .5;
+        }
+      }
+    }
+  }
+  .chosen-results li.result-selected {
+    opacity: .6;
+    filter: alpha(opacity = 60);
+  }
+  .chosen-choices li.search-choice .search-choice-close:hover {
+    opacity: 1;
+  }
+}

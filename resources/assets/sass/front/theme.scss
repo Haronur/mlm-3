@@ -1,0 +1,187 @@
+@charset 'UTF-8';
+
+@import '../variables';
+
+@import '../import/preset/helpers/backgrounds';
+@import '../import/preset/helpers/boilerplate';
+@import '../import/preset/helpers/borderRadius';
+@import '../import/preset/helpers/grid';
+@import '../import/preset/helpers/pageTransition';
+@import '../import/preset/helpers/spacing';
+@import '../import/preset/helpers/typography';
+@import '../import/preset/helpers/utils';
+@import '../import/preset/helpers/colors';
+
+@import '../import/preset/elements/badges';
+@import '../import/preset/elements/buttons';
+@import '../import/preset/elements/contentBox';
+@import '../import/preset/elements/dashboardBox';
+@import '../import/preset/elements/forms';
+@import '../import/preset/elements/images';
+@import '../import/preset/elements/infobox';
+@import '../import/preset/elements/loadingIndicator';
+@import '../import/preset/elements/menu';
+@import '../import/preset/elements/panelBox';
+@import '../import/preset/elements/responseMessage';
+@import '../import/preset/elements/responsiveTable';
+@import '../import/preset/elements/ribbon';
+@import '../import/preset/elements/socialBox';
+@import '../import/preset/elements/table';
+@import '../import/preset/elements/tileBox';
+@import '../import/preset/elements/timeline';
+
+@import '../import/preset/widgets/accordion';
+// @import '../import/preset/widgets/calendar';
+@import '../import/preset/widgets/carousel';
+@import '../import/preset/widgets/dropdown';
+@import '../import/preset/widgets/loadingBar';
+@import '../import/preset/widgets/modal';
+@import '../import/preset/widgets/popover';
+@import '../import/preset/widgets/tooltip';
+@import '../import/preset/widgets/touchspin';
+@import '../import/preset/widgets/uniform';
+@import '../import/preset/widgets/wizard';
+
+@import '../import/preset/charts/justgage';
+@import '../import/preset/charts/morris';
+@import '../import/preset/charts/piegage';
+@import '../import/preset/charts/xchart';
+
+@import '../import/preset/snippets/chat';
+@import '../import/preset/snippets/fileBox';
+@import '../import/preset/snippets/loginBox';
+@import '../import/preset/snippets/notificationBox';
+@import '../import/preset/snippets/progressBox';
+// @import '../import/preset/snippets/todo';
+@import '../import/preset/snippets/userProfile';
+@import '../import/preset/snippets/mobileNavigation';
+
+// @import '../import/preset/application/mailbox';
+
+@import '../import/preset/admin/layout';
+@import '../import/preset/admin/default';
+
+@import '../import/preset/components/default';
+@import '../import/preset/components/borderRadius';
+
+@import '../import/preset/helpers/responsiveElements';
+@import '../import/preset/helpers/adminResponsive';
+
+* {
+  word-wrap: break-word;
+}
+
+html,body {
+  height: 100%;
+  background: #fff;
+}
+
+.parsley-errors-list {
+  margin: 2px 0 3px;
+  padding: 0;
+  list-style-type: none;
+  font-size: 0.9em;
+  line-height: 0.9em;
+  opacity: 0;
+  transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -webkit-transition: all .3s ease-in;
+  text-align: left;
+  color: #f00;
+  &.filled {
+    opacity: 1;
+  }
+}
+
+.btn-preloader {
+  display: none;
+  text-align: center;
+}
+
+.icon-spin {
+  display: inline-block;
+  -moz-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
+  -webkit-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+}
+
+a .icon-spin {
+  display: inline-block;
+  text-decoration: none;
+}
+
+a.btn {
+  color: #fff;
+}
+
+.btn-link {
+  color: $main-color;
+}
+
+@-moz-keyframes spin {
+  0% { -moz-transform: rotate(0deg); }
+  100% { -moz-transform: rotate(359deg); }
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(359deg); }
+}
+@-o-keyframes spin {
+  0% { -o-transform: rotate(0deg); }
+  100% { -o-transform: rotate(359deg); }
+}
+@-ms-keyframes spin {
+  0% { -ms-transform: rotate(0deg); }
+  100% { -ms-transform: rotate(359deg); }
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(359deg); }
+}
+
+.alert-fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99999;
+}
+
+#pageLoader {
+  width: 75px;
+  height: 75px;
+  z-index: 99999;
+  border-radius: 5px;
+  position: fixed;
+  background: rgba(0, 0, 0, .75);
+  top: 2%;
+  left: 95%;
+  display: none;
+
+  @include respond-to(handhelds) {
+    top: 2%;
+    left: 18%;
+  }
+
+  span {
+    color: #fff;
+    left: 30%;
+    top: 21%;
+    position: relative;
+    font-size: 30px;
+  }
+}
+
+.radio label, .checkbox label {
+  padding-left: 0;
+}
+
+.tile-box-alt .tile-header {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+#sidebar-menu li .sidebar-submenu ul li a.sfActive {
+  background: transparent;
+}

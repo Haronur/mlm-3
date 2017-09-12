@@ -1,0 +1,117 @@
+/* Post it box */
+
+.post-box {
+  textarea {
+    font-size: 18px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 80px;
+    padding: 15px;
+    border: 0;
+  }
+  .button-pane {
+    .glyph-icon {
+      font-size: 13px;
+    }
+    .hover-white:hover {
+      background: #fff;
+    }
+    text-align: left;
+    .btn-post {
+      font-size: 13px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+}
+
+/* Profile box */
+
+.profile-box {
+  &.content-box .content-box-header {
+    line-height: 1.6em;
+    height: auto;
+    padding: 15px !important;
+  }
+  .content-box-header {
+    img {
+      float: left;
+      margin: 0 15px 0 0;
+    }
+    .user-details {
+      font-size: 16px;
+      position: relative;
+      overflow: hidden;
+      padding-top: 5px;
+      span {
+        font-size: 13px;
+        display: block;
+        opacity: .80;
+        text-transform: none;
+        -moz-opacity: .80;
+        filter: alpha(opacity = 80);
+      }
+    }
+  }
+}
+
+/* Alternate profile box */
+
+.profile-box-alt .content-box-header {
+  text-align: center;
+}
+
+.profile-box {
+  .pie-wrapper {
+    padding: 20px;
+    text-align: center;
+    canvas {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  div.list-group {
+    margin-bottom: 0 !important;
+    border: 0;
+    a.list-group-item {
+      border-right: 0;
+      border-left: 0;
+      &.active {
+        margin-right: -1px;
+        margin-left: -1px;
+      }
+      &:last-child {
+        border-bottom: 0;
+        border-radius: 0;
+      }
+      &:first-child {
+        border-top: 0;
+        border-radius: 0;
+      }
+    }
+  }
+  .list-group.list-group-separator {
+    &.row {
+      padding: 10px;
+    }
+    a.list-group-item:after {
+      right: -10px;
+    }
+  }
+  ul.list-group {
+    margin: 10px 0;
+  }
+  .nav {
+    > li > a {
+      padding: 0;
+    }
+    margin-bottom: 0 !important;
+    &.nav-justified {
+      margin: 0 !important;
+    }
+  }
+}
+
+/* Profile box with list group inside */

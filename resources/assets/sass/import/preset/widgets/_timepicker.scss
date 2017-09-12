@@ -1,0 +1,46 @@
+/* Timepicker */
+
+.bootstrap-timepicker {
+  position: relative;
+}
+
+.dropdown.bootstrap-timepicker {
+  float: none;
+}
+
+.bootstrap-timepicker-widget {
+  &.dropdown-menu.open {
+    display: inline-block;
+    padding: 10px;
+  }
+  table {
+    width: 100%;
+    margin: 0;
+    td {
+      line-height: 32px;
+      width: 42px;
+      height: 32px;
+      &.separator {
+        width: auto;
+        padding: 0 5px;
+      }
+      a {
+        display: block;
+        text-align: center;
+        i {
+          margin: 0 auto;
+        }
+      }
+      input {
+        width: 100%;
+        min-width: 32px;
+        margin: 0;
+        padding: 0 5px;
+        text-align: center;
+        &.bootstrap-timepicker-meridian {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

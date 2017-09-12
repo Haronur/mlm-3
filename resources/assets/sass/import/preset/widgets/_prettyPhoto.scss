@@ -1,0 +1,510 @@
+/* ------------------------------------------------------------------------
+    This you can edit.
+------------------------------------------------------------------------- */
+/* ----------------------------------
+    Default Theme
+----------------------------------- */
+
+div {
+  &.pp_default {
+    .pp_top {
+      height: 13px;
+      .pp_middle, .pp_left, .pp_right {
+        height: 13px;
+      }
+    }
+    .pp_bottom {
+      height: 13px;
+      .pp_left, .pp_middle, .pp_right {
+        height: 13px;
+      }
+    }
+    .pp_top {
+      .pp_left {
+        background: url(images/default/sprite.png) -78px -93px no-repeat;
+      }
+      .pp_middle {
+        background: url(images/default/sprite_x.png) top left repeat-x;
+      }
+      .pp_right {
+        background: url(images/default/sprite.png) -112px -93px no-repeat;
+      }
+    }
+    .pp_content .ppt {
+      color: #f8f8f8;
+    }
+    .pp_content_container {
+      .pp_left {
+        padding-left: 13px;
+        background: url(images/default/sprite_y.png) -7px 0 repeat-y;
+      }
+      .pp_right {
+        padding-right: 13px;
+        background: url(images/default/sprite_y.png) top right repeat-y;
+      }
+    }
+    .pp_content {
+      background-color: #fff;
+    }
+    .pp_next:hover {
+      cursor: pointer;
+      background: url(images/default/sprite_next.png) center right no-repeat;
+    }
+    .pp_previous:hover {
+      cursor: pointer;
+      background: url(images/default/sprite_prev.png) center left no-repeat;
+    }
+    .pp_expand {
+      width: 28px;
+      height: 28px;
+      cursor: pointer;
+      background: url(images/default/sprite.png) 0 -29px no-repeat;
+      &:hover {
+        cursor: pointer;
+        background: url(images/default/sprite.png) 0 -56px no-repeat;
+      }
+    }
+    .pp_contract {
+      width: 28px;
+      height: 28px;
+      cursor: pointer;
+      background: url(images/default/sprite.png) 0 -84px no-repeat;
+      &:hover {
+        cursor: pointer;
+        background: url(images/default/sprite.png) 0 -113px no-repeat;
+      }
+    }
+    .pp_close {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      background: url(images/default/sprite.png) 2px 1px no-repeat;
+    }
+    #pp_full_res .pp_inline {
+      color: #000;
+    }
+    .pp_gallery ul li {
+      a {
+        border: 1px solid #aaa;
+        background: url(images/default/default_thumb.png) center center #f8f8f8;
+        &:hover {
+          border-color: #fff;
+        }
+      }
+      &.selected a {
+        border-color: #fff;
+      }
+    }
+    .pp_social {
+      margin-top: 7px;
+    }
+    .pp_gallery a {
+      &.pp_arrow_previous, &.pp_arrow_next {
+        position: static;
+        left: auto;
+      }
+    }
+    .pp_nav {
+      .pp_play {
+        width: 30px;
+        height: 30px;
+        background: url(images/default/sprite.png) -51px 1px no-repeat;
+      }
+      .pp_pause {
+        width: 30px;
+        height: 30px;
+        background: url(images/default/sprite.png) -51px 1px no-repeat;
+        background-position: -51px -29px;
+      }
+    }
+    .pp_details {
+      position: relative;
+    }
+    a {
+      &.pp_arrow_previous {
+        width: 20px;
+        height: 20px;
+        margin: 4px 0 0 0;
+        background: url(images/default/sprite.png) -31px -3px no-repeat;
+      }
+      &.pp_arrow_next {
+        width: 20px;
+        height: 20px;
+        margin: 4px 0 0 0;
+        background: url(images/default/sprite.png) -31px -3px no-repeat;
+        left: 52px;
+        background-position: -82px -3px;
+      }
+    }
+    .pp_content_container .pp_details {
+      margin-top: 5px;
+    }
+    .pp_nav {
+      position: relative;
+      clear: none;
+      width: 110px;
+      height: 30px;
+      .currentTextHolder {
+        font-family: Georgia;
+        font-size: 11px;
+        font-style: italic;
+        line-height: 25px;
+        position: absolute;
+        top: 2px;
+        left: 75px;
+        margin: 0;
+        padding: 0 0 0 10px;
+        color: #999;
+      }
+    }
+    .pp_close:hover {
+      opacity: .7;
+    }
+    .pp_nav {
+      .pp_play:hover, .pp_pause:hover {
+        opacity: .7;
+      }
+    }
+    .pp_arrow_next:hover, .pp_arrow_previous:hover {
+      opacity: .7;
+    }
+    .pp_description {
+      font-size: 11px;
+      font-weight: bold;
+      line-height: 14px;
+      margin: 5px 50px 5px 0;
+    }
+    .pp_bottom {
+      .pp_left {
+        background: url(images/default/sprite.png) -78px -127px no-repeat;
+      }
+      .pp_middle {
+        background: url(images/default/sprite_x.png) bottom left repeat-x;
+      }
+      .pp_right {
+        background: url(images/default/sprite.png) -112px -127px no-repeat;
+      }
+    }
+    .pp_loaderIcon {
+      background: url(images/default/loader.gif) center center no-repeat;
+    }
+  }
+  &.pp_pic_holder a:focus {
+    outline: none;
+  }
+  &.pp_overlay {
+    position: absolute;
+    z-index: 9500;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    background: #000;
+  }
+  &.pp_pic_holder {
+    position: absolute;
+    z-index: 10000;
+    display: none;
+    width: 100px;
+  }
+}
+
+/* Top left corner */
+
+/* Top pattern/color */
+
+/* Top right corner */
+
+/* Content background */
+
+/* Next button */
+
+/* Previous button */
+
+/* Expand button */
+
+/* Expand button hover */
+
+/* Contract button */
+
+/* Contract button hover */
+
+/* Close button */
+
+/* The next arrow in the bottom nav */
+
+/* Bottom left corner */
+
+/* Bottom pattern/color */
+
+/* Bottom right corner */
+
+/* Loader icon */
+/* ------------------------------------------------------------------------
+    DO NOT CHANGE
+------------------------------------------------------------------------- */
+
+.pp_top {
+  position: relative;
+  height: 20px;
+}
+
+* html .pp_top {
+  padding: 0 20px;
+}
+
+.pp_top {
+  .pp_left {
+    position: absolute;
+    left: 0;
+    width: 20px;
+    height: 20px;
+  }
+  .pp_middle {
+    position: absolute;
+    right: 20px;
+    left: 20px;
+    height: 20px;
+  }
+}
+
+* html .pp_top .pp_middle {
+  position: static;
+  left: 0;
+}
+
+.pp_top .pp_right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: auto;
+  width: 20px;
+  height: 20px;
+}
+
+.pp_content {
+  min-width: 40px;
+  height: 40px;
+}
+
+* html .pp_content {
+  width: 40px;
+}
+
+.pp_fade {
+  display: none;
+}
+
+.pp_content_container {
+  position: relative;
+  width: 100%;
+  text-align: left;
+  .pp_left {
+    padding-left: 20px;
+  }
+  .pp_right {
+    padding-right: 20px;
+  }
+  .pp_details {
+    float: left;
+    margin: 10px 0 2px 0;
+  }
+}
+
+.pp_description {
+  display: none;
+  margin: 0;
+}
+
+.pp_social {
+  float: left;
+  margin: 0;
+  .facebook {
+    float: left;
+    overflow: hidden;
+    width: 55px;
+    margin-left: 5px;
+  }
+  .twitter {
+    float: left;
+  }
+}
+
+.pp_nav {
+  float: left;
+  clear: right;
+  margin: 3px 10px 0 0;
+  p {
+    float: left;
+    margin: 2px 4px;
+    white-space: nowrap;
+  }
+  .pp_play, .pp_pause {
+    float: left;
+    margin-right: 4px;
+    text-indent: -10000px;
+  }
+}
+
+a {
+  &.pp_arrow_previous, &.pp_arrow_next {
+    display: block;
+    float: left;
+    overflow: hidden;
+    width: 14px;
+    height: 15px;
+    margin-top: 3px;
+    text-indent: -10000px;
+  }
+}
+
+.pp_hoverContainer {
+  position: absolute;
+  z-index: 2000;
+  top: 0;
+  width: 100%;
+}
+
+.pp_gallery {
+  position: absolute;
+  z-index: 10000;
+  left: 50%;
+  display: none;
+  margin-top: -50px;
+  div {
+    position: relative;
+    float: left;
+    overflow: hidden;
+  }
+  ul {
+    position: relative;
+    float: left;
+    height: 35px;
+    margin: 0 0 0 5px;
+    padding: 0;
+    white-space: nowrap;
+    a {
+      display: block;
+      float: left;
+      overflow: hidden;
+      height: 33px;
+      border: 1px #000 solid;
+      border: 1px rgba(0, 0, 0, 0.5) solid;
+      &:hover {
+        border-color: #fff;
+      }
+    }
+  }
+  li.selected a {
+    border-color: #fff;
+  }
+  ul a img {
+    border: 0;
+  }
+  li {
+    display: block;
+    float: left;
+    margin: 0 5px 0 0;
+    padding: 0;
+    &.default a {
+      display: block;
+      width: 50px;
+      height: 33px;
+      background: url(images/facebook/default_thumbnail.gif) 0 0 no-repeat;
+      img {
+        display: none;
+      }
+    }
+  }
+  .pp_arrow_previous, .pp_arrow_next {
+    margin-top: 7px !important;
+  }
+}
+
+a {
+  &.pp_expand, &.pp_contract {
+    position: absolute;
+    z-index: 20000;
+    top: 10px;
+    right: 30px;
+    display: none;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    text-indent: -10000px;
+  }
+  &.pp_close {
+    line-height: 22px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    text-indent: -10000px;
+  }
+}
+
+.pp_bottom {
+  position: relative;
+  height: 20px;
+}
+
+* html .pp_bottom {
+  padding: 0 20px;
+}
+
+.pp_bottom {
+  .pp_left {
+    position: absolute;
+    left: 0;
+    width: 20px;
+    height: 20px;
+  }
+  .pp_middle {
+    position: absolute;
+    right: 20px;
+    left: 20px;
+    height: 20px;
+  }
+}
+
+* html .pp_bottom .pp_middle {
+  position: static;
+  left: 0;
+}
+
+.pp_bottom .pp_right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: auto;
+  width: 20px;
+  height: 20px;
+}
+
+.pp_loaderIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin: -12px 0 0 -12px;
+}
+
+#pp_full_res {
+  line-height: 1 !important;
+  .pp_inline {
+    text-align: left;
+    p {
+      margin: 0 0 15px 0;
+    }
+  }
+}
+
+div.ppt {
+  font-size: 17px;
+  z-index: 9999;
+  display: none;
+  margin: 0 0 5px 15px;
+  color: #fff;
+}

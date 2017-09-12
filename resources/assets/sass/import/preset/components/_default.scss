@@ -1,0 +1,785 @@
+/* Components */
+/* Framework CSS */
+/* Secondary font color */
+
+.table, .chosen-disabled .chosen-single, div.selector {
+  color: #8da0aa;
+}
+
+.content-box-header {
+  &.bg-default > .ui-tabs-nav li > a, &.bg-gray > .ui-tabs-nav li > a, &.bg-white > .ui-tabs-nav li > a, > .ui-tabs-nav li.ui-tabs-active > a {
+    color: #8da0aa;
+  }
+}
+
+body .content-box-header > .ui-tabs-nav li.ui-tabs-active > a:hover {
+  color: #8da0aa;
+}
+
+.pagination > li > {
+  a, span {
+    color: #8da0aa;
+  }
+}
+
+.btn-link, a {
+  color: #8da0aa;
+}
+
+/* Primary font color */
+
+.tabs-nav li {
+  a:hover, &.active a {
+    color: #1c82e1;
+  }
+}
+
+.features-tour-box h3, .font-primary {
+  color: #1c82e1;
+}
+
+table.dataTable thead th {
+  &.sorting_asc:after, &.sorting_desc:after {
+    color: #1c82e1;
+  }
+}
+
+.content-box-header {
+  &.bg-default > .ui-tabs-nav li > a:hover, &.bg-gray > .ui-tabs-nav li > a:hover, &.bg-white > .ui-tabs-nav li > a:hover {
+    color: #1c82e1;
+  }
+}
+
+.btn-link:hover, #page-sidebar ul li.sfHover > a.sf-with-ul, a:hover {
+  color: #1c82e1;
+}
+
+/* Primary border color */
+
+.ui-accordion .ui-accordion-header.ui-accordion-header-active, .ui-dialog-buttonset button {
+  border-color: #00a792;
+}
+
+.ui-datepicker {
+  .ui-datepicker-prev, .ui-datepicker-next {
+    border-color: #00a792;
+  }
+}
+
+a.thumbnail:hover, .ui-spinner .ui-spinner-button:hover, div[id^='uniform-'] span.checked {
+  border-color: #00a792;
+}
+
+.nav > li.active > a {
+  border-color: #00a792;
+  &:hover, &:focus {
+    border-color: #00a792;
+  }
+}
+
+a.list-group-item.active {
+  border-color: #00a792;
+  &:hover, &:focus {
+    border-color: #00a792;
+  }
+}
+
+li.active a.list-group-item {
+  border-color: #00a792;
+  &:hover, &:focus {
+    border-color: #00a792;
+  }
+}
+
+.border-primary, .btn-primary {
+  border-color: #00a792;
+}
+
+a:focus {
+  outline: none !important;
+}
+
+/* Primary background color */
+
+#loadingbar, .irs-line-mid, .irs-line-left, .irs-line-right, div.switch-toggle.switch-on, .bootstrap-switch-primary {
+  color: #fff;
+  background: #00bca4;
+}
+
+.ui-tabs-nav li.ui-state-active {
+  > a, &.ui-state-hover > a {
+    color: #fff;
+    background: #00bca4;
+  }
+}
+
+.ms-hover.ui-state-focus, .ui-accordion-header.ui-accordion-header-active, .ui-slider-handle, .ui-rangeSlider-bar, .ui-dialog-buttonset button {
+  color: #fff;
+  background: #00bca4;
+}
+
+.ui-datepicker {
+  .ui-datepicker-current-day {
+    a, span {
+      color: #fff;
+      background: #00bca4;
+    }
+  }
+  .ui-datepicker-prev, .ui-datepicker-next {
+    color: #fff;
+    background: #00bca4;
+  }
+}
+
+.daterangepicker .ranges li.active {
+  color: #fff;
+  background: #00bca4;
+  &:hover {
+    color: #fff;
+    background: #00bca4;
+  }
+}
+
+.form-wizard > ul > li.active .wizard-step, .ui-spinner .ui-spinner-button:hover, .ui-menu li > a:hover, .ms-list .ms-hover, .chosen-container .chosen-results li.active-result.highlighted, div[id^='uniform-'] span.checked {
+  color: #fff;
+  background: #00bca4;
+}
+
+.nav > li.active > a {
+  color: #fff;
+  background: #00bca4;
+  &:hover, &:focus {
+    color: #fff;
+    background: #00bca4;
+  }
+}
+
+a.list-group-item.active {
+  color: #fff;
+  background: #00bca4;
+  &:hover, &:focus {
+    color: #fff;
+    background: #00bca4;
+  }
+}
+
+li.active a.list-group-item {
+  color: #fff;
+  background: #00bca4;
+  &:hover, &:focus {
+    color: #fff;
+    background: #00bca4;
+  }
+}
+
+.label-primary, .badge-primary, .fc-event, .bg-primary, .btn-primary, .owl-controls .owl-page span {
+  color: #fff;
+  background: #00bca4;
+}
+
+#nav-toggle {
+  &.collapsed span {
+    color: #fff;
+    background: #00bca4;
+  }
+  span {
+    &:before, &:after {
+      color: #fff;
+      background: #00bca4;
+    }
+  }
+}
+
+.font-secondary, .post-box .post-title {
+  color: #00bca4;
+}
+
+.inverse.carousel-wrapper .owl-controls .owl-buttons {
+  .owl-next, .owl-prev {
+    color: #00bca4;
+  }
+}
+
+.post-box .post-title:hover {
+  color: #3e4855;
+}
+
+/* Default border color */
+
+.thumb-pane, .mailbox-wrapper .nav-list li a, .ui-tabs-nav {
+  border-color: #dfe8f1;
+}
+
+.tabs-navigation > ul {
+  border-color: #dfe8f1;
+  li {
+    > a, &.ui-state-hover > a {
+      border-color: #dfe8f1;
+    }
+  }
+}
+
+.ui-accordion .ui-accordion-header, .panel {
+  border-color: #dfe8f1;
+}
+
+.panel-group {
+  .panel-heading + .panel-collapse .panel-body, .panel-footer + .panel-collapse .panel-body {
+    border-color: #dfe8f1;
+  }
+}
+
+.panel-footer, .panel-heading {
+  border-color: #dfe8f1;
+}
+
+.timeline-box {
+  &:before, .tl-item .popover {
+    border-color: #dfe8f1;
+  }
+}
+
+.popover-title, .ui-dialog .ui-dialog-titlebar, .thumbnail, .img-thumbnail, .daterangepicker .calendar-date, .ui-spinner .ui-spinner-button {
+  border-color: #dfe8f1;
+}
+
+.ms-container {
+  .ms-list, .ms-selectable li.ms-elem-selectable, .ms-selection li.ms-elem-selection {
+    border-color: #dfe8f1;
+  }
+}
+
+.chosen-container-multi .chosen-choices li.search-choice {
+  border-color: #dfe8f1;
+}
+
+.chosen-container {
+  .chosen-drop {
+    border-color: #dfe8f1;
+  }
+  border-color: #dfe8f1;
+}
+
+.chosen-container-single .chosen-single div, .chosen-container-active.chosen-with-drop .chosen-single div {
+  border-color: #dfe8f1;
+}
+
+div {
+  &[id^='uniform-'] span, &.selector {
+    border-color: #dfe8f1;
+  }
+}
+
+.selector i, .list-group-item {
+  border-color: #dfe8f1;
+}
+
+.nav-tabs {
+  border-color: #dfe8f1;
+  > li > a {
+    &:hover, &:focus {
+      border-color: #dfe8f1;
+    }
+  }
+}
+
+.nav .open > a {
+  border-color: #dfe8f1;
+  &:hover, &:focus {
+    border-color: #dfe8f1;
+  }
+}
+
+.table > {
+  thead > tr > th, tbody > tr > th, tfoot > tr > th, thead > tr > td, tbody > tr > td, tfoot > tr > td, thead > tr > th {
+    border-color: #dfe8f1;
+  }
+}
+
+.table-bordered, .button-pane, .ui-datepicker-buttonpane, .ui-dialog-buttonpane, .content-box {
+  border-color: #dfe8f1;
+}
+
+.content-box-header {
+  &.bg-default, &.bg-gray, &.bg-white {
+    border-color: #dfe8f1;
+  }
+}
+
+.panel-box {
+  &.bg-default, &.bg-gray, &.bg-white {
+    border-color: #dfe8f1;
+  }
+}
+
+.panel-content {
+  &.bg-default, &.bg-gray, &.bg-white {
+    border-color: #dfe8f1;
+  }
+}
+
+.pagination > li > {
+  a, span {
+    border-color: #dfe8f1;
+  }
+}
+
+.dashboard-buttons .btn, .bg-default, .fc-state-default, .fc-widget-header, .fc-widget-content, .ui-datepicker .ui-datepicker-buttonpane button, .btn-default, .popover-title, .bordered-row .form-group {
+  border-color: #dfe8f1;
+}
+
+.bg-white {
+  &.dashboard-box .button-pane, &.tile-box .tile-footer {
+    border-color: #dfe8f1;
+  }
+}
+
+.mail-toolbar, .email-body, .ui-dialog, .ui-datepicker, .dropdown-menu, .popover, .ui-menu, .minicolors-panel, .jvectormap-label, .jvectormap-zoomin, .jvectormap-zoomout, .posts-list li, .border-default {
+  border-color: #dfe8f1;
+}
+
+.nav-divider, .divider, .timeline-horizontal.timeline-box:before {
+  background: #dfe8f1;
+}
+
+.content-box.border-top {
+  border-right-color: #dfe8f1 !important;
+  border-bottom-color: #dfe8f1 !important;
+  border-left-color: #dfe8f1 !important;
+}
+
+/* Default background color */
+
+.label-default, .bootstrap-switch-default, .ui-accordion-header, .panel-heading, .panel-footer, .ui-dialog .ui-dialog-titlebar, .popover-title {
+  color: #555a60;
+  background-color: #FEFEFF;
+}
+
+.ui-datepicker td {
+  span, a {
+    color: #555a60;
+    background-color: #FEFEFF;
+  }
+}
+
+.ui-spinner .ui-spinner-button, div[id^='uniform-'] span, .bg-default, .btn-default, .button-pane, .mail-toolbar {
+  color: #555a60;
+  background-color: #FEFEFF;
+}
+
+.bg-white {
+  &.dashboard-box .button-pane, &.tile-box .tile-footer {
+    color: #555a60;
+    background-color: #FEFEFF;
+  }
+}
+
+.jvectormap-zoomin, .jvectormap-zoomout, .jvectormap-zoomin, .jvectormap-zoomout, .jvectormap-label {
+  color: #555a60;
+  background-color: #FEFEFF;
+}
+
+.irs-diapason, .ui-datepicker-buttonpane, .ui-dialog-buttonpane, .ui-slider-range, .ui-rangeSlider-container {
+  background-color: #FEFEFF;
+}
+
+.table > {
+  thead > tr > th, tbody > tr > th, tfoot > tr > th {
+    color: #4b5056;
+    background-color: #f9fafe;
+  }
+}
+
+/* Button default hover */
+
+.ui-tabs-nav > li.ui-state-hover > a, .ui-accordion-header.ui-state-hover, .fc-state-hover, .fc-state-down, .fc-state-active, .fc-state-disabled {
+  color: #2b2f33;
+  border-color: #bfc8d1;
+  background-color: #f3f3f9;
+}
+
+.btn-default {
+  &:hover, &:focus, &:active, &.active {
+    color: #2b2f33;
+    border-color: #bfc8d1;
+    background-color: #f3f3f9;
+  }
+}
+
+.ui-datepicker .ui-datepicker-buttonpane button:hover {
+  color: #2b2f33;
+  border-color: #bfc8d1;
+  background-color: #f3f3f9;
+}
+
+.open {
+  .dropdown-toggle.btn-default, &.dropdown-submenu a {
+    color: #2b2f33;
+    border-color: #bfc8d1;
+    background-color: #f3f3f9;
+  }
+}
+
+.btn-default {
+  &.disabled, &[disabled], &.disabled:hover, &[disabled]:hover, &.disabled:focus, &[disabled]:focus, &.disabled:active, &[disabled]:active, &.disabled.active, &[disabled].active {
+    color: #2b2f33;
+    border-color: #bfc8d1;
+    background-color: #f3f3f9;
+  }
+}
+
+.jvectormap-zoomin:hover, .jvectormap-zoomout:hover {
+  color: #2b2f33;
+  border-color: #bfc8d1;
+  background-color: #f3f3f9;
+}
+
+.btn-default.active .glyph-icon {
+  color: #2b2f33 !important;
+}
+
+/* Button primary hover */
+
+.ui-accordion-header.ui-accordion-header-active.ui-state-hover {
+  color: #fff;
+  border-color: #00b19b;
+  background-color: #00ceb4;
+}
+
+.ui-rangeSlider-bar {
+  &:hover, &:active {
+    color: #fff;
+    border-color: #00b19b;
+    background-color: #00ceb4;
+  }
+}
+
+.ui-slider-handle {
+  &.ui-state-hover, &.ui-state-active {
+    color: #fff;
+    border-color: #00b19b;
+    background-color: #00ceb4;
+  }
+}
+
+.ui-dialog-buttonset button:hover {
+  color: #fff;
+  border-color: #00b19b;
+  background-color: #00ceb4;
+}
+
+.ui-datepicker {
+  td a:hover, .ui-datepicker-prev.ui-state-hover, .ui-datepicker-next.ui-state-hover {
+    color: #fff;
+    border-color: #00b19b;
+    background-color: #00ceb4;
+  }
+}
+
+.bsdatepicker {
+  th {
+    &.next:hover, &.prev:hover {
+      color: #fff;
+      border-color: #00b19b;
+      background-color: #00ceb4;
+    }
+  }
+  td {
+    &.active, &.day.active:hover, span:hover {
+      color: #fff;
+      border-color: #00b19b;
+      background-color: #00ceb4;
+    }
+  }
+}
+
+.daterangepicker {
+  .calendar th {
+    &.next:hover, &.prev:hover {
+      color: #fff;
+      border-color: #00b19b;
+      background-color: #00ceb4;
+    }
+  }
+  td {
+    &.active, &.available.active:hover {
+      color: #fff;
+      border-color: #00b19b;
+      background-color: #00ceb4;
+    }
+  }
+}
+
+.label-primary[href] {
+  &:hover, &:focus {
+    color: #fff;
+    border-color: #00b19b;
+    background-color: #00ceb4;
+  }
+}
+
+.pagination > .active > {
+  a, span, a:hover, span:hover, a:focus, span:focus {
+    color: #fff;
+    border-color: #00b19b;
+    background-color: #00ceb4;
+  }
+}
+
+.hover-primary:hover {
+  color: #fff;
+  border-color: #00b19b;
+  background-color: #00ceb4;
+}
+
+.btn-primary {
+  &:hover, &:focus, &:active, &.active {
+    color: #fff;
+    border-color: #00b19b;
+    background-color: #00ceb4;
+  }
+}
+
+.open .dropdown-toggle.btn-primary {
+  color: #fff;
+  border-color: #00b19b;
+  background-color: #00ceb4;
+}
+
+.btn-primary {
+  &.disabled, &[disabled], &.disabled:hover, &[disabled]:hover, &.disabled:focus, &[disabled]:focus, &.disabled:active, &[disabled]:active, &.disabled.active, &[disabled].active {
+    color: #fff;
+    border-color: #00b19b;
+    background-color: #00ceb4;
+  }
+}
+
+/* Dropdown hover/active/focus */
+
+.ui-datepicker-title {
+  color: #2b2f33;
+  background: #eff4f6;
+}
+
+.bsdatepicker {
+  td.day:hover, thead tr:first-child th.switch:hover, td span {
+    color: #2b2f33;
+    background: #eff4f6;
+  }
+}
+
+.daterangepicker {
+  td.available:hover, .ranges li:hover {
+    color: #2b2f33;
+    background: #eff4f6;
+  }
+}
+
+.chosen-container-single .chosen-single div, .chosen-container-multi .chosen-choices li.search-choice, .selector i {
+  color: #2b2f33;
+  background: #eff4f6;
+}
+
+.nav > li > a {
+  &:hover, &:focus {
+    color: #2b2f33;
+    background: #eff4f6;
+  }
+}
+
+a.list-group-item {
+  &:hover, &:focus {
+    color: #2b2f33;
+    background: #eff4f6;
+  }
+}
+
+.pager li > a {
+  &:hover, &:focus {
+    color: #2b2f33;
+    background: #eff4f6;
+  }
+}
+
+.pagination > li > {
+  a:hover, span:hover, a:focus, span:focus {
+    color: #2b2f33;
+    background: #eff4f6;
+  }
+}
+
+.pager li > a {
+  &:hover, &:focus {
+    color: #2b2f33;
+    background-color: #f3f3f9;
+  }
+}
+
+.pagination > li > {
+  a:hover, span:hover, a:focus, span:focus {
+    color: #2b2f33;
+    background-color: #f3f3f9;
+  }
+}
+
+.dropdown-menu {
+  li > a:hover {
+    color: #2b2f33;
+    background: #eff4f6;
+  }
+  .active > a {
+    color: #2b2f33;
+    background: #eff4f6;
+    &:hover, &:focus {
+      color: #2b2f33;
+      background: #eff4f6;
+    }
+  }
+}
+
+/* Colors for elements inside active class */
+
+.active > {
+  .badge, .bs-badge, .bs-label {
+    color: #666 !important;
+    background: #fff !important;
+  }
+}
+
+a.list-group-item.active > .glyph-icon, li.active a.list-group-item > .glyph-icon, .active > .glyph-icon {
+  color: #fff !important;
+}
+
+/* Icon separator */
+
+.icon-separator {
+  border-right: rgba(255, 255, 255, 0.21) solid 1px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.tile-box {
+  &.bg-default .tile-header, &.bg-gray .tile-header, &.bg-white .tile-header, &.btn-default .tile-header {
+    border-right: #dfe8f1 solid 1px;
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.content-box-header {
+  &.bg-default .icon-separator, &.bg-gray .icon-separator, &.bg-white .icon-separator {
+    border-right: #dfe8f1 solid 1px;
+    background: rgba(255, 255, 255, 0.1);
+  }
+  .header-buttons-separator .icon-separator {
+    border-right: 0;
+    border-left: rgba(255, 255, 255, 0.21) solid 1px;
+  }
+  &.bg-default .header-buttons-separator .icon-separator, &.bg-gray .header-buttons-separator .icon-separator, &.bg-white .header-buttons-separator .icon-separator {
+    border-right: 0;
+    border-left: #dfe8f1 solid 1px;
+  }
+}
+
+.header-buttons-separator .icon-separator {
+  color: rgba(255, 255, 255, 0.8);
+  &:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.3);
+  }
+}
+
+.content-box-header {
+  &.bg-default .header-buttons-separator .icon-separator, &.bg-gray .header-buttons-separator .icon-separator, &.bg-white .header-buttons-separator .icon-separator {
+    color: rgba(0, 0, 0, 0.6);
+  }
+  &.bg-default .header-buttons-separator .icon-separator:hover, &.bg-gray .header-buttons-separator .icon-separator:hover, &.bg-white .header-buttons-separator .icon-separator:hover {
+    color: rgba(0, 0, 0, 0.9);
+  }
+}
+
+.dashboard-panel .button-pane {
+  background: rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Charts */
+
+.xchart {
+  .color0 {
+    .line, circle {
+      stroke: #00bca4;
+    }
+    .line .fill {
+      pointer-events: none;
+    }
+    rect {
+      fill: #00bca4;
+    }
+    circle {
+      fill: #fff;
+    }
+    .fill {
+      fill: rgba(0, 188, 164, 0.06);
+    }
+    &.comp {
+      .line {
+        stroke: #00bca4;
+      }
+      rect {
+        fill: #00bca4;
+      }
+      .fill {
+        display: none;
+      }
+      circle, .pointer {
+        fill: #00bca4;
+      }
+    }
+  }
+  .color1 {
+    .line, circle {
+      stroke: #52a7e0;
+    }
+    .line .fill {
+      pointer-events: none;
+    }
+    rect {
+      fill: #52a7e0;
+    }
+    circle {
+      fill: #fff;
+    }
+    .fill {
+      fill: rgba(82, 167, 224, 0.06);
+    }
+    &.comp {
+      .line {
+        stroke: #52a7e0;
+      }
+      rect {
+        fill: #52a7e0;
+      }
+      .fill {
+        display: none;
+      }
+      circle, .pointer {
+        fill: #52a7e0;
+      }
+    }
+  }
+}
+
+/* Components modifiers */
+
+body .popover {
+  &.top .arrow:after {
+    border-top-color: #fff;
+  }
+  &.right .arrow:after {
+    border-right-color: #fff;
+  }
+  &.bottom .arrow:after {
+    border-bottom-color: #fff;
+  }
+  &.left .arrow:after {
+    border-left-color: #fff;
+  }
+}
