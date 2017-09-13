@@ -169,6 +169,10 @@ Route::post($adminRoute . '/shares/update-buy/{id}', ['as' => 'admin.sharesBuy.u
 Route::post($adminRoute . '/shares/update-sell/{id}', ['as' => 'admin.sharesSell.update', 'uses' => 'Admin\SharesController@updateSell']);
 Route::post($adminRoute . '/shares/unlock/{id}', ['as' => 'admin.sharesFreeze.unlock', 'uses' => 'Admin\SharesController@unlock']);
 
+Route::get($adminRoute . '/shares-follow' , ['as' => 'admin.shares.follow', 'uses' => 'Admin\SiteController@getSharesFollow']);
+Route::get($adminRoute . '/shares-follow/list' , ['as' => 'admin.shares.followList', 'uses' => 'Admin\SharesController@getSharesFollowList']);
+Route::post($adminRoute . '/shares-follow/unlock/{id}', ['as' => 'admin.sharesFollow.unlock', 'uses' => 'Admin\SharesController@unlockFollow']);
+
 Route::delete($adminRoute . '/shares/remove-buy/{id}', ['as' => 'admin.sharesBuy.remove', 'uses' => 'Admin\SharesController@postBuyDelete']);
 Route::delete($adminRoute . '/shares/remove-sell/{id}', ['as' => 'admin.sharesSell.remove', 'uses' => 'Admin\SharesController@postSellDelete']);
 

@@ -5,12 +5,13 @@ namespace App\Repositories;
 use Carbon\Carbon;
 use App\Models\SharesBuy;
 use App\Models\SharesSell;
+use App\Models\SharesQueue;
 use App\Repositories\MemberRepository;
 use Yajra\Datatables\Facades\Datatables;
 
 class SharesRepository extends BaseRepository
 {
-    protected $model;
+    protected $modelBuy, $modelSell, $modelQueue;
     protected $allowedFields = [];
     protected $booleanFields = [];
     private $sellSharesValue, $sellRange;
@@ -18,6 +19,7 @@ class SharesRepository extends BaseRepository
     public function __construct() {
         $this->modelBuy = new SharesBuy;
         $this->modelSell = new SharesSell;
+        $this->modelQueue = new SharesQueue;
         $this->sellSharesValue = config('misc.shares.sellValue');
         $this->sellRange = config('misc.shares.sellRange');
     }
@@ -687,7 +689,7 @@ class SharesRepository extends BaseRepository
         $values = $this->sellSharesValue;
 
         // add sales record
-        $this->saveModel($this->modelSell, [
+        $sell = $this->saveModel($this->modelSell, [
             'member_id' => $member->id,
             'amount'    => $quantity,
             'amount_left' => $quantity,
@@ -700,7 +702,26 @@ class SharesRepository extends BaseRepository
             'is_admin' => false
         ]);
 
+        $this->addQueueSellShares($sell);
         return true;
+    }
+
+    /**
+     * Add follow shares to queue
+     * @param [type] $amount [description]
+     */
+    public function addQueueSellShares ($share) {
+        $state = $this->getCurrentShareState();
+        if (!$state->always_follow) return false;
+
+        $model = $this->modelQueue;
+        $model->sell_id = $share->id;
+        $model->amount = $share->amount;
+        $model->share_price = $share->share_price;
+        $model->activated_at = Carbon::now()->addMinutes(mt_rand(60, 180));
+        $model->save();
+
+        return $model;
     }
 
     /**
@@ -712,7 +733,7 @@ class SharesRepository extends BaseRepository
     public function adminSellShares ($quantity, $price) {
         $state = $this->getCurrentShareState();
 
-        $this->saveModel($this->modelSell, [
+        $sell = $this->saveModel($this->modelSell, [
             'member_id' => 0,
             'amount'    => $quantity,
             'amount_left' => $quantity,
@@ -722,6 +743,7 @@ class SharesRepository extends BaseRepository
         ]);
 
         // $this->accumulateSharesState($state, $quantity);
+        $this->addQueueSellShares($sell);
         return true;
     }
 
@@ -995,6 +1017,25 @@ class SharesRepository extends BaseRepository
                 return view('back.shares.buyAction')->with('model', $model);
             })
             ->rawColumns(['created_at', 'amount', 'amount_left', 'total', 'share_price', 'action'])
+            ->make(true);
+    }
+
+    /**
+     * Buy List Admin - DataTable
+     * @return object
+     */
+    public function adminFollowList () {
+        return Datatables::eloquent(\App\Models\SharesQueue::select(['id', 'amount', 'is_queued', 'created_at', 'activated_at']))
+            ->editColumn('amount', function ($model) {
+                return number_format($model->amount, 0);
+            })
+            ->editColumn('is_queued', function ($model) {
+                return ($model->is_queued ? '<label class="label label-success">DONE</label>' : '<label class="label label-danger">NO</label>');
+            })
+            ->addColumn('action', function ($model) {
+                return view('back.shares.followAction')->with('model', $model);
+            })
+            ->rawColumns(['is_queued', 'action'])
             ->make(true);
     }
 

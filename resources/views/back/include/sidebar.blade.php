@@ -120,6 +120,11 @@
                 <span>Freeze List</span>
               </a>
             </li>
+            <li>
+              <a href="{{ route('admin.shares.follow') }}">
+                <span>Follow List</span>
+              </a>
+            </li>
           </ul>
         </div>
       </li>

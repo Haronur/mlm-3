@@ -33,6 +33,7 @@ $shares = \DB::table('Shares_Centre')->first();
                   <th>Raise By</th>
                   <th>Always Company?</th>
                   <th>Always Follow?</th>
+                  <th>Random Follow?</th>
                   <th>Follow Percent</th>
                   <th>Follower Amount</th>
                   <th></th>
@@ -80,6 +81,10 @@ $shares = \DB::table('Shares_Centre')->first();
 
                 <td>
                   <input type="checkbox" class="input-switch" name="always_follow" @if ($shares->always_follow) checked="checked" @endif data-on-text="Yes" data-off-text="No" data-size="small" data-on-color="danger">
+                </td>
+
+                <td>
+                  <input type="checkbox" class="input-switch" name="follow_random" @if ($shares->follow_random) checked="checked" @endif data-on-text="Yes" data-off-text="No" data-size="small" data-on-color="danger">
                 </td>
 
                 <td>

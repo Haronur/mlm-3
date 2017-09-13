@@ -23,6 +23,10 @@ export class Shares {
     if ($('#sharesSellListTable').length) {
       this.sellList()
     }
+
+    if ($('#sharesFollowListTable').length) {
+      this.followList()
+    }
   }
   list () {
     var $table = $('#sharesListTable')
@@ -251,6 +255,48 @@ export class Shares {
             data: {
               data: $row.serializeForm()
             },
+            success: function (e) {
+              $loader.hide()
+              processing = false
+              noty({
+                type: e.type,
+                text: e.message
+              })
+            },
+            error: function (xhr, status, e) {
+              $loader.hide()
+              processing = false
+              noty({
+                type: 'error',
+                text: xhr.responseText
+              })
+            }
+          })
+        } else {
+          noty({
+            type: 'information',
+            text: 'A process is still ongoing.'
+          })
+        }
+      }
+    })
+  }
+  followList () {
+    var $table = $('#sharesFollowListTable')
+    var $loader = $('#pageLoader')
+    var processing = false
+
+    $table.on('click', '.btn-unlock', function (e) {
+      var $this = $(this)
+
+      if (confirm('Unlock?')) {
+        if (!processing) {
+          $loader.show()
+          processing = true
+
+          $.ajax({
+            type: 'post',
+            url: $this.data('url'),
             success: function (e) {
               $loader.hide()
               processing = false

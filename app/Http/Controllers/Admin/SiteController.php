@@ -167,6 +167,10 @@ class SiteController extends Controller
         return view('back.shares.lockList');
     }
 
+    public function getSharesFollow () {
+        return view('back.shares.followList');
+    }
+
     public function getMemberEdit ($id) {
         $instance = new MemberRepository;
         if (!$model = $instance->findById(trim($id))) {

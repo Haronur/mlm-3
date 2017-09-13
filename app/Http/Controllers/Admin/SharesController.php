@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Repositories\SharesRepository;
 
@@ -46,6 +47,14 @@ class SharesController extends Controller
     }
 
     /**
+     * Shares Buy List - DataTable
+     * @return object
+     */
+    public function getSharesFollowList () {
+        return $this->SharesRepository->adminFollowList();
+    }
+
+    /**
      * Update shares settings
      * @return json
      */
@@ -58,7 +67,8 @@ class SharesController extends Controller
             'raise_by' =>  $data['raise_by'],
             'raise_limit' =>  $data['raise_limit'],
             'always_company' =>  isset($data['always_company']) ? 1 : 0,
-            'always_follow' =>  isset($data['always_company']) ? 1 : 0,
+            'always_follow' => isset($data['always_follow']) ? 1 : 0,
+            'follow_random' => isset($data['follow_random']) ? 1 : 0,
             'follow_percent' => $data['follow_percent'],
             'follow_amount' => $data['follow_amount']
         ]);
@@ -256,6 +266,82 @@ class SharesController extends Controller
         return \Response::json([
             'type' => 'success',
             'message' => 'Shares unlocked.'
+        ]);
+    }
+
+    /**
+     * Unlock follow shares
+     * @return json
+     */
+    public function unlockFollow ($id) {
+        $model = new \App\Models\SharesQueue;
+        if (!$share = $model->where('id', trim($id))->first()) {
+            return \Response::json([
+                'type' => 'error',
+                'message' => 'Data not found.'
+            ]);
+        }
+
+        if ($model->is_queued) {
+            return \Response::json([
+                'type' => 'information',
+                'message' => 'Shares already unlocked.'
+            ]);
+        }
+
+        $state = $this->SharesRepository->getCurrentShareState();
+
+        if (!$state->always_follow) {
+            return \Response::json([
+                'type' => 'information',
+                'message' => 'Follow state is off.'
+            ]);
+        }
+
+        $followers = $state->follow_random ? mt_rand(1, 3) : $state->follow_amount;
+        $total = $share->amount;
+        $amounts = [];
+        $sum = 0;
+
+        if ($state->always_follow) {
+            $amounts[0] = floor($state->follow_percent / 100 * $share->amount);
+            $sum += $amounts[0];
+            $followers -= 1;
+        }
+
+        if ($followers > 0) {
+            for ($index=$followers; $index; --$index) {
+                if (!isset($amounts[$index])) {
+                    $max = $total - $sum - $index;
+                    $sum += $amounts[] = mt_rand(1, $max);
+                }
+            }
+            $amounts[] = $total - $sum;
+        }
+
+        if (count($amounts) > 0) {
+            $faker = \Faker\Factory::create();
+            foreach ($amounts as $amount) {
+                \DB::table('Shares_Sell')->insert([
+                    'amount' => $amount,
+                    'amount_left' => 0,
+                    'username' => $faker->username,
+                    'share_price' => $share->share_price,
+                    'is_follow' => 1,
+                    'has_process' => 1,
+                    'is_admin' => 0,
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now()
+                ]);
+            }
+
+            $share->is_queued = 1;
+            $share->save();
+        }
+
+        return \Response::json([
+            'type' => 'success',
+            'message' => 'Shares follow unlocked.',
         ]);
     }
 

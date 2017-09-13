@@ -23,6 +23,7 @@ class CreateSharesTable extends Migration
             $table->smallInteger('follow_amount')->default(1);
             $table->unsignedInteger('current_accumulate')->default(0);
             $table->unsignedInteger('raise_limit')->default(200000);
+            $table->boolean('follow_random')->default(0);
             $table->boolean('always_follow')->default(0);
             $table->boolean('always_company')->default(0);
             $table->timestamps();
@@ -60,6 +61,7 @@ class CreateSharesTable extends Migration
             $table->decimal('admin_fee', 16, 4)->default(0);
             $table->boolean('has_process')->default(0);
             $table->boolean('is_admin')->default(0);
+            $table->boolean('is_follow')->default(0);
             $table->timestamps();
 
             $table->engine = 'InnoDB';
@@ -88,8 +90,11 @@ class CreateSharesTable extends Migration
 
         Schema::create('Shares_Sell_Queue', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('sell_id')->default(0);
             $table->unsignedInteger('amount')->default(0);
+            $table->decimal('share_price', 16, 4)->default(0);
             $table->boolean('is_queued', 0)->default(0);
+            $table->timestamp('activated_at')->nullable();
             $table->timestamps();
 
             $table->engine = 'InnoDB';

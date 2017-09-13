@@ -23,7 +23,7 @@
                   <fieldset>
                     <div class="form-group">
                       <label class="control-label">Price</label>
-                      <input type="number" step="any" name="price" class="form-control" placeholder="Use dot for decimal separator..">
+                      <input type="text" name="price" class="form-control" placeholder="Use dot for decimal separator..">
                       <span class="help-block">example: 0.200</span>
                     </div>
 
