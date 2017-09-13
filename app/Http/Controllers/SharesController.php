@@ -50,6 +50,8 @@ class SharesController extends Controller
             ]);
         }
 
+        \Cache::forget('member.' . $user->id);
+
         return \Response::json([
             'type'  =>  'success',
             'message'   =>  \Lang::get('message.sharesBuySuccess')
@@ -80,6 +82,8 @@ class SharesController extends Controller
                 'message'   =>  $e->getMessage()
             ]);
         }
+
+        \Cache::forget('member.' . $user->id);
 
         return \Response::json([
             'type'  =>  'success',

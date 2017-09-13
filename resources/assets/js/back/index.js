@@ -3,10 +3,20 @@
 import { Core } from './core'
 import { Widget } from './widget'
 import { DataTable } from './datatable'
+import { Announcement } from './announcement'
+import { Package } from './package'
+import { Register } from './register'
+import { Shares } from './shares'
+import { Withdraw } from './withdraw'
 
 new Core()
 new Widget()
 new DataTable()
+new Announcement()
+new Package()
+new Register()
+new Shares()
+new Withdraw()
 
 setTimeout(function() {
   $('#loading').fadeOut(400, 'linear')

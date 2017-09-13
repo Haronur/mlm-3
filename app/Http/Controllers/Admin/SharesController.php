@@ -56,9 +56,11 @@ class SharesController extends Controller
             'minimum_price' =>  $data['minimum_price'],
             'current_price' =>  $data['current_price'],
             'raise_by' =>  $data['raise_by'],
-            // 'current_accumulate' =>  $data['current_accumulate'],
             'raise_limit' =>  $data['raise_limit'],
-            'always_company'    =>  isset($data['always_company']) ? 1 : 0
+            'always_company' =>  isset($data['always_company']) ? 1 : 0,
+            'always_follow' =>  isset($data['always_company']) ? 1 : 0,
+            'follow_percent' => $data['follow_percent'],
+            'follow_amount' => $data['follow_amount']
         ]);
 
         \Cache::forget('shares.state');

@@ -37,7 +37,7 @@
                         <input type="hidden" name="is_update_basic" value="true">
                         <div class="form-group">
                           <label class="control-label normal">Ban?</label>
-                          <input type="checkbox" class="input-switch" name="is_ban" @if ($mUser->is_ban) checked="checked" @endif data-on-text="On" data-off-text="Off" data-size="small">
+                          <input type="checkbox" class="input-switch" name="is_ban" @if ($mUser->is_ban) checked="checked" @endif data-on-color="danger" data-on-text="On" data-off-text="Off" data-size="small">
                         </div>
 
                         <div class="form-group">
@@ -115,7 +115,7 @@
                         <div class="form-group">
                           <button type="submit" class="btn btn-primary">
                             <span class="btn-preloader">
-                              <i class="md md-cached md-spin"></i>
+                              <span class="icon-spin icon-spin-1"></span>
                             </span>
                             <span>Submit</span>
                           </button>
@@ -200,7 +200,7 @@
                       <div class="form-group">
                         <button type="submit" class="btn btn-primary">
                           <span class="btn-preloader">
-                            <i class="md md-cached md-spin"></i>
+                            <span class="icon-spin icon-spin-1"></span>
                           </span>
                           <span>Submit</span>
                         </button>
@@ -231,7 +231,7 @@
 
                       <div class="form-group">
                         <label class="control-label">Lock Register</label>
-                        <input type="checkbox" class="input-switch" name="lock_register" @if ($wallet->lock_register) checked="checked" @endif data-size="small" data-on-text="Yes" data-off-text="No">
+                        <input type="checkbox" class="input-switch" name="lock_register" @if ($wallet->lock_register) checked="checked" @endif data-size="small" data-on-text="Yes" data-off-text="No" data-on-color="danger">
                       </div>
 
                       <div class="form-group">
@@ -252,7 +252,7 @@
 
                       <div class="form-group">
                         <label class="control-label">Lock Promotion</label>
-                        <input type="checkbox" class="input-switch" name="lock_promotion" @if ($wallet->lock_promotion) checked="checked" @endif data-size="small" data-on-text="On" data-off-text="Off">
+                        <input type="checkbox" class="input-switch" name="lock_promotion" @if ($wallet->lock_promotion) checked="checked" @endif data-size="small" data-on-text="On" data-off-text="Off" data-on-color="danger">
                       </div>
 
                       <div class="form-group">
@@ -265,13 +265,13 @@
 
                       <div class="form-group">
                         <label class="control-label">Lock Cash</label>
-                        <input type="checkbox" name="lock_cash" class="input-switch" @if ($wallet->lock_cash) checked="checked" @endif data-size="small" data-on-text="On" data-off-text="Off"> 
+                        <input type="checkbox" name="lock_cash" class="input-switch" @if ($wallet->lock_cash) checked="checked" @endif data-size="small" data-on-text="On" data-off-text="Off" data-on-color="danger"> 
                       </div>
 
                       <div class="form-group">
                         <button type="submit" class="btn btn-primary">
                           <span class="btn-preloader">
-                            <i class="md md-cached md-spin"></i>
+                            <span class="icon-spin icon-spin-1"></span>
                           </span>
                           <span>Submit</span>
                         </button>
@@ -316,7 +316,7 @@
                       <div class="form-group">
                         <button type="submit" class="btn btn-primary">
                           <span class="btn-preloader">
-                            <i class="md md-cached md-spin"></i>
+                            <span class="icon-spin icon-spin-1"></span>
                           </span>
                           <span>Submit</span>
                         </button>
@@ -357,7 +357,7 @@
                       <div class="form-group">
                         <button type="submit" class="btn btn-primary">
                           <span class="btn-preloader">
-                            <i class="md md-cached md-spin"></i>
+                            <span class="icon-spin icon-spin-1"></span>
                           </span>
                           <span>Submit</span>
                         </button>

@@ -37,7 +37,6 @@ var backLibs = [
   './plugins/jquery.ui.mouse.js',
   './plugins/jquery.ui.transition.js',
   './plugins/bootstrap.datepicker.js',
-  './plugins/jquery.cookie.js',
   './plugins/progressbar.js',
   './plugins/superclick.js',
   './plugins/inputSwitchAlt.js',
@@ -52,6 +51,7 @@ var backLibs = [
   './plugins/table/tablesorter.js',
   './plugins/table/responsive.js',
   './plugins/bootstrap.switch.js',
+  './plugins/summernote.js',
 ]
 
 gulp.task('concat-front', function () {

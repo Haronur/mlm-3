@@ -33,6 +33,7 @@ Route::get('', function() {
 Route::group(['prefix' => '{lang?}', 'where' => ['lang' => '(en|chs|cht)'], 'middleware' => 'locale'], function () {
     Route::get('login', ['as' => 'login', 'uses' => 'SiteController@getLogin']);
     Route::get('logout', ['as' => 'logout', 'uses' => 'SiteController@getLogout']);
+
     Route::get('/', ['as' => 'home', 'uses' => 'SiteController@getHome']);
 
     Route::get('settings/account', ['as' => 'settings.account', 'uses' => 'SiteController@getSettingsAccount']);
@@ -43,6 +44,7 @@ Route::group(['prefix' => '{lang?}', 'where' => ['lang' => '(en|chs|cht)'], 'mid
     Route::get('member/register-history', ['as' => 'member.registerHistory', 'uses' => 'SiteController@getMemberRegisterHistory']);
     Route::get('member/upgrade', ['as' => 'member.upgrade', 'uses' => 'SiteController@getMemberUpgrade']);
 
+    Route::get('network/binary', ['as' => 'network.binary', 'uses' => 'SiteController@getNetworkBinary']);
     Route::get('network/unilevel', ['as' => 'network.unilevel', 'uses' => 'SiteController@getNetworkUnilevel']);
 
     Route::get('shares/market', ['as' => 'shares.market', 'uses' => 'SiteController@getSharesMarket']);
@@ -59,13 +61,19 @@ Route::group(['prefix' => '{lang?}', 'where' => ['lang' => '(en|chs|cht)'], 'mid
     Route::get('terms', ['as' => 'terms', 'uses' => 'SiteController@getTerms']);
     Route::get('member/show-modal', ['as' => 'member.showModal', 'uses' => 'MemberController@getMemberRegisterModal']);
 
-    Route::get('announcement/all', ['as' => 'announcement.list', 'uses' => 'SiteController@getAnnouncementList']);
+    Route::get('member/get-binary', ['as' => 'member.getBinary', 'uses' => 'MemberController@getBinary']);
+    Route::get('member/binary-back', ['as' => 'member.getBinaryTop', 'uses' => 'MemberController@getBinaryTop']);
+    Route::get('member/binary-modal', ['as' => 'member.binary.modal', 'uses' => 'MemberController@getBinaryModal']);
+
+    Route::get('announcement/all', ['as' => 'announcement.list', 'uses' => 'AnnouncementController@getAll']);
     Route::get('announcement/list', ['as' => 'announcement.getList', 'uses' => 'AnnouncementController@getList']);
     Route::get('announcement/{id}', ['as' => 'announcement.read', 'uses' => 'AnnouncementController@read']);
 
     Route::get('pending-group', ['as' => 'bonus.group.pending', 'uses' => 'SiteController@getGroupPending']);
+
     Route::get('transfer/list', ['as' => 'transfer.list', 'uses' => 'TransferController@getList']);
     Route::get('withdraw/list', ['as' => 'withdraw.list', 'uses' => 'WithdrawController@getList']);
+
     Route::get('bonus/direct-list', ['as' => 'bonus.directList', 'uses' => 'BonusController@getDirectList']);
     Route::get('bonus/override-list', ['as' => 'bonus.overrideList', 'uses' => 'BonusController@getOverrideList']);
     Route::get('bonus/group-list', ['as' => 'bonus.groupList', 'uses' => 'BonusController@getGroupList']);
@@ -73,25 +81,26 @@ Route::group(['prefix' => '{lang?}', 'where' => ['lang' => '(en|chs|cht)'], 'mid
 
     Route::post('make-transfer', ['as' => 'transaction.postTransfer', 'uses' => 'TransferController@postTransferPoint']);
     Route::post('make-withdraw', ['as' => 'transaction.postWithdraw', 'uses' => 'WithdrawController@postMakeWithdraw']);
-    
+
     Route::get('shares/sell-list', ['as' => 'shares.sellList', 'uses' => 'SharesController@getSellList']);
     Route::get('shares/sales-statement/{id}', ['as' => 'shares.sell.statement', 'uses' => 'SharesController@getSalesStatement']);
+
     Route::get('shares/return-list', ['as' => 'shares.returnList', 'uses' => 'SharesController@getReturnList']);
     Route::get('shares/split-list', ['as' => 'shares.splitList', 'uses' => 'SharesController@getSplitList']);
+
+    Route::post('login', ['as' => 'login.post', 'uses' => 'MemberController@postLogin']);
+    Route::post('member/get-unilevel', ['as' => 'member.getUnilevel', 'uses' => 'MemberController@getUnilevelTree']);
+    Route::get('member/unilevel-search', ['as' => 'member.unilevelSearch', 'uses' => 'MemberController@getUnilevel']);
 
 });
 
 /**
  * Non-Language specific routes
  */
-Route::post('login', ['as' => 'login.post', 'uses' => 'MemberController@postLogin']);
 Route::post('account/update', ['as' => 'account.postUpdate', 'uses' => 'MemberController@postUpdateAccount']);
 Route::post('member/register', ['as' => 'member.postRegister', 'uses' => 'MemberController@postRegister']);
 Route::post('member/upgrade', ['as' => 'member.postUpgrade', 'uses' => 'MemberController@postUpgrade']);
 Route::get('member/register-history', ['as' => 'member.registerHistoryList', 'uses' => 'MemberController@getRegisterHistory']);
-
-Route::post('member/get-unilevel', ['as' => 'member.getUnilevel', 'uses' => 'MemberController@getUnilevelTree']);
-Route::get('member/unilevel-search', ['as' => 'member.unilevelSearch', 'uses' => 'MemberController@getUnilevel']);
 
 Route::post('shares/buy', ['as' => 'shares.postBuy', 'uses' => 'SharesController@buy']);
 Route::post('shares/sell', ['as' => 'shares.postSell', 'uses' => 'SharesController@sell']);
@@ -109,7 +118,6 @@ $adminRoute = config('app.adminUrl');
 Route::get($adminRoute, ['as' => 'admin.home', 'uses' => 'Admin\SiteController@getIndex']);
 Route::get($adminRoute . '/login', ['as' => 'admin.login', 'uses' => 'Admin\SiteController@getLogin']);
 Route::get($adminRoute . '/logout', ['as' => 'admin.logout', 'uses' => 'Admin\SiteController@getLogout']);
-Route::get('client-destroy', 'SiteController@destroy');
 Route::get($adminRoute . '/settings', ['as' => 'admin.settings.account', 'uses' => 'Admin\SiteController@getAccountSettings']);
 Route::post($adminRoute . '/login', ['as' => 'admin.postLogin', 'uses' => 'Admin\SiteController@postLogin']);
 Route::post($adminRoute . '/update-account', ['as' => 'admin.account.postUpdate', 'uses' => 'Admin\SiteController@postUpdateAccount']);
@@ -140,14 +148,18 @@ Route::post($adminRoute . '/package/update/{id}', ['as' => 'admin.package.update
 // shares routes
 Route::get($adminRoute . '/shares-settings' , ['as' => 'admin.settings.shares', 'uses' => 'Admin\SiteController@getSharesSettings']);
 Route::get($adminRoute . '/shares/sell' , ['as' => 'admin.shares.sellAdmin', 'uses' => 'Admin\SiteController@getSharesSellAdmin']);
+
 Route::get($adminRoute . '/shares-lock' , ['as' => 'admin.shares.lock', 'uses' => 'Admin\SiteController@getSharesLock']);
 Route::get($adminRoute . '/shares-lock/list' , ['as' => 'admin.shares.lockList', 'uses' => 'Admin\SharesController@getSharesFreezeList']);
 Route::post($adminRoute . '/shares/update-freeze/{id}', ['as' => 'admin.sharesFreeze.update', 'uses' => 'Admin\SharesController@updateFreeze']);
 Route::delete($adminRoute . '/shares/remove-freeze/{id}', ['as' => 'admin.sharesFreeze.remove', 'uses' => 'Admin\SharesController@postFreezeDelete']);
+
 Route::get($adminRoute . '/shares-buy' , ['as' => 'admin.shares.buy', 'uses' => 'Admin\SiteController@getSharesBuy']);
 Route::get($adminRoute . '/shares-buy/list' , ['as' => 'admin.shares.buyList', 'uses' => 'Admin\SharesController@getSharesBuyList']);
+
 Route::get($adminRoute . '/shares-sell' , ['as' => 'admin.shares.sell', 'uses' => 'Admin\SiteController@getSharesSell']);
 Route::get($adminRoute . '/shares-sell/list' , ['as' => 'admin.shares.sellList', 'uses' => 'Admin\SharesController@getSharesSellList']);
+
 Route::post($adminRoute . '/shares/update/{id}', ['as' => 'admin.shares.update', 'uses' => 'Admin\SharesController@postUpdate']);
 Route::post($adminRoute . '/shares/sell', ['as' => 'admin.shares.postSell', 'uses' => 'Admin\SharesController@sell']);
 Route::get($adminRoute . '/split', ['as' => 'admin.shares.split', 'uses' => 'Admin\SiteController@getSharesSplit']);
@@ -156,6 +168,7 @@ Route::post($adminRoute . '/shares/split', ['as' => 'admin.postSplit', 'uses' =>
 Route::post($adminRoute . '/shares/update-buy/{id}', ['as' => 'admin.sharesBuy.update', 'uses' => 'Admin\SharesController@updateBuy']);
 Route::post($adminRoute . '/shares/update-sell/{id}', ['as' => 'admin.sharesSell.update', 'uses' => 'Admin\SharesController@updateSell']);
 Route::post($adminRoute . '/shares/unlock/{id}', ['as' => 'admin.sharesFreeze.unlock', 'uses' => 'Admin\SharesController@unlock']);
+
 Route::delete($adminRoute . '/shares/remove-buy/{id}', ['as' => 'admin.sharesBuy.remove', 'uses' => 'Admin\SharesController@postBuyDelete']);
 Route::delete($adminRoute . '/shares/remove-sell/{id}', ['as' => 'admin.sharesSell.remove', 'uses' => 'Admin\SharesController@postSellDelete']);
 

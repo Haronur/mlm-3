@@ -1,7 +1,9 @@
+<?php $type = \Input::get('t'); ?>
+
 @extends('back.app')
 
 @section('title')
-  All Bonus Statement | {{ config('app.name') }} 
+  {{ ucwords($type) }} Statement | {{ config('app.name') }} 
 @stop
 
 @section('content')
@@ -12,6 +14,28 @@
     <div id="page-content-wrapper">
       <div id="page-content">
         <div class="container">
+          <div class="page-title">
+            <h2>{{ ucwords($type) }} Statement</h2>
+          </div>
+
+          <div class="panel">
+            <div class="panel-body">
+              <div class="example-box-wrapper">
+                <table class="table table-full table-full-small dt-responsive display nowrap table-grid" cellspacing="0" width="100%" role="grid" id="bonusListTable" data-url="{{ route('admin.bonus.getList', ['type' => $type]) }}">
+                  <thead>
+                    <tr>
+                      <th data-id="created_at">Created Date</th>
+                      <th data-id="username">Username</th>
+                      <th data-id="total">Amount</th>
+                      <th data-id="action">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
