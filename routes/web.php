@@ -86,8 +86,8 @@ Route::group(['prefix' => '{lang?}', 'where' => ['lang' => '(en|chs|cht)'], 'mid
     Route::get('shares/split-list', ['as' => 'shares.splitList', 'uses' => 'SharesController@getSplitList']);
 
     Route::post('login', ['as' => 'login.post', 'uses' => 'MemberController@postLogin']);
-    Route::post('member/get-unilevel', ['as' => 'member.getUnilevel', 'uses' => 'MemberController@getUnilevelTree']);
     Route::post('member/unilevel-search', ['as' => 'member.unilevelSearch', 'uses' => 'MemberController@getUnilevel']);
+    Route::get('member/unilevel-modal', ['as' => 'member.unilevel.modal', 'uses' => 'MemberController@getUnilevelModal']);
 
 });
 

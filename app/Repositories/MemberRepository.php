@@ -181,10 +181,10 @@ class MemberRepository extends BaseRepository
             return false;
         }
 
-        if (!$this->checkIfPositionAvailable($parent)) {
-            throw new \Exception(\Lang::get('error.positionNotAvailable'), 1);
-            return false;
-        }
+        // if (!$this->checkIfPositionAvailable($parent)) {
+        //     throw new \Exception(\Lang::get('error.positionNotAvailable'), 1);
+        //     return false;
+        // }
 
         $user = \Sentinel::registerAndActivate([
             'email'   => $data['email'],

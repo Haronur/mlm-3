@@ -1,15 +1,7 @@
-<?php
-  if (\Input::has('rid')) {
-    $sMember = \App\Models\Member::where('id', trim(\Input::get('rid')))->first();
-  } else {
-    $sMember = $member;
-  }
-?>
-
 @extends('front.app')
 
 @section('title')
-  @lang('unilevel.title') | {{ config('app.name') }}
+@lang('unilevel.title') | {{ config('app.name') }}
 @stop
 
 @section('content')
@@ -31,11 +23,11 @@
                 <div class="panel">
                   <div class="panel-body">
                     <div class="example-box-wrapper">
-                      <form class="floating-label" data-parsley-validate="" role="form" id="unilevelForm" data-url="{{ route('member.getUnilevel', ['lang' => \App::getLocale()]) }}">
+                      <form onsubmit="return false;" data-parsley-validate="" role="form" id="unilevelForm" data-url="{{ route('member.unilevelSearch', ['lang' => $lang]) }}">
                         <fieldset>
                           <div class="form-group">
                             <label class="control-label" for="inputMember">@lang('unilevel.member')</label>
-                            <input type="text" value="{{ $sMember->username }}" name="u" class="form-control" required="" id="inputMember">
+                            <input type="text" value="{{ $member->username }}" name="u" class="form-control" required="" id="inputMember">
                           </div>
 
                           <div class="form-group">
@@ -63,7 +55,7 @@
                 <div class="panel">
                   <div class="panel-body">
                     <div class="example-box-wrapper">
-                      <div id="unilevelNetwork" data-url="{{ route('member.unilevelSearch', ['lang' => $lang]) }}"></div>
+                      <div id="unilevelNetwork" data-url="{{ route('member.unilevelSearch', ['lang' => $lang]) }}" data-show="{{ route('member.unilevel.modal', ['lang' => $lang]) }}">@lang('unilevel.notice')</div>
                     </div>
                   </div>
                 </div>
@@ -75,4 +67,34 @@
     </div>
   </div>
 </div>
+
+<div class="modal fade" id="showModal" tabindex="-1" role="dialog" aria-labelledby="showModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="showModalLabel">@lang('unilevel.modal.title')</h4>
+      </div>
+      <div class="modal-body">
+        <div class="loading text-center">
+          <img src="{{ asset('assets/img/loading.gif') }}" alt="Network Loading">
+          <br>
+          <small class="text-primary">@lang('common.modal.load')</small>
+        </div>
+
+        <div class="error text-center">
+          <i class="md md-error"></i>
+          <br>
+          <small class="text-danger">@lang('common.modal.error')</small>
+        </div>
+
+        <div id="modalContent"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger btn-raised" data-dismiss="modal">@lang('common.close')</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 @stop

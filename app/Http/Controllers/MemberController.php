@@ -247,11 +247,7 @@ class MemberController extends Controller
      * Get Member detail from binary - VisJS
      * @return html
      */
-    public function getBinaryModal (Request $req) {
-        if (!$req->session()->has('binary.session')) {
-            return \Lang::get('error.binarySessionError');
-        }
-
+    public function getUnilevelModal () {
         if (!\Input::has('u')) {
             return \Lang::get('error.binarySessionError');
         } else {
@@ -267,56 +263,7 @@ class MemberController extends Controller
             return \Lang::get('error.memberNotFound');
         }
 
-        return view('front.network.binaryModal')->with('model', $target);
-    }
-
-    /**
-     * Search Hierarchy by Username - VisJS
-     * @param  [type] $type [description]
-     * @return [type]       [description]
-     */
-    public function getUnilevelTree () {
-        $data = \Input::get('data');
-        $user = \Sentinel::getUser();
-        $member = $user->member;
-
-        if (trim($data['s']) != $member->secret_password) {
-            return \Response::json([
-                'type'  =>  'error',
-                'message'   =>  \Lang::get('error.securityPasswordError')
-            ]);
-        }
-
-        if (!$target = $this->MemberRepository->findByUsername(trim($data['u']))) {
-            return \Response::json([
-                'type'  =>  'error',
-                'message'   => \Lang::get('error.memberNotFound')
-            ]);
-        }
-
-        if ($target->level <= $member->level && $member->username != $target->username) {
-            return \Response::json([
-                'type'  =>  'error',
-                'message'   =>  \Lang::get('error.memberNotFound')
-            ]);
-        }
-
-        if ($target->id != $member->id) {
-            $left = explode(',', $member->left_children);
-            $right = explode(',', $member->right_children);
-
-            if (!in_array($target->id, $left) && !in_array($target->id, $right)) {
-                return \Response::json([
-                    'type'  =>  'error',
-                    'message'   => \Lang::get('error.memberNotFound')
-                ]);
-            }
-        }
-
-        return \Response::json([
-            'type'  =>  'success',
-            'redirect'  =>  route('network.unilevel', ['lang' => \App::getLocale()]) . '?rid=' . $target->id
-        ]);
+        return view('front.network.unilevelModal')->with('model', $target);
     }
 
     /**
@@ -326,62 +273,80 @@ class MemberController extends Controller
     public function getUnilevel () {
         $user = \Sentinel::getUser();
         $member = $user->member;
+
         $data = [
             'nodes' => [],
             'edges' => []
         ];
 
+        if (\Input::has('data')) {
+            $formData = \Input::get('data');
+            if (trim($formData['s']) != $member->secret_password) {
+                return \Response::json([
+                    'type'  =>  'error',
+                    'message'   =>  \Lang::get('error.securityPasswordError')
+                ]);
+            }
+
+            if (!$target = $this->MemberRepository->findByUsername(trim($formData['u']))) {
+                return \Response::json([
+                    'type'  =>  'error',
+                    'message'   => \Lang::get('error.memberNotFound')
+                ]);
+            }
+
+            if ($target->level <= $member->level && $member->username != $target->username) {
+                return \Response::json([
+                    'type'  =>  'error',
+                    'message'   =>  \Lang::get('error.memberNotFound')
+                ]);
+            }
+        } else $target = $member;
+
         array_push($data['nodes'], [
-            'id' => $member->id,
-            'group' => 'icons',
-            'label' => $member->username
+            'id' => $target->id,
+            'group' => 'main',
+            'label' => $target->username
         ]);
 
-        if (\Input::has('pid')) {
-            $id = trim(\Input::get('pid'));
-            if (!$target = $this->MemberRepository->findById($id)) return $data;
-            if ($target->level <= $member->level) return $data;
-        } else if (\Input::has('rid') && \Input::get('rid') != 0) {
-            $id = trim(\Input::get('rid'));
-            if (!$target = $this->MemberRepository->findById($id)) return $data;
-            if ($target->level <= $member->level && $target->username != $member->username) return $data;
-        } else {
-            $target = $member;
-        }
-
         $children = $this->MemberRepository->findDirect($target);
+
         if (count($children) > 0) {
             foreach ($children as $child) {
                 array_push($data['nodes'], [
                     'id' => $child->id,
                     'label' =>  $child->username,
-                    'group' => 'icons'
+                    'group' => 'child'
                 ]);
 
                 array_push($data['edges'], [
-                    'from' => $member->id,
+                    'from' => $target->id,
                     'to' => $child->id
                 ]);
 
-                $grandChildren = $this->MemberRepository->findDirect($child);
+                // $grandChildren = $this->MemberRepository->findDirect($child);
 
-                if (count($grandChildren) > 0) {
-                    foreach ($grandChildren as $gc) {
-                        array_push($data['nodes'], [
-                            'id' => $gc->id,
-                            'label' =>  $gc->username,
-                            'group' => 'icons'
-                        ]);
+                // if (count($grandChildren) > 0) {
+                //     foreach ($grandChildren as $gc) {
+                //         array_push($data['nodes'], [
+                //             'id' => $gc->id,
+                //             'label' =>  $gc->username,
+                //             'group' => 'child'
+                //         ]);
 
-                        array_push($data['edges'], [
-                            'from' => $child->id,
-                            'to' => $gc->id
-                        ]);
-                    }
-                }
+                //         array_push($data['edges'], [
+                //             'from' => $child->id,
+                //             'to' => $gc->id
+                //         ]);
+                //     }
+                // }
             }
         }
-        return json_encode($data);
+
+        return \Response::json([
+            'type' => 'success',
+            'data' => $data
+        ]);
     }
 
     /**

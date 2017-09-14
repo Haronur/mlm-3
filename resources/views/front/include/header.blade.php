@@ -46,7 +46,18 @@
                 <i>@lang('common.member')</i>
               </span>
               <a href="{{ route('settings.account', ['lang' => $lang]) }}" title="Edit profile">@lang('sidebar.settingsLink1')</a>
-              <a href="{{ route('settings.bank', ['lang' => $lang]) }}" title="View notifications">@lang('sidebar.settingsLink1')</a>
+              <a href="{{ route('settings.bank', ['lang' => $lang]) }}" title="View notifications">@lang('sidebar.settingsLink2')</a>
+              <a href="{{ $routeEN }}">
+                English
+              </a>
+
+              <a href="{{ $routeCHS }}">
+                简体中文
+              </a>
+
+              <a href="{{ $routeCHT }}">
+                繁體中文
+              </a>
             </div>
           </div>
           <div class="divider"></div>

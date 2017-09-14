@@ -110,7 +110,7 @@
 
                 <?php
                   $total = 0;
-                  $children = $member->children()->get();
+                  $children = $member->findDescendants()->where('id', '!=', $member->id)->get();
                   if (count($children) > 0) {
                     foreach ($children as $child) {
                       $total += $child->package_amount;
