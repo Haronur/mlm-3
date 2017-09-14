@@ -12,14 +12,14 @@
           <th colspan="4">@lang('sharesStatement.modalHeader') #{{ $id }}</th>
         </tr>
         <tr>
-          <th class="theme-text">@lang('sharesStatement.modal.createdDate')</th>
-          <th class="theme-text">@lang('sharesStatement.cash')</th>
-          <th class="theme-text">@lang('sharesStatement.purchase')</th>
-          <th class="theme-text">@lang('sharesStatement.md')</th>
-          <th class="theme-text">@lang('sharesStatement.fee')</th>
-          <th class="theme-text">@lang('sharesStatement.modal.quantity')</th>
-          <th class="theme-text">@lang('sharesStatement.modal.price')</th>
-          <th class="theme-text">@lang('sharesStatement.modal.status')</th>
+          <th>@lang('sharesStatement.modal.createdDate')</th>
+          <th>@lang('sharesStatement.cash')</th>
+          <th>@lang('sharesStatement.purchase')</th>
+          <th>@lang('sharesStatement.md')</th>
+          <th>@lang('sharesStatement.fee')</th>
+          <th>@lang('sharesStatement.modal.quantity')</th>
+          <th>@lang('sharesStatement.modal.price')</th>
+          <th>@lang('sharesStatement.modal.status')</th>
         </tr>
       </thead>
 

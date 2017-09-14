@@ -5,12 +5,14 @@ import { Widget } from './widget'
 import { DataTable } from './datatable'
 import { Register } from './register'
 import { Shares } from './shares'
+import { Network } from './network'
 
 new Core()
 new Widget()
 new DataTable()
 new Register()
 new Shares()
+new Network()
 
 setTimeout(function() {
   $('#loading').fadeOut(400, 'linear')

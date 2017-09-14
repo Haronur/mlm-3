@@ -1,6 +1,7 @@
 <?php
 
 return [
+	'member' => 'Member',
 	'toggleNav' => 'Toggle Navigation',
 	'pointTitle' => 'My Points',
 	'pointSub' => '(Your Wallet Statement)',

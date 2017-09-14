@@ -64,7 +64,7 @@ $packages = Package::all();
                   <div class="form-group">
                     <button type="submit" class="btn btn-primary">
                       <span class="btn-preloader">
-                        <i class="md md-cached md-spin"></i>
+                        <span class="icon-spin icon-spin-1"></span>
                       </span>
                       <span>@lang('common.submit')</span>
                     </button>

@@ -64,6 +64,7 @@
         <div class="sidebar-submenu">
           <ul>
             <li><a href="{{ route('shares.market', ['lang' => $lang]) }}"><span>@lang('sidebar.sharesLink1')</span></a></li>
+            <li><a href="{{ route('shares.marketSell', ['lang' => $lang]) }}"><span>@lang('sidebar.sharesLink4')</span></a></li>
             <li><a href="{{ route('shares.lock', ['lang' => $lang]) }}"><span>@lang('sidebar.sharesLink2')</span></a></li>
             <li><a href="{{ route('shares.statement', ['lang' => $lang]) }}"><span>@lang('sidebar.sharesLink3')</span></a></li>
           </ul>

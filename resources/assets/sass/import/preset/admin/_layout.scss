@@ -12,19 +12,19 @@
   float: left;
   position: relative;
   .logo-content-big {
-    background: url($img-dir + 'logo-admin.png') left 50% no-repeat;
+    background: url($img-dir + 'logo.png') left 50% no-repeat;
     text-indent: -999em;
     position: absolute;
-    height: 34px;
-    width: 190px;
-    left: 10px;
     top: 50%;
-    margin-top: -17px;
+    left: -16px;
+    width: 267px;
+    height: 75px;
+    margin-top: -38px;
   }
 }
 
 .logo-content-small {
-  background: url($img-dir + 'logo-admin.png') left 50% no-repeat;
+  background: url($img-dir + 'logo.png') left 50% no-repeat;
   text-indent: -999em;
   position: absolute;
   height: 34px;
@@ -231,7 +231,7 @@ body #nav-toggle {
     -ms-transform: translateX(0px);
     -o-transform: translateX(0px);
     -webkit-transform: translateX(0px);
-    background-color: #fff;
+    // background-color: #fff;
     float: none;
     width: 100%;
     position: relative;
@@ -576,10 +576,12 @@ body #nav-toggle {
   #header-logo {
     width: 100px;
     .logo-content-small {
-      width: 35px;
-      margin-left: 0;
-      left: 20px;
+      left: -24px;
       display: block;
+      width: 103px;
+      margin-left: 0;
+      height: 67px;
+      top: 23px;
     }
     .logo-content-big {
       width: 0;

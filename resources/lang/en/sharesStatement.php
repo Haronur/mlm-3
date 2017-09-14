@@ -6,11 +6,12 @@ return [
 	'buyList' => 'BUY LIST',
 	'sellList' => 'SELL LIST',
     'returnList' => 'RETURN/SPLIT LIST',
-	'sellTitle' => '<span class="theme-text">SELL</span> Created Date', // don't remove <span></span>
-	'buyTitle' => '<span class="theme-text">BUY</span> Created Date', // don't remove <span></span>
-    'returnTitle' => '<span class="theme-text">RETURN</span> Created Date', // don't remove <span></span>
-    'splitTitle' => '<span class="theme-text">SPLIT</span> Created Date', // don't remove <span></span>
+	'sellTitle' => '<span class="text-warning">SELL</span> Created Date', // don't remove <span></span>
+	'buyTitle' => '<span class="text-warning">BUY</span> Created Date', // don't remove <span></span>
+    'returnTitle' => '<span class="text-warning">RETURN</span> Created Date', // don't remove <span></span>
+    'splitTitle' => '<span class="text-warning">SPLIT</span> Created Date', // don't remove <span></span>
     'id' => '#ID',
+    'username' => 'Username',
 	'amount' => 'Quantity',
     'amountLeft' => 'Quantity Left',
 	'price' => 'Price',

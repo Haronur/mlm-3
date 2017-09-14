@@ -2,7 +2,7 @@
 
 return [
 	'title' => '注册新会员',
-	'notice' => '<span class="theme-text bold">支付0-50%</span> 优惠积分, <span class="theme-text bold"> 并支付50-100%</span> 注册积分。', // don't remove the <span></span>
+	'notice' => '<span class="text-red bold">支付0-50%</span> 优惠积分, <span class="text-red bold"> 并支付50-100%</span> 注册积分。', // don't remove the <span></span>
 	'package' => '配套',
 	'name' => '全名',
 	'username' => '账号',

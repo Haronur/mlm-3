@@ -2,7 +2,7 @@
 
 return [
 	'title' => 'Register New Member',
-	'notice' => '<span class="theme-text bold">0-50%</span> of your promotion point, <span class="theme-text bold">50-100%</span> of your register point.', // don't remove the <span></span>
+	'notice' => '<span class="text-red bold">0-50%</span> of your promotion point, <span class="text-red bold">50-100%</span> of your register point.', // don't remove the <span></span>
 	'package' => 'Package',
 	'name' => 'Full Name',
 	'username' => 'Username',

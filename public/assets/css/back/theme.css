@@ -13310,15 +13310,15 @@ ul.files-box
 {
     position: absolute;
     top: 50%;
-    left: 10px;
+    left: -16px;
 
-    width: 190px;
-    height: 34px;
-    margin-top: -17px; 
+    width: 267px;
+    height: 75px;
+    margin-top: -38px; 
 
     text-indent: -999em;
 
-    background: url('../../img/logo-admin.png') left 50% no-repeat;
+    background: url('../../img/logo.png') left 50% no-repeat;
 }
 
 .logo-content-small
@@ -13334,7 +13334,7 @@ ul.files-box
 
     text-indent: -999em;
 
-    background: url('../../img/logo-admin.png') left 50% no-repeat;
+    background: url('../../img/logo.png') left 50% no-repeat;
 }
 
 #header-logo .logo-content-small
@@ -13626,8 +13626,6 @@ body #nav-toggle.collapsed span:after
 
     -webkit-transform: translateX(0px);
             transform: translateX(0px);
-
-    background-color: #fff;
 }
 #page-sidebar.collapse.in .scroll-sidebar
 {
@@ -14025,11 +14023,13 @@ body #nav-toggle.collapsed span:after
 }
 .closed-sidebar #header-logo .logo-content-small
 {
-    left: 20px;
+    top: 23px; 
+    left: -24px;
 
-    display: block; 
+    display: block;
 
-    width: 35px;
+    width: 103px;
+    height: 67px;
     margin-left: 0;
 }
 .closed-sidebar #header-logo .logo-content-big
@@ -14307,56 +14307,56 @@ a:hover
 .ui-accordion .ui-accordion-header.ui-accordion-header-active,
 .ui-dialog-buttonset button
 {
-    border-color: #00a792;
+    border-color: #af0019;
 }
 
 .ui-datepicker .ui-datepicker-prev,
 .ui-datepicker .ui-datepicker-next
 {
-    border-color: #00a792;
+    border-color: #af0019;
 }
 
 a.thumbnail:hover,
 .ui-spinner .ui-spinner-button:hover,
 div[id^='uniform-'] span.checked
 {
-    border-color: #00a792;
+    border-color: #af0019;
 }
 
 .nav > li.active > a
 {
-    border-color: #00a792;
+    border-color: #af0019;
 }
 .nav > li.active > a:hover,
 .nav > li.active > a:focus
 {
-    border-color: #00a792;
+    border-color: #af0019;
 }
 
 a.list-group-item.active
 {
-    border-color: #00a792;
+    border-color: #af0019;
 }
 a.list-group-item.active:hover,
 a.list-group-item.active:focus
 {
-    border-color: #00a792;
+    border-color: #af0019;
 }
 
 li.active a.list-group-item
 {
-    border-color: #00a792;
+    border-color: #af0019;
 }
 li.active a.list-group-item:hover,
 li.active a.list-group-item:focus
 {
-    border-color: #00a792;
+    border-color: #af0019;
 }
 
 .border-primary,
 .btn-primary
 {
-    border-color: #00a792;
+    border-color: #af0019;
 }
 
 a:focus
@@ -14373,14 +14373,14 @@ div.switch-toggle.switch-on,
 .bootstrap-switch-primary
 {
     color: #fff;
-    background: #00bca4;
+    background: #e20020;
 }
 
 .ui-tabs-nav li.ui-state-active > a,
 .ui-tabs-nav li.ui-state-active.ui-state-hover > a
 {
     color: #fff;
-    background: #00bca4;
+    background: #e20020;
 }
 
 .ms-hover.ui-state-focus,
@@ -14390,32 +14390,32 @@ div.switch-toggle.switch-on,
 .ui-dialog-buttonset button
 {
     color: #fff;
-    background: #00bca4;
+    background: #e20020;
 }
 
 .ui-datepicker .ui-datepicker-current-day a,
 .ui-datepicker .ui-datepicker-current-day span
 {
     color: #fff;
-    background: #00bca4;
+    background: #e20020;
 }
 
 .ui-datepicker .ui-datepicker-prev,
 .ui-datepicker .ui-datepicker-next
 {
     color: #fff;
-    background: #00bca4;
+    background: #e20020;
 }
 
 .daterangepicker .ranges li.active
 {
     color: #fff;
-    background: #00bca4;
+    background: #e20020;
 }
 .daterangepicker .ranges li.active:hover
 {
     color: #fff;
-    background: #00bca4;
+    background: #e20020;
 }
 
 .form-wizard > ul > li.active .wizard-step,
@@ -14426,43 +14426,43 @@ div.switch-toggle.switch-on,
 div[id^='uniform-'] span.checked
 {
     color: #fff;
-    background: #00bca4;
+    background: #e20020;
 }
 
 .nav > li.active > a
 {
     color: #fff;
-    background: #00bca4;
+    background: #e20020;
 }
 .nav > li.active > a:hover,
 .nav > li.active > a:focus
 {
     color: #fff;
-    background: #00bca4;
+    background: #e20020;
 }
 
 a.list-group-item.active
 {
     color: #fff;
-    background: #00bca4;
+    background: #e20020;
 }
 a.list-group-item.active:hover,
 a.list-group-item.active:focus
 {
     color: #fff;
-    background: #00bca4;
+    background: #e20020;
 }
 
 li.active a.list-group-item
 {
     color: #fff;
-    background: #00bca4;
+    background: #e20020;
 }
 li.active a.list-group-item:hover,
 li.active a.list-group-item:focus
 {
     color: #fff;
-    background: #00bca4;
+    background: #e20020;
 }
 
 .label-primary,
@@ -14473,32 +14473,32 @@ li.active a.list-group-item:focus
 .owl-controls .owl-page span
 {
     color: #fff;
-    background: #00bca4;
+    background: #e20020;
 }
 
 #nav-toggle.collapsed span
 {
     color: #fff;
-    background: #00bca4;
+    background: #e20020;
 }
 
 #nav-toggle span:before,
 #nav-toggle span:after
 {
     color: #fff;
-    background: #00bca4;
+    background: #e20020;
 }
 
 .font-secondary,
 .post-box .post-title
 {
-    color: #00bca4;
+    color: #e20020;
 }
 
 .inverse.carousel-wrapper .owl-controls .owl-buttons .owl-next,
 .inverse.carousel-wrapper .owl-controls .owl-buttons .owl-prev
 {
-    color: #00bca4;
+    color: #e20020;
 }
 
 .post-box .post-title:hover
@@ -15160,7 +15160,7 @@ li.active a.list-group-item > .glyph-icon,
 .xchart .color0 .line,
 .xchart .color0 circle
 {
-    stroke: #00bca4;
+    stroke: #e20020;
 }
 
 .xchart .color0 .line .fill
@@ -15170,7 +15170,7 @@ li.active a.list-group-item > .glyph-icon,
 
 .xchart .color0 rect
 {
-    fill: #00bca4;
+    fill: #e20020;
 }
 
 .xchart .color0 circle
@@ -15185,12 +15185,12 @@ li.active a.list-group-item > .glyph-icon,
 
 .xchart .color0.comp .line
 {
-    stroke: #00bca4;
+    stroke: #e20020;
 }
 
 .xchart .color0.comp rect
 {
-    fill: #00bca4;
+    fill: #e20020;
 }
 
 .xchart .color0.comp .fill
@@ -15201,7 +15201,7 @@ li.active a.list-group-item > .glyph-icon,
 .xchart .color0.comp circle,
 .xchart .color0.comp .pointer
 {
-    fill: #00bca4;
+    fill: #e20020;
 }
 
 .xchart .color1 .line,
@@ -16146,7 +16146,7 @@ a.btn
 
 .btn-link
 {
-    color: #e91e63;
+    color: #e20020;
 }
 
 @-webkit-keyframes spin
@@ -16233,4 +16233,11 @@ a.btn
 #sidebar-menu li .sidebar-submenu ul li a.sfActive
 {
     background: transparent;
+}
+
+.form-control:focus,
+.form-control:active
+{
+    border-color: #f00;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(255, 0, 0, .6);
 }

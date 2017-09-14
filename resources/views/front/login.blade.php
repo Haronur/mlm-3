@@ -12,7 +12,7 @@ Login - {{ config('app.name') }}
       <h3 class="text-center pad25B font-gray text-transform-upr font-size-23"><span class="opacity-80"><a href="{{ route('login', ['lang' => 'en']) }}">English</a> | <a href="{{ route('login', ['lang' => 'chs']) }}">简体中文</a> | <a href="{{ route('login', ['lang' => 'cht']) }}">繁體中文</a></span></h3>
       <div id="login-form" class="content-box bg-default">
         <div class="content-box-wrapper pad20A">
-          <img class="mrg25B center-margin radius-all-100 display-block" src="{{ asset('assets/img/gravatar.jpg') }}" alt="">
+          <img class="mrg25B center-margin radius-all-100 display-block" src="{{ asset('assets/img/logo.png') }}" alt="">
           <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon addon-inside bg-gray">

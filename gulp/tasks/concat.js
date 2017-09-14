@@ -24,6 +24,7 @@ var frontLibs = [
   './plugins/table/tablesorter.js',
   './plugins/table/responsive.js',
   './plugins/bootstrap.switch.js',
+  './plugins/slick.js'
 ]
 
 var backLibs = [
@@ -52,6 +53,7 @@ var backLibs = [
   './plugins/table/responsive.js',
   './plugins/bootstrap.switch.js',
   './plugins/summernote.js',
+  './plugins/slick.js'
 ]
 
 gulp.task('concat-front', function () {

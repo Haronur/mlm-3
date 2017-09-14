@@ -1,4 +1,4 @@
-<div id="page-header" class="bg-gradient-7 font-inverse">
+<div id="page-header" class="poly-bg-1 font-inverse">
   <div id="mobile-navigation">
     <button id="nav-toggle" class="collapsed" data-toggle="collapse" data-target="#page-sidebar"><span></span></button>
     <a href="{{ route('admin.home') }}" class="logo-content-small" title="{{ config('app.name') }}"></a>

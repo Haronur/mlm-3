@@ -57,42 +57,42 @@ table.dataTable thead th {
 /* Primary border color */
 
 .ui-accordion .ui-accordion-header.ui-accordion-header-active, .ui-dialog-buttonset button {
-  border-color: #00a792;
+  border-color: darken($main-color, $amount);
 }
 
 .ui-datepicker {
   .ui-datepicker-prev, .ui-datepicker-next {
-    border-color: #00a792;
+    border-color: darken($main-color, $amount);
   }
 }
 
 a.thumbnail:hover, .ui-spinner .ui-spinner-button:hover, div[id^='uniform-'] span.checked {
-  border-color: #00a792;
+  border-color: darken($main-color, $amount);
 }
 
 .nav > li.active > a {
-  border-color: #00a792;
+  border-color: darken($main-color, $amount);
   &:hover, &:focus {
-    border-color: #00a792;
+    border-color: darken($main-color, $amount);
   }
 }
 
 a.list-group-item.active {
-  border-color: #00a792;
+  border-color: darken($main-color, $amount);
   &:hover, &:focus {
-    border-color: #00a792;
+    border-color: darken($main-color, $amount);
   }
 }
 
 li.active a.list-group-item {
-  border-color: #00a792;
+  border-color: darken($main-color, $amount);
   &:hover, &:focus {
-    border-color: #00a792;
+    border-color: darken($main-color, $amount);
   }
 }
 
 .border-primary, .btn-primary {
-  border-color: #00a792;
+  border-color: darken($main-color, $amount);
 }
 
 a:focus {
@@ -103,100 +103,100 @@ a:focus {
 
 #loadingbar, .irs-line-mid, .irs-line-left, .irs-line-right, div.switch-toggle.switch-on, .bootstrap-switch-primary {
   color: #fff;
-  background: #00bca4;
+  background: $main-color;
 }
 
 .ui-tabs-nav li.ui-state-active {
   > a, &.ui-state-hover > a {
     color: #fff;
-    background: #00bca4;
+    background: $main-color;
   }
 }
 
 .ms-hover.ui-state-focus, .ui-accordion-header.ui-accordion-header-active, .ui-slider-handle, .ui-rangeSlider-bar, .ui-dialog-buttonset button {
   color: #fff;
-  background: #00bca4;
+  background: $main-color;
 }
 
 .ui-datepicker {
   .ui-datepicker-current-day {
     a, span {
       color: #fff;
-      background: #00bca4;
+      background: $main-color;
     }
   }
   .ui-datepicker-prev, .ui-datepicker-next {
     color: #fff;
-    background: #00bca4;
+    background: $main-color;
   }
 }
 
 .daterangepicker .ranges li.active {
   color: #fff;
-  background: #00bca4;
+  background: $main-color;
   &:hover {
     color: #fff;
-    background: #00bca4;
+    background: $main-color;
   }
 }
 
 .form-wizard > ul > li.active .wizard-step, .ui-spinner .ui-spinner-button:hover, .ui-menu li > a:hover, .ms-list .ms-hover, .chosen-container .chosen-results li.active-result.highlighted, div[id^='uniform-'] span.checked {
   color: #fff;
-  background: #00bca4;
+  background: $main-color;
 }
 
 .nav > li.active > a {
   color: #fff;
-  background: #00bca4;
+  background: $main-color;
   &:hover, &:focus {
     color: #fff;
-    background: #00bca4;
+    background: $main-color;
   }
 }
 
 a.list-group-item.active {
   color: #fff;
-  background: #00bca4;
+  background: $main-color;
   &:hover, &:focus {
     color: #fff;
-    background: #00bca4;
+    background: $main-color;
   }
 }
 
 li.active a.list-group-item {
   color: #fff;
-  background: #00bca4;
+  background: $main-color;
   &:hover, &:focus {
     color: #fff;
-    background: #00bca4;
+    background: $main-color;
   }
 }
 
 .label-primary, .badge-primary, .fc-event, .bg-primary, .btn-primary, .owl-controls .owl-page span {
   color: #fff;
-  background: #00bca4;
+  background: $main-color;
 }
 
 #nav-toggle {
   &.collapsed span {
     color: #fff;
-    background: #00bca4;
+    background: $main-color;
   }
   span {
     &:before, &:after {
       color: #fff;
-      background: #00bca4;
+      background: $main-color;
     }
   }
 }
 
 .font-secondary, .post-box .post-title {
-  color: #00bca4;
+  color: $main-color;
 }
 
 .inverse.carousel-wrapper .owl-controls .owl-buttons {
   .owl-next, .owl-prev {
-    color: #00bca4;
+    color: $main-color;
   }
 }
 
@@ -705,13 +705,13 @@ a.list-group-item.active > .glyph-icon, li.active a.list-group-item > .glyph-ico
 .xchart {
   .color0 {
     .line, circle {
-      stroke: #00bca4;
+      stroke: $main-color;
     }
     .line .fill {
       pointer-events: none;
     }
     rect {
-      fill: #00bca4;
+      fill: $main-color;
     }
     circle {
       fill: #fff;
@@ -721,16 +721,16 @@ a.list-group-item.active > .glyph-icon, li.active a.list-group-item > .glyph-ico
     }
     &.comp {
       .line {
-        stroke: #00bca4;
+        stroke: $main-color;
       }
       rect {
-        fill: #00bca4;
+        fill: $main-color;
       }
       .fill {
         display: none;
       }
       circle, .pointer {
-        fill: #00bca4;
+        fill: $main-color;
       }
     }
   }

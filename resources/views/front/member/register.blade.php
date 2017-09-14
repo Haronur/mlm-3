@@ -153,8 +153,8 @@ $packages = Package::all();
                       <span class="input-group-addon">%</span>
                     </div>
                     <span class="help-block">
-                      <p style="margin-bottom:5px;"><small>@lang('register.registerNeed') <span class="theme-text" id="registerPointValue"></span></small></p>
-                      <p><small>@lang('register.promoNeed') <span class="theme-text" id="promotionPointValue"></span></small></p>
+                      <p style="margin-bottom:5px;">@lang('register.registerNeed') <span class="text-warning" id="registerPointValue"></span></p>
+                      <p>@lang('register.promoNeed') <span class="text-warning" id="promotionPointValue"></span></p>
                     </span>
                   </div>
 
@@ -174,7 +174,7 @@ $packages = Package::all();
                   <div class="form-group">
                     <button type="submit" class="btn btn-primary">
                       <span class="btn-preloader">
-                        <i class="md md-cached md-spin"></i>
+                        <span class="icon-spin icon-spin-1"></span>
                       </span>
                       <span>@lang('common.submit')</span>
                     </button>

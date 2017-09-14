@@ -12,9 +12,11 @@ export class Core {
         return this.each(function () {
           if (state) {
             $(this).find('span').hide()
+            $(this).find('.icon-spin').show()
             $(this).attr('disabled', 'disabled').find('.btn-preloader').show()
           } else {
             $(this).find('span').show()
+            $(this).find('.icon-spin').hide()
             $(this).removeAttr('disabled').find('.btn-preloader').hide()
           }
         })

@@ -80,6 +80,10 @@ class SiteController extends Controller
         return view('front.shares.market');
     }
 
+    public function getSharesMarketSell () {
+        return view('front.shares.marketSell');
+    }
+
     public function getSharesLock () {
         return view('front.shares.lock');
     }

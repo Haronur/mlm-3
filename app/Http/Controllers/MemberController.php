@@ -271,7 +271,7 @@ class MemberController extends Controller
     }
 
     /**
-     * Search Hierarchy by Username - JSTree
+     * Search Hierarchy by Username - VisJS
      * @param  [type] $type [description]
      * @return [type]       [description]
      */
@@ -320,13 +320,22 @@ class MemberController extends Controller
     }
 
     /**
-     * Search Unilevel Tree - JSTree
+     * Search Unilevel Tree - VisJS
      * @return array [array of children]
      */
     public function getUnilevel () {
         $user = \Sentinel::getUser();
         $member = $user->member;
-        $data = [];
+        $data = [
+            'nodes' => [],
+            'edges' => []
+        ];
+
+        array_push($data['nodes'], [
+            'id' => $member->id,
+            'group' => 'icons',
+            'label' => $member->username
+        ]);
 
         if (\Input::has('pid')) {
             $id = trim(\Input::get('pid'));
@@ -343,15 +352,36 @@ class MemberController extends Controller
         $children = $this->MemberRepository->findDirect($target);
         if (count($children) > 0) {
             foreach ($children as $child) {
-                array_push($data, [
+                array_push($data['nodes'], [
                     'id' => $child->id,
-                    'text'  =>  $child->username,
-                    'icon'  =>  'md md-person-add',
-                    'children'  =>  true
+                    'label' =>  $child->username,
+                    'group' => 'icons'
                 ]);
+
+                array_push($data['edges'], [
+                    'from' => $member->id,
+                    'to' => $child->id
+                ]);
+
+                $grandChildren = $this->MemberRepository->findDirect($child);
+
+                if (count($grandChildren) > 0) {
+                    foreach ($grandChildren as $gc) {
+                        array_push($data['nodes'], [
+                            'id' => $gc->id,
+                            'label' =>  $gc->username,
+                            'group' => 'icons'
+                        ]);
+
+                        array_push($data['edges'], [
+                            'from' => $child->id,
+                            'to' => $gc->id
+                        ]);
+                    }
+                }
             }
         }
-        return $data;
+        return json_encode($data);
     }
 
     /**

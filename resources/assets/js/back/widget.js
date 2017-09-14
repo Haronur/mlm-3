@@ -90,5 +90,14 @@ export class Widget {
         }
       })
     }
+
+    if ($('.dd-icon').length) {
+      $('.dd-icon').each(function() {
+        $(this).ddslick({
+          width: '100%',
+          defaultSelectedIndex: $(this).prop('selectedIndex')
+        })
+      })
+    }
   }
 }

@@ -2,13 +2,14 @@
 
 return [
 	'title' => 'MD積分交易市場',
+	'subTitle' => 'ALL sales in market.',
 	'next' => 'MD積分庫存',
 	'today' => '今日交易量',
 	'sales' => '掛賣平台',
 	'totalSales' => '總掛賣量',
 	'current' => '您的MD積分數量',
-	'buy' => '買入 <span class="theme-text">IN</span>', // don't remove <span></span>
-	'sell' => '賣出 <span class="theme-text">OUT</span>', // don't remove <span></span>
+	'buy' => '買入 <span class="text-warning">IN</span>', // don't remove <span></span>
+	'sell' => '賣出 <span class="text-warning">OUT</span>', // don't remove <span></span>
 	'price' => '價位',
 	'quantity' => '數量',
 	'quantityNotice' => '必須被10整除。10到1000之間。',

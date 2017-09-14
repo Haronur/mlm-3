@@ -1,10 +1,12 @@
 <?php
 
 return [
+	'member' => 'Member',
 	'toggleNav' => '收放列表',
 	'pointTitle' => '积分报表',
 	'pointSub' => '(电子钱包报表)',
 	'cash' => '现金积分',
+	'share' => 'share|shares',
 	'register' => '注册积分',
 	'promotion' => '优惠积分',
 	'sharesTitle' => 'MD积分报表',

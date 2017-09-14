@@ -6,11 +6,12 @@ return [
 	'buyList' => '買入報表',
 	'sellList' => '賣出報表',
     'returnList' => '退還/拆分報表',
-	'sellTitle' => '<span class="theme-text">賣出</span> 創立日期', // don't remove <span></span>
-	'buyTitle' => '<span class="theme-text">買入</span> 創立日期', // don't remove <span></span>
-    'returnTitle' => '<span class="theme-text">退還</span> 創立日期',
-    'splitTitle' => '<span class="theme-text">拆分</span> 創立日期', // don't remove <span></span>
+	'sellTitle' => '<span class="text-warning">賣出</span> 創立日期', // don't remove <span></span>
+	'buyTitle' => '<span class="text-warning">買入</span> 創立日期', // don't remove <span></span>
+    'returnTitle' => '<span class="text-warning">退還</span> 創立日期',
+    'splitTitle' => '<span class="text-warning">拆分</span> 創立日期', // don't remove <span></span>
     'id' => '#ID',
+    'username' => 'Username',
 	'amount' => '數量',
     'amountLeft' => '剩餘金額',
 	'price' => '價位',

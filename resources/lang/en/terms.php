@@ -2,30 +2,30 @@
 
 return [
 	'title' => 'Terms & Condition',
-	'content' => "<h3 class='theme-text uppercase bold'>Privacy Policy</h3>
+	'content' => "<h3 class='text-warning mrg20T'>Privacy Policy</h3>
 <p>MDGlobal Ltd, always respects the user's privacy. When you are surfing in the website of MDGlobal Ltd, the company will collect certain information so that companies can identify you from many users. The following statement to disclose MDGlobal Ltd website privacy policy related to prove that the company's commitment to the protection of privacy.</p>
 
 <p>Before you register for any services, the company will disclose to you any additional terms and conditions relating to the collection and usage of user information. Here, you will understand what personal information is collected, and how to use these, when and how to use, how the company protects your information and who is entitled to access such personal information and how you can correct any inaccuracies in the information, what information will be collected and so on of activities measures.</p>
 
 <p>MDGlobal Ltd collects user information in two ways: users with direct access to and obtained from the company's website server logs. User provided information: when you submit the registration form, the company may requires you to provide your name, email, and other personal information. You will disclose more accurate information so that companies can customize to a better MDGlobal Ltd service experience.</p>
 
-<h3 class='theme-text uppercase bold'>Web log information</h3>
+<h3 class='text-warning mrg20T'>Web log information</h3>
 
 <p>When you visit an Internet website, you will disclose information about yourself, such as your IP Addresses, time and reference fields (such as providing MDGlobal Ltd linked Webpage). Just like other websites, MDGlobal Ltd will collect such basic information. Keep in mind that whenever you voluntarily disclose personal information, the information may be collected and used by the others.</p>
 
 <p>Although MDGlobal Ltd tries to protect the privacy of your personal information, however MDGlobal Ltd do not assure you that the security of information transmitted to MDGlobal Ltd will be definitely safe and you must take the risk yourself. Furthermore, you are the only person who has the duty of confidentiality on your account and password information.</p>
 
-<h3 class='theme-text uppercase bold'>How and when information will be use</h3>
+<h3 class='text-warning mrg20T'>How and when information will be use</h3>
 
 <p>Company according to different information to do different purposes. User provided information: this information will be used for personalization and verification purposes. Network Server Logs: this type of information helps companies identify the most popular area of the company website. MDGlobal Ltd also collects the visitor's IP address for system administration purposes.</p>
 
-<h3 class='theme-text uppercase bold'>Third party companies and cookies</h3>
+<h3 class='text-warning mrg20T'>Third party companies and cookies</h3>
 
 <p>Third-party companies, including Google for showing advertisement of MDGlobal Ltd on the internet. Third-party companies which including Google will use cookies to determine your connections page and content, and to send you relevant ads. You can log in to Google advertising opt-out page to opt out using Google cookies.</p>
 
 <p>How the company protects your information: privacy and security of your personal information is important for companies. Without your permission, MDGlobal Ltd will not disclose your personal information to any third parties. That information such as user data that disclosed by MDGlobal Ltd to potential business partner will never contain any personal information of user. However, information transmitted on the Internet cannot be guaranteed to be hundred percent safe. In view of this, although MDGlobal Ltd is committed firmly for the implementation of measures to protect the user's privacy, however MDGlobal Ltd cannot assure you that the security of your products, services and transmitted information in MDGlobal Ltd website.</p>
 
-<h3 class='theme-text uppercase bold'>Who is entitled to access this information</h3>
+<h3 class='text-warning mrg20T'>Who is entitled to access this information</h3>
 
 <p>Unless stated specially, without the permission of user, MDGlobal Ltd will not to disclose any personally identifiable information to third parties. According to the law, to protect the MDGlobal Ltd and its user's legal rights or public security and benefit, MDGlobal Ltd will disclose your personally identifiable information.</p>
 
@@ -33,11 +33,11 @@ return [
 
 <p>All privacy policy changes will take effect immediately after the announcement on the Internet. Companies encourage you to visit privacy policy website of MDGlobal Ltd from time to time. If you continue to use MDGlobal Ltd website or accept the email from corporate, which also means that you agreed with any and all of the modified privacy policy.</p>
  
-<h3 class='theme-text uppercase bold'>The Terms and Conditions of Services</h3>
+<h3 class='text-warning mrg20T'>The Terms and Conditions of Services</h3>
 
 <p>This website is owned and maintained by MDGlobal Ltd, you must comply with all term and conditions of services which had provided. Once you log on to this Web site, its indicate that you have read and agree to all the terms and conditions. If you do not agree to these terms and conditions, you should stop using this website.</p>
 
-<h3 class='theme-text uppercase bold'>Disclaimer</h3>
+<h3 class='text-warning mrg20T'>Disclaimer</h3>
 
 <p>The information provided in this website is for information purpose only, and it is not a legal advice that reflects the company or its attorneys or clients. Information provided in this website is only for basic information, it does not reflect the most current legal developments, judgement or agreement. Although our website will attempt to provide the most accurate and up-to-date information, but do not promise the accuracy, instantaneity and the completeness of the information provided. Information on this website is not intended to create and constitute a solicitor-client relationship. You should not be without your authorization law and any under appropriate legal or other professional advice, to do any action based on any information on this website. Information on this site should not be construed as a commitment or indicator of future performance.</p>
 
@@ -47,11 +47,11 @@ return [
 
 <p>The various articles and pages of this website may contain links to other resources on the Internet. These links are provided to you by the company, and help you identify and locate other Internet resources that may interest you, but it does not express or implied MDGlobal Ltd, is affiliated or associated, or legally authorized to use any trademark in the link, registered trademark, logo, legal seal or stamp, or a copyright symbol.</p>
 
-<h3 class='theme-text uppercase bold'>No warranties and limitation of liability statement</h3>
+<h3 class='text-warning mrg20T'>No warranties and limitation of liability statement</h3>
 
 <p>Information is 'as original' provided, without any form of commitment, but not including  limited to the warranties of merchantability, a particular purpose or non-infringement, whether express or implied. You must take the risk of using this website. You will assume all download and / or use of this Website or through the Website files, information, or other communication content or other material (limited but not including to software) incur the responsibility and risk of loss. Regardless of in any situation and the any legal theory, MDGlobal Ltd , the website created, making or provides content of suppliers or other party, do not take responsibility on you or other people for access or using this website and incurred of any profit or income loss, business loss or data lost, or any indirect, special, accidentally or joint of loss.</p>
 
-<h3 class='theme-text uppercase bold'>Copyright and trademark notice</h3>
+<h3 class='text-warning mrg20T'>Copyright and trademark notice</h3>
 
 <p>You can download, use and copy materials on this site for personal and non-commercial purposes, but all material of your copy must content the relevant copyright, trademark or other proprietary rights notices. Except as authorized in the paragraph, you are not granted to use any copyright material, trademark, patent or other intellectual property rights. All rights are held by MDGlobal Ltd and / or any third party. You may not create the frame of our Webpage without the written permission of MDGlobal Ltd.</p>
 

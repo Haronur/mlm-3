@@ -911,6 +911,34 @@ class SharesRepository extends BaseRepository
     }
 
     /**
+     * Sell List - DataTable
+     * @param App\Models\Member $member
+     * @return object
+     */
+    public function sellListPublic () {
+        return Datatables::eloquent($this->modelSell->query())
+            ->editColumn('amount', function ($model) {
+                return number_format($model->amount, 0);
+            })
+            ->editColumn('cash_point', function ($model) {
+                return number_format($model->cash_point, 2);
+            })
+            ->editColumn('purchase_point', function ($model) {
+                return number_format($model->purchase_point, 2);
+            })
+            ->editColumn('promotion_point', function ($model) {
+                return number_format($model->promotion_point, 2);
+            })
+            ->editColumn('admin_fee', function ($model) {
+                return number_format($model->admin_fee, 2);
+            })
+            ->editColumn('total', function ($model) {
+                return number_format($model->total, 2);
+            })
+            ->make(true);
+    }
+
+    /**
      * Freeze List - DataTable
      * @param App\Models\Member $member
      * @return object

@@ -44,10 +44,10 @@ Route::group(['prefix' => '{lang?}', 'where' => ['lang' => '(en|chs|cht)'], 'mid
     Route::get('member/register-history', ['as' => 'member.registerHistory', 'uses' => 'SiteController@getMemberRegisterHistory']);
     Route::get('member/upgrade', ['as' => 'member.upgrade', 'uses' => 'SiteController@getMemberUpgrade']);
 
-    Route::get('network/binary', ['as' => 'network.binary', 'uses' => 'SiteController@getNetworkBinary']);
     Route::get('network/unilevel', ['as' => 'network.unilevel', 'uses' => 'SiteController@getNetworkUnilevel']);
 
     Route::get('shares/market', ['as' => 'shares.market', 'uses' => 'SiteController@getSharesMarket']);
+    Route::get('shares/market-sell', ['as' => 'shares.marketSell', 'uses' => 'SiteController@getSharesMarketSell']);
     Route::get('shares/lock-list', ['as' => 'shares.lock', 'uses' => 'SiteController@getSharesLock']);
     Route::get('shares/statement', ['as' => 'shares.statement', 'uses' => 'SiteController@getSharesStatement']);
 
@@ -60,10 +60,6 @@ Route::group(['prefix' => '{lang?}', 'where' => ['lang' => '(en|chs|cht)'], 'mid
 
     Route::get('terms', ['as' => 'terms', 'uses' => 'SiteController@getTerms']);
     Route::get('member/show-modal', ['as' => 'member.showModal', 'uses' => 'MemberController@getMemberRegisterModal']);
-
-    Route::get('member/get-binary', ['as' => 'member.getBinary', 'uses' => 'MemberController@getBinary']);
-    Route::get('member/binary-back', ['as' => 'member.getBinaryTop', 'uses' => 'MemberController@getBinaryTop']);
-    Route::get('member/binary-modal', ['as' => 'member.binary.modal', 'uses' => 'MemberController@getBinaryModal']);
 
     Route::get('announcement/all', ['as' => 'announcement.list', 'uses' => 'AnnouncementController@getAll']);
     Route::get('announcement/list', ['as' => 'announcement.getList', 'uses' => 'AnnouncementController@getList']);
@@ -83,6 +79,7 @@ Route::group(['prefix' => '{lang?}', 'where' => ['lang' => '(en|chs|cht)'], 'mid
     Route::post('make-withdraw', ['as' => 'transaction.postWithdraw', 'uses' => 'WithdrawController@postMakeWithdraw']);
 
     Route::get('shares/sell-list', ['as' => 'shares.sellList', 'uses' => 'SharesController@getSellList']);
+    Route::get('shares/sell-list/public', ['as' => 'shares.sellList.public', 'uses' => 'SharesController@getSellListPublic']);
     Route::get('shares/sales-statement/{id}', ['as' => 'shares.sell.statement', 'uses' => 'SharesController@getSalesStatement']);
 
     Route::get('shares/return-list', ['as' => 'shares.returnList', 'uses' => 'SharesController@getReturnList']);
@@ -90,7 +87,7 @@ Route::group(['prefix' => '{lang?}', 'where' => ['lang' => '(en|chs|cht)'], 'mid
 
     Route::post('login', ['as' => 'login.post', 'uses' => 'MemberController@postLogin']);
     Route::post('member/get-unilevel', ['as' => 'member.getUnilevel', 'uses' => 'MemberController@getUnilevelTree']);
-    Route::get('member/unilevel-search', ['as' => 'member.unilevelSearch', 'uses' => 'MemberController@getUnilevel']);
+    Route::post('member/unilevel-search', ['as' => 'member.unilevelSearch', 'uses' => 'MemberController@getUnilevel']);
 
 });
 
