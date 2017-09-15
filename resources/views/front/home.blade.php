@@ -15,58 +15,58 @@
           <div class="row">
             <div class="col-md-8">
               <div class="row">
-                <div class="col-md-4">
-                  <a href="#" title="Wallet" class="tile-box tile-box-alt btn-success">
+                <div class="col-md-3">
+                  <a href="#" title="Wallet" class="tile-box tile-box-alt">
                     <div class="tile-header">
                       {{ number_format($member->wallet->cash_point, 2) }}
                     </div>
-                    <div class="tile-content-wrapper">
+                    <div class="tile-content-wrapper text-uppercase">
                       <i class="glyph-icon icon-money opacity-80 font-size-20"></i> @lang('common.cash')
                     </div>
                   </a>
                 </div>
 
-                <div class="col-md-4">
-                  <a href="#" title="Wallet" class="tile-box tile-box-alt btn-info">
+                <div class="col-md-3">
+                  <a href="#" title="Wallet" class="tile-box tile-box-alt">
                     <div class="tile-header">
                       {{ number_format($member->wallet->register_point, 0) }}
                     </div>
-                    <div class="tile-content-wrapper">
+                    <div class="tile-content-wrapper text-uppercase">
                       <i class="glyph-icon icon-money opacity-80 font-size-20"></i> @lang('common.register')
                     </div>
                   </a>
                 </div>
 
-                <div class="col-md-4">
-                  <a href="#" title="Wallet" class="tile-box tile-box-alt btn-primary">
+                <div class="col-md-3">
+                  <a href="#" title="Wallet" class="tile-box tile-box-alt">
                     <div class="tile-header">
                       {{ number_format($member->wallet->promotion_point, 2) }}
                     </div>
-                    <div class="tile-content-wrapper">
+                    <div class="tile-content-wrapper text-uppercase">
                       <i class="glyph-icon icon-money opacity-80 font-size-20"></i> @lang('common.promotion')
+                    </div>
+                  </a>
+                </div>
+
+                <div class="col-md-3">
+                  <a href="#" title="Wallet" class="tile-box tile-box-alt">
+                    <div class="tile-header">
+                      {{ number_format($member->wallet->purchase_point, 2) }}
+                    </div>
+                    <div class="tile-content-wrapper text-uppercase">
+                      <i class="glyph-icon icon-money opacity-80 font-size-20"></i> @lang('common.purchase')
                     </div>
                   </a>
                 </div>
               </div>
 
               <div class="row mrg20T">
-                <div class="col-md-4">
-                  <a href="#" title="Wallet" class="tile-box tile-box-alt btn-warning">
-                    <div class="tile-header">
-                      {{ number_format($member->wallet->purchase_point, 2) }}
-                    </div>
-                    <div class="tile-content-wrapper">
-                      <i class="glyph-icon icon-money opacity-80 font-size-20"></i> @lang('common.purchase')
-                    </div>
-                  </a>
-                </div>
-
-                <div class="col-md-4">
+                <div class="col-md-6">
                   <a href="#" title="Wallet" class="tile-box tile-box-alt btn-success">
                     <div class="tile-header">
                       {{ number_format($member->shares->amount, 0) }}
                     </div>
-                    <div class="tile-content-wrapper">
+                    <div class="tile-content-wrapper text-uppercase">
                       <i class="glyph-icon icon-unlock opacity-80 font-size-20"></i> @lang('common.active')
                     </div>
                   </a>
@@ -82,12 +82,12 @@
                   }
                 ?>
 
-                <div class="col-md-4">
+                <div class="col-md-6">
                   <a href="#" title="Wallet" class="tile-box tile-box-alt btn-danger">
                     <div class="tile-header">
                       {{ number_format($freezeTotal, 0) }}
                     </div>
-                    <div class="tile-content-wrapper">
+                    <div class="tile-content-wrapper text-uppercase">
                       <i class="glyph-icon icon-lock opacity-80 font-size-20"></i> @lang('common.lock')
                     </div>
                   </a>
@@ -168,7 +168,7 @@
                 <div class="tile-header">
                   0.200 <small>/ {{ trans_choice('common.share', 1) }}</small>
                 </div>
-                <div class="tile-content-wrapper">
+                <div class="tile-content-wrapper text-uppercase">
                   <i class="glyph-icon icon-dollar opacity-80 font-size-20"></i> @lang('common.currentShareTitle')
                 </div>
               </a>

@@ -32,7 +32,7 @@ $buyPrices = $repo->getAvailableBuyPrice();
                 <div class="tile-header">
                   0.200 <small>/ {{ trans_choice('common.share', 1) }}</small>
                 </div>
-                <div class="tile-content-wrapper">
+                <div class="tile-content-wrapper text-uppercase">
                   <i class="glyph-icon icon-dollar opacity-80 font-size-20"></i> @lang('common.currentShareTitle')
                 </div>
               </a>
@@ -44,7 +44,7 @@ $buyPrices = $repo->getAvailableBuyPrice();
                 <div class="tile-header">
                   {{ substr($next, -3) }}
                 </div>
-                <div class="tile-content-wrapper">
+                <div class="tile-content-wrapper text-uppercase">
                   <i class="glyph-icon icon-line-chart opacity-80 font-size-20"></i> @lang('sharesMarket.next')
                 </div>
               </a>
@@ -55,7 +55,7 @@ $buyPrices = $repo->getAvailableBuyPrice();
                 <div class="tile-header">
                   {{ number_format($member->shares->amount, 0) }}
                 </div>
-                <div class="tile-content-wrapper">
+                <div class="tile-content-wrapper text-uppercase">
                   <i class="glyph-icon icon-unlock opacity-80 font-size-20"></i> @lang('common.active')
                 </div>
               </a>
