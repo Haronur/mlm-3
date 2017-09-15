@@ -96,10 +96,26 @@
                 <div class="panel-body">
                   <div class="example-box-wrapper">
                     <?php $countries = config('misc.countries'); ksort($countries); ?>
-                    <script type="text/javascript">
-                      window._exchangeRate = {!! json_encode($countries) !!};
-                    </script>
-                    <canvas id="exchangeRateChart" height="450" width="100%"></canvas>
+                    <table class="table table-full table-full-small table-dashboard-widget-1">
+                      <thead>
+                        <tr>
+                          <th>Country</th>
+                          <th>Currency</th>
+                          <th>Buy IN</th>
+                          <th>Sell OUT</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        @foreach ($countries as $index => $country)
+                        <tr>
+                          <td><img src="{{ asset('assets/img/flags/' . $index . '.png') }}" alt="{{ \Lang::get('country.' . $index) }}" width="25" class="m-r-5" /> {{ $index }}</td>
+                          <td>{{ $country['currency'] }}</td>
+                          <td>{{ $country['buy'] }}</td>
+                          <td>{{ $country['sell'] }}</td>
+                        </tr>
+                        @endforeach
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>

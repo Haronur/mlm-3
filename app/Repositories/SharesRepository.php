@@ -696,7 +696,6 @@ class SharesRepository extends BaseRepository
             'share_price' => $price,
             'total' =>  $amount,
             'cash_point' => ($values['cash'] / 100) * $amount,
-            'md_point' => ($values['point'] / 100) * $amount,
             'purchase_point' => (float) ($values['buyBack'] / 100) * $amount,
             'admin_fee' => ($values['fee'] / 100) * $amount,
             'is_admin' => false
