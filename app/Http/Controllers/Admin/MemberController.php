@@ -155,11 +155,6 @@ class MemberController extends Controller
                     return false;
                 }
 
-                if (!$this->MemberRepository->checkIfPositionAvailable($parent, $data['position'])) {
-                    throw new \Exception('Position no longer available.', 1);
-                    return false;
-                }
-
                 $member = $this->MemberRepository->saveModel(new \App\Models\Member, [
                     'username'  =>  $user->username,
                     'register_by' => 'admin',

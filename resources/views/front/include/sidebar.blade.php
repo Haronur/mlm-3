@@ -93,6 +93,7 @@
         <div class="sidebar-submenu">
           <ul>
             <li><a href="{{ route('bonus.statement', ['lang' => $lang]) }}"><span>@lang('sidebar.statementLink1')</span></a></li>
+            <li><a href="{{ route('bonus.group.pending', ['lang' => $lang]) }}"><span>@lang('sidebar.statementLink3')</span></a></li>
             <li><a href="{{ route('summary.statement', ['lang' => $lang]) }}"><span>@lang('sidebar.statementLink2')</span></a></li>
           </ul>
         </div><!-- .sidebar-submenu -->

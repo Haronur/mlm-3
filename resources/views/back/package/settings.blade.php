@@ -77,7 +77,7 @@ $packages = Package::orderBy('id', 'asc')->get();
 
                       <td>
                         <div class="input-group">
-                          <span class="input-group-addon">$</span>
+                          <span class="input-group-addon">%</span>
                           <input type="number" class="form-control" name="purchase_point" value="{{ (float) $package->purchase_point }}" required="" min="0">
                         </div>
                       </td>

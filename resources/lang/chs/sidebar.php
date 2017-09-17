@@ -28,5 +28,6 @@ return [
 	'statementTitle'	=>	'报表中心',
 	'statementLink1'	=>	'奖励报表',
 	'statementLink2'	=>	'财务报表',
+	'statementLink3'	=>	'Pending Group Statement',
 	'announcementTitle' =>	'公司通告'
 ];

@@ -258,7 +258,7 @@ class BonusRepository extends BaseRepository
     public function calculateOverride ($member) {
         $calculation = $this->calculation;
         $currentMember = $member->direct();
-        $remain = $member->direct_percent;
+        $remain = 20;
         if (!$currentMember) return false;
         $model = $this->overrideModel;
         // calculate remain, if any
@@ -301,7 +301,7 @@ class BonusRepository extends BaseRepository
     public function calculateOverrideUpgrade ($member, $amountToAdd) {
         $calculation = $this->calculation;
         $currentMember = $member->direct();
-        $remain = $member->direct_percent;
+        $remain = 20;
         if (!$currentMember) return false;
         $model = $this->overrideModel;
         // calculate remain, if any

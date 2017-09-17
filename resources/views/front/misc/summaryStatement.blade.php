@@ -29,7 +29,7 @@
                       </a>
                     </li>
                     <li class="col-md-2">
-                      <a href="#tabTransfer" data-toggle="tab" class="list-group-item">
+                      <a href="#tabWithdraw" data-toggle="tab" class="list-group-item">
                         <i class="glyph-icon font-purple icon-plus-circle"></i>
                         @lang('misc.withdraw')
                       </a>

@@ -29,8 +29,8 @@ $shares = \DB::table('Shares_Centre')->first();
                   <th>Min Price</th>
                   <th>Curr Price</th>
                   <th>Curr Sales Total</th>
-                  <th>Raise Every</th>
-                  <th>Raise By</th>
+                  <th>Raise Every (in shares)</th>
+                  <th>Raise By (in shares)</th>
                   <th>Always Company?</th>
                   <th>Always Follow?</th>
                   <th>Random Follow?</th>
@@ -55,24 +55,15 @@ $shares = \DB::table('Shares_Centre')->first();
                 </td>
 
                 <td>
-                  <div class="input-group">
-                    <input type="number" class="form-control" value="{{ (integer) $shares->current_accumulate }}" disabled="" readonly="">
-                    <span class="input-group-addon">shares</span>
-                  </div>
+                  <input type="number" class="form-control" value="{{ (integer) $shares->current_accumulate }}" disabled="" readonly="">
                 </td>
 
                 <td>
-                  <div class="input-group">
-                    <input type="number" name="raise_limit" class="form-control" value="{{ (integer) $shares->raise_limit }}" required="" min="0">
-                    <span class="input-group-addon">shares</span>
-                  </div>
+                  <input type="number" name="raise_limit" class="form-control" value="{{ (integer) $shares->raise_limit }}" required="" min="0">
                 </td>
 
                 <td>
-                  <div class="input-group">
-                    <span class="input-group-addon">$</span>
-                    <input type="number" name="raise_by" class="form-control" value="{{ (float) $shares->raise_by }}" required="" min="0">
-                  </div>
+                  <input type="number" name="raise_by" class="form-control" value="{{ (float) $shares->raise_by }}" required="" min="0">
                 </td>
 
                 <td>

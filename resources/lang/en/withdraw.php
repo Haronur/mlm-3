@@ -9,7 +9,7 @@ return [
 	'bank'	=> 'Bank',
 	'bank.account' => 'Account Detail',
 	'amount' => 'Amount',
-	'amountNotice' => 'Divisible by 100, minimum 300.',
+	'amountNotice' => 'Divisible by 10, minimum 20.',
 	'fee' => 'Admin Fee (5%)',
 	'total' => 'Total',
 	'security' => 'Security Password',

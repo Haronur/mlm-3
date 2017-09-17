@@ -41,6 +41,20 @@ class WithdrawController extends Controller
             ]);
         }
 
+        if ($data['amount'] % 10 != 0) {
+            return \Response::json([
+                'type'  =>  'error',
+                'message'   =>  \Lang::get('error.withdrawError')
+            ]);
+        }
+
+        if ($data['amount'] < 20) {
+            return \Response::json([
+                'type'  =>  'error',
+                'message'   =>  \Lang::get('error.withdrawError')
+            ]);
+        }
+
         try {
             $this->WithdrawRepository->makeWithdraw($member, $data['amount']);
         } catch (\Exception $e) {

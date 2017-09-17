@@ -35,5 +35,6 @@ return [
     'termsError' => 'You have to agree to our terms.',
     'cashWalletLock' => 'Your cash wallet is locked.',
     'promotionWalletLock' => 'Your promotion wallet is locked.',
-    'registerWalletLock' => 'Your register wallet is locked.'
+    'registerWalletLock' => 'Your register wallet is locked.',
+    'withdrawError' => 'Withdraw Error'
 ];

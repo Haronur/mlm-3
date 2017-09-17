@@ -7,8 +7,8 @@ return [
 		'override'	=>	12, // in percent
 		'pairing'	=>	500, // in USD
 		'calculation' => [ // in percent
-			'cash'	=>	70,
-			'promotion'	=>	30
+			'cash'	=>	80,
+			'promotion'	=>	20
 		],
 	],
 	'shares' => [

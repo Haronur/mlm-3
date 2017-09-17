@@ -17,10 +17,9 @@
 */
 
 // Route::get('test', function () {
-//     $member = \App\Models\Member::where('id', 4)->first();
-//     $wallet = $member->wallet;
-//     $repo = new SharesRepository;
-//     $repo->repurchasePackage($member, $wallet->purchase_point, $wallet);
+//     $member = \App\Models\Member::where('id', 10)->first();
+//     $repo = new BonusRepository;
+//     $repo->calculateOverride($member);
 // });
 
 Route::get('', function() {

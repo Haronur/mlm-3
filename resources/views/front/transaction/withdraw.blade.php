@@ -58,7 +58,7 @@
                             <label class="control-label">@lang('withdraw.amount')</label>
                             <div class="input-group">
                               <span class="input-group-addon">$</span>
-                              <input type="number" min="10" class="form-control" name="amount" required="" min="300">
+                              <input type="number" min="20" class="form-control" name="amount" required="" min="300">
                             </div>
                             <span class="help-block">@lang('withdraw.amountNotice')</span>
                           </div>

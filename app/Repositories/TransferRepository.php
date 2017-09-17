@@ -183,21 +183,12 @@ class TransferRepository extends BaseRepository
      */
     public function checkCanTransfer ($from, $to) {
         if ($from->id == $to->id) return true;
-        // if ($from->level >= $to->level) return false;
+        $childs = $from->findDescendants()->pluck('id')->toArray();
+        if (in_array($to->id, $childs)) return true;
 
-        $left = explode(',', $from->left_children);
-        $right = explode(',', $from->right_children);
-        if (in_array($to->id, $left) || in_array($to->id, $right)) {
-            return true;
-        }
-
-        $left = explode(',', $to->left_children);
-        $right = explode(',', $to->right_children);
-
-        if (in_array($from->id, $left) || in_array($from->id, $right)) {
-            return true;
-        }
-
+        $root = $from->findRoot();
+        $childs = $root->findDescendants()->pluck('id')->toArray();
+        if (in_array($from->id, $childs)) return true;
         return false;
     }
 

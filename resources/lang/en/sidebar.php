@@ -27,5 +27,6 @@ return [
 	'statementTitle'	=>	'E-Statement Report',
 	'statementLink1'	=>	'Bonus Statement',
 	'statementLink2'	=>	'Summary Statement',
+	'statementLink3'	=>	'Pending Group Statement',
 	'announcementTitle' =>	'Announcement'
 ];
