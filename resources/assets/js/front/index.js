@@ -131,3 +131,18 @@ function pageTransitions() {
     }
   }
 }
+
+if ($('#withdrawForm').length) {
+  var $form = $('#withdrawForm')
+  var $adminFeeLabel = $('#adminFeeLabel')
+  var $totalLabel = $('#totalLabel')
+  var $adminFeePercent = $adminFeeLabel.data('percent') / 100
+
+  $form.find('[name=amount]').on('input', function () {
+    let grossTotal = $(this).val()
+    let adminFee = $adminFeePercent * grossTotal
+    let total = parseFloat(grossTotal) + parseFloat(adminFee)
+    $adminFeeLabel.text(adminFee.toFixed(2))
+    $totalLabel.text(total.toFixed(2))
+  })
+}

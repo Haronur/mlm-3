@@ -65,12 +65,12 @@
 
                           <div class="form-group">
                             <label class="control-label">@lang('withdraw.fee')</label>
-                            <h3 class="theme-text no-m-t" id="adminFeeLabel" data-percent="5">0</h3>
+                            <h3 class="text-warning" id="adminFeeLabel" data-percent="5">0</h3>
                           </div>
 
                           <div class="form-group">
                             <label class="control-label">@lang('withdraw.total')</label>
-                            <h2 class="theme-text no-m-t" id="totalLabel">0</h2>
+                            <h2 class="text-warning" id="totalLabel">0</h2>
                           </div>
 
                           <div class="form-group">

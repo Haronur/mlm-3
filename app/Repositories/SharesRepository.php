@@ -690,6 +690,7 @@ class SharesRepository extends BaseRepository
 
         // add sales record
         $sell = $this->saveModel($this->modelSell, [
+            'username'  => $member->username,
             'member_id' => $member->id,
             'amount'    => $quantity,
             'amount_left' => $quantity,

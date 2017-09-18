@@ -170,16 +170,15 @@ class MemberController extends Controller
 
                 $member->setChildOf($parent);
 
-                $this->MemberRepository->saveModel(new \App\Models\MemberWallet, [
+                $wallet = $this->MemberRepository->saveModel(new \App\Models\MemberWallet, [
                     'member_id' =>  $member->id,
                     'register_point' =>  0,
-                    'purchase_point' =>  $package->purchase_point,
+                    'purchase_point' =>  ($package->purchase_point / 100) * $direct->package_amount,
                     'promotion_point' =>  0,
                     'cash_point' =>  0,
                 ]);
 
                 if (env('APP_ENV') == 'local') { // local
-                    $wallet = $member->wallet;
                     $this->SharesRepository->repurchasePackage($member, $wallet->purchase_point, $wallet);
                 } else { // production
                     dispatch(new SharesAfterRegisterJob($member))->onQueue('queue-shares-register');
