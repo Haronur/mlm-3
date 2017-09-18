@@ -185,9 +185,6 @@ class MemberController extends Controller
                     dispatch(new NetworkAfterRegisterJob($member))->onQueue('queue-network-register');
                 }
 
-                // remove cache for network
-                \Cache::forget('member.' . $parent->id . '.children');
-
                 $this->BonusRepository->calculateDirect($member, $direct);
                 $this->BonusRepository->calculateOverride($member);
             }

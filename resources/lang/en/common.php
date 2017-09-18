@@ -36,5 +36,6 @@ return [
 	'to' => 'to',
 	'status.process' => 'Process',
 	'status.done' => 'Done',
-	'status.reject' => 'Reject'
+	'status.reject' => 'Reject',
+	'search' => 'Search'
 ];

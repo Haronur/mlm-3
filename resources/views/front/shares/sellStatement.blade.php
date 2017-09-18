@@ -15,7 +15,6 @@
           <th>@lang('sharesStatement.modal.createdDate')</th>
           <th>@lang('sharesStatement.cash')</th>
           <th>@lang('sharesStatement.purchase')</th>
-          <th>@lang('sharesStatement.md')</th>
           <th>@lang('sharesStatement.fee')</th>
           <th>@lang('sharesStatement.modal.quantity')</th>
           <th>@lang('sharesStatement.modal.price')</th>
@@ -29,7 +28,6 @@
             <td>{{ Carbon::createFromFormat('Y-m-d H:i:s', $statement->created_at)->format('Y-m-d') }}</td>
             <td>{{ number_format($statement->cash_point, 2) }}</td>
             <td>{{ number_format($statement->purchase_point,2) }}</td>
-            <td>{{ number_format($statement->md_point, 2) }}</td>
             <td>{{ number_format($statement->admin_fee, 2) }}</td>
             <td>{{ number_format($statement->amount, 0) }}</td>
             <td>{{ number_format($statement->share_price, 3) }}</td>

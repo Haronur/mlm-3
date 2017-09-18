@@ -200,3 +200,22 @@ a.btn {
     margin-bottom: 15px;
   }
 }
+
+.jstree-node {
+  font-size: 18px;
+  min-height: 50px;
+
+  a {
+    &.jstree-hovered, &.jstree-clicked {
+      min-height: 50px;
+    }
+  }
+}
+
+.jstree-icon, .jstree-anchor {
+  line-height: 32px;
+}
+
+.jstree-themeicon-custom {
+  color: #d6ab57;
+}

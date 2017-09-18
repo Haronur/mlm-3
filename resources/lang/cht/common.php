@@ -37,5 +37,6 @@ return [
 	'to' => '至',
 	'status.process' => '處理中',
 	'status.done' => '完成',
-	'status.reject' => '拒絕'
+	'status.reject' => '拒絕',
+	'search' => '搜索'
 ];

@@ -16,5 +16,6 @@ return [
 	'netTotal' => '净总额（已扣除10%管理费）',
 	'total' => '总额',
 	'security' => '安全密码',
-	'noBuy' => '目前市场上并没有挂卖MD积分。'
+	'noBuy' => '目前市场上并没有挂卖MD积分。',
+	'searchPrice' => '搜索价格从'
 ];

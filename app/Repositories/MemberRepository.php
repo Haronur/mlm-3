@@ -195,7 +195,7 @@ class MemberRepository extends BaseRepository
         }
 
         // add to network
-        $member->setChildOf($direct);
+        $member->setChildOf($currentMember);
 
         if (!$this->saveModel($this->walletModel, [
             'member_id' =>  $member->id,
@@ -232,11 +232,8 @@ class MemberRepository extends BaseRepository
 
         // add direct and override bonus
         $repo = new BonusRepository();
-        $repo->calculateDirect($member, $direct);
+        $repo->calculateDirect($member, $currentMember);
         $repo->calculateOverride($member);
-
-        // remove cache for network
-        \Cache::forget('member.' . $parent->id . '.children');
 
         return $member;
     }
@@ -321,12 +318,12 @@ class MemberRepository extends BaseRepository
         $wallet->save();
 
         $this->saveWalletStatement($member, $needAmount, 0, 'upgrade');
-
-        if ($member->position != 'top') {
+        
+        $direct = $member->direct();
+        if ($direct) {
             $repo = new BonusRepository();
             $repo->calculateDirectUpgrade($member, $needAmount);
             $repo->calculateOverrideUpgrade($member, $needAmount);
-            $this->addNetworkSales($member, $needAmount);
         }
         return $member;
     }
@@ -363,12 +360,11 @@ class MemberRepository extends BaseRepository
 
         $this->saveWalletStatement($member, $needAmount, 0, 'renew');
 
-        if ($member->position != 'top') {
+        $direct = $member->direct();
+        if ($direct) {
             $repo = new BonusRepository();
-            $direct = $member->parent();
             $repo->calculateDirect($member, $direct);
             $repo->calculateOverride($member);
-            $this->addNetworkSales($member);
         }
         return $member;
     }

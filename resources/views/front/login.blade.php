@@ -18,7 +18,7 @@ Login - {{ config('app.name') }}
               <span class="input-group-addon addon-inside bg-gray">
                 <i class="glyph-icon icon-user"></i>
               </span>
-              <input type="text" name="username" class="form-control" id="inputUsername" placeholder="Enter username">
+              <input type="text" name="username" class="form-control" id="inputUsername" placeholder="{{ \Lang::get('login.username') }}">
             </div>
           </div>
           <div class="form-group">
@@ -26,19 +26,19 @@ Login - {{ config('app.name') }}
               <span class="input-group-addon addon-inside bg-gray">
                 <i class="glyph-icon icon-unlock-alt"></i>
               </span>
-              <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password">
+              <input type="password" name="password" class="form-control" id="inputPassword" placeholder="{{ \Lang::get('login.password') }}">
             </div>
           </div>
           <div class="form-group">
             <button type="submit" class="btn btn-block btn-primary">
               <span class="btn-preloader"><span class="icon-spin icon-spin-1"></span></span>
-              <span>Login</span>
+              <span>{{ \Lang::get('login.title') }}</span>
             </button>
           </div>
           <div class="row">
             <div class="checkbox checkbox-primary col-md-6" style="height: 20px;">
               <label>
-                <input type="checkbox" name="remember" id="loginCheckbox1" class="custom-checkbox"> Remember me
+                <input type="checkbox" name="remember" id="loginCheckbox1" class="custom-checkbox"> @lang('login.remember')
               </label>
             </div>
           </div>

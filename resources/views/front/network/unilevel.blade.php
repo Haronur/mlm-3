@@ -1,3 +1,11 @@
+<?php
+  if (\Input::has('rid')) {
+    $sMember = \App\Models\Member::where('id', trim(\Input::get('rid')))->first();
+  } else {
+    $sMember = $member;
+  }
+?>
+
 @extends('front.app')
 
 @section('title')
@@ -23,11 +31,11 @@
                 <div class="panel">
                   <div class="panel-body">
                     <div class="example-box-wrapper">
-                      <form onsubmit="return false;" data-parsley-validate="" role="form" id="unilevelForm" data-url="{{ route('member.unilevelSearch', ['lang' => $lang]) }}">
+                      <form onsubmit="return false;" data-parsley-validate="" role="form" id="unilevelForm" data-url="{{ route('member.getUnilevel', ['lang' => \App::getLocale()]) }}">
                         <fieldset>
                           <div class="form-group">
                             <label class="control-label" for="inputMember">@lang('unilevel.member')</label>
-                            <input type="text" value="{{ $member->username }}" name="u" class="form-control" required="" id="inputMember">
+                            <input type="text" value="{{ $sMember->username }}" name="u" class="form-control" required="" id="inputMember">
                           </div>
 
                           <div class="form-group">
@@ -55,7 +63,7 @@
                 <div class="panel">
                   <div class="panel-body">
                     <div class="example-box-wrapper">
-                      <div id="unilevelNetwork" data-url="{{ route('member.unilevelSearch', ['lang' => $lang]) }}" data-show="{{ route('member.unilevel.modal', ['lang' => $lang]) }}">@lang('unilevel.notice')</div>
+                      <div id="unilevelNetwork" data-url="{{ route('member.unilevelSearch', ['lang' => \App::getLocale()]) . '?rid=' . \Input::get('rid') }}" data-show="{{ route('member.unilevel.modal', ['lang' => $lang]) }}">@lang('unilevel.notice')</div>
                     </div>
                   </div>
                 </div>

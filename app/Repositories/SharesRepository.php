@@ -361,6 +361,7 @@ class SharesRepository extends BaseRepository
                     $shares->save();
 
                     \DB::table('Shares_Buy')->insert([
+                        'username'  =>  $member->username,
                         'amount'    =>  $quantityToBuy,
                         'amount_left'   =>  $quantityToBuy,
                         'member_id' =>  $member->id,
@@ -398,6 +399,7 @@ class SharesRepository extends BaseRepository
                         'amount'    =>  $quantityToBuy,
                         'amount_left'   =>  $quantityToBuy,
                         'member_id' =>  $member->id,
+                        'username' => $member->username,
                         'has_process'   =>  0,
                         'share_price'   =>  is_null($sharePrice) ? 0 : $sharePrice,
                         'total' =>  $quantityToBuy * $shares->share_price,
@@ -502,6 +504,7 @@ class SharesRepository extends BaseRepository
             \DB::table('Shares_Buy')->insert([
                 'amount'    =>  $quantity,
                 'amount_left'   =>  $quantity,
+                'username' => $member->username,
                 'member_id' =>  $member->id,
                 'has_process'   =>  0,
                 'share_price'   =>  $state->current_price,
@@ -545,6 +548,7 @@ class SharesRepository extends BaseRepository
                     \DB::table('Shares_Buy')->insert([
                         'amount'    =>  $quantityToBuy,
                         'amount_left'   =>  $quantityToBuy,
+                        'username' => $member->username,
                         'member_id' =>  $member->id,
                         'has_process'   =>  0,
                         'share_price'   =>  is_null($sharePrice) ? 0 : $sharePrice,
@@ -577,6 +581,7 @@ class SharesRepository extends BaseRepository
                     \DB::table('Shares_Buy')->insert([
                         'amount'    =>  $quantityToBuy,
                         'amount_left'   =>  $quantityToBuy,
+                        'username' => $member->username,
                         'member_id' =>  $member->id,
                         'has_process'   =>  0,
                         'share_price'   =>  is_null($sharePrice) ? 0 : $sharePrice,
@@ -917,6 +922,9 @@ class SharesRepository extends BaseRepository
      */
     public function sellListPublic () {
         return Datatables::eloquent($this->modelSell->query())
+            ->editColumn('created_at', function ($model) {
+                return $model->created_at->format('d F Y');
+            })
             ->editColumn('amount', function ($model) {
                 return number_format($model->amount, 0);
             })

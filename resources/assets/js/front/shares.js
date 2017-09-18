@@ -1,8 +1,119 @@
 export class Shares {
   constructor () {
+    if ($('#chart-shares').length) {
+      var $chart = $('#chart-shares')
+      var linkElem = document.createElement('link')
+      document.getElementsByTagName('head')[0].appendChild(linkElem)
+      linkElem.rel = 'stylesheet'
+      linkElem.type = 'text/css'
+      linkElem.href = window._root + '/lib/c3.css'
+
+      $.when(
+        $.getScript(window._root + '/lib/d3.js'),
+        $.getScript(window._root + '/lib/c3.js'),
+        $.Deferred(function (deferred) {
+          $(deferred.resolve)
+        })
+      ).done(function () {
+        $.ajax({
+          type: 'post',
+          url: $chart.data('url'),
+          success: function (e) {
+            if (e.type === 'success') {
+              $('#sharesTotalSales').text(e.total)
+              let chartLine = {
+                bindto: '#chart-shares',
+                data: {
+                  x: 'price',
+                  columns: e.data
+                },
+                axis: {
+                  x: {
+                    show: false
+                  },
+                  y: {
+                    show: false
+                  }
+                },
+                color: {
+                  pattern: ["#f00"]
+                },
+                legend: {
+                  hide: true
+                },
+                size: {
+                  height: 200
+                }
+              }
+              c3.generate(chartLine)
+            }
+          },
+          error: function (xhr, status, e) {
+            console.log(xhr.responseText)
+            return false
+          }
+        })
+
+        var $refreshForm = $('#refreshGraphForm')
+        $refreshForm.on('click', '[type=submit]', function (e) {
+          e.preventDefault()
+          var $this = $(this)
+          $this.disable(true)
+
+          let min = $refreshForm.find('[name=search_from1]').val() + 
+          $refreshForm.find('[name=search_from2]').val()
+
+          $.ajax({
+            type: 'post',
+            data: {
+              min: min
+            },
+            url: $chart.data('url'),
+            success: function (e) {
+              $this.disable(false)
+              if (e.type === 'success') {
+                $('#sharesTotalSales').text(e.total)
+                let chartLine = {
+                  bindto: '#chart-shares',
+                  data: {
+                    x: 'price',
+                    columns: e.data
+                  },
+                  axis: {
+                    x: {
+                      show: false
+                    },
+                    y: {
+                      show: false
+                    }
+                  },
+                  color: {
+                    pattern: ["#f00"]
+                  },
+                  legend: {
+                    hide: true
+                  },
+                  size: {
+                    height: 200
+                  }
+                }
+                c3.generate(chartLine)
+              }
+            },
+            error: function (xhr, status, e) {
+              $this.disable(false)
+              console.log(xhr.responseText)
+              return false
+            }
+          })
+        })
+      })
+    }
+
     if ($('#transferForm').length) {
       this.transfer()
     }
+
     if ($('#sharesSellForm').length) {
       var $sellForm = $('#sharesSellForm')
       $sellForm.find('[name=quantity]').on('input', function () {

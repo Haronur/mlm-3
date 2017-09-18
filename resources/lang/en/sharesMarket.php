@@ -8,8 +8,8 @@ return [
 	'sales' => 'Shares Sales',
 	'totalSales' => 'Total Sale',
 	'current' => 'Current Share',
-	'buy' => 'Buy <span class="text-warning">IN</span>', // don't remove <span></span>
-	'sell' => 'Sell <span class="text-warning">OUT</span>', // don't remove <span></span>
+	'buy' => 'Buy IN', // don't remove <span></span>
+	'sell' => 'Sell OUT', // don't remove <span></span>
 	'price' => 'Price',
 	'quantity' => 'Quantity',
 	'quantityNotice' => 'Must be divisible by 10.',

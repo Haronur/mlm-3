@@ -16,5 +16,6 @@ return [
 	'netTotal' => '淨總額（已扣除10%管理費）',
 	'total' => '總額',
 	'security' => '安全密碼',
-	'noBuy' => '目前市場上並沒有掛賣MD積分。'
+	'noBuy' => '目前市場上並沒有掛賣MD積分。',
+	'searchPrice' => '搜索價格從'
 ];

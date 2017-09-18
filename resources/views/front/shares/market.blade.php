@@ -63,7 +63,43 @@ $buyPrices = $repo->getAvailableBuyPrice();
           </div>
 
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
+              <div class="content-box">
+                <h2 class="content-box-header bg-success">@lang('sharesMarket.sales')</h2>
+                <div class="content-box-wrapper">
+                  <div id="chart-shares" data-url="{{ route('shares.graph') }}"></div>
+                  <hr>
+                  <form role="form" onsubmit="return false;" id="refreshGraphForm">
+                    <label>@lang('sharesMarket.searchPrice')</label>
+                    <div class="input-group">
+                      <select class="form-control" name="search_from1">
+                        @for ($i=0.1; $i<=0.9; $i+=0.1)
+                        <option value="{{ $i }}">{{ $i }}</option>
+                        @endfor
+                      </select>
+                      <span class="input-group-addon">+</span>
+                      <select class="form-control" name="search_from2">
+                        @foreach (range(0, 99) as $i)
+                        <?php $j = str_pad($i, 2, '0',  STR_PAD_LEFT); ?>
+                        <option value="{{ $j }}">{{ $j }}</option>
+                        @endforeach
+                      </select>
+                    </div>
+
+                    <div class="form-group mrg20T">
+                      <button type="submit" id="refreshGraphBtn" class="btn btn-primary">
+                        <span class="btn-preloader">
+                          <span class="icon-spin icon-spin-1"></span>
+                        </span>
+                        <span>@lang('common.search')</span>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
               <div class="content-box">
                 <h2 class="content-box-header bg-primary">@lang('sharesMarket.buy')</h2>
                 <div class="content-box-wrapper">
@@ -118,7 +154,7 @@ $buyPrices = $repo->getAvailableBuyPrice();
               </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-4">
               <div class="content-box">
                 <h2 class="content-box-header bg-purple">@lang('sharesMarket.sell')</h2>
                 <div class="content-box-wrapper">

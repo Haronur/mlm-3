@@ -209,14 +209,16 @@ class MemberController extends Controller
             ]);
         }
 
-        try {
-            $member = $this->MemberRepository->upgrade($member, $data);
-        } catch (\Exception $e) {
-            return \Response::json([
-                'type'  =>  'error',
-                'message'   =>  $e->getMessage()
-            ]);
-        }
+        $member = $this->MemberRepository->upgrade($member, $data);
+
+        // try {
+        //     $member = $this->MemberRepository->upgrade($member, $data);
+        // } catch (\Exception $e) {
+        //     return \Response::json([
+        //         'type'  =>  'error',
+        //         'message'   =>  $e->getMessage()
+        //     ]);
+        // }
 
         if (env('APP_ENV') == 'local') { // local
             $wallet = $member->wallet;
@@ -251,8 +253,8 @@ class MemberController extends Controller
         if (!\Input::has('u')) {
             return \Lang::get('error.binarySessionError');
         } else {
-            $username = trim(\Input::get('u'));
-            if (!$target = $this->MemberRepository->findByUsername(trim($username))) {
+            $id = trim(\Input::get('u'));
+            if (!$target = $this->MemberRepository->findById($id)) {
                 return \Lang::get('error.memberNotFound');
             }
         }
@@ -267,86 +269,75 @@ class MemberController extends Controller
     }
 
     /**
-     * Search Unilevel Tree - VisJS
+     * Search Hierarchy by Username - JSTree
+     * @param  [type] $type [description]
+     * @return [type]       [description]
+     */
+    public function getUnilevelTree () {
+        $data = \Input::get('data');
+        $user = \Sentinel::getUser();
+        $member = $user->member;
+
+        if (trim($data['s']) != $member->secret_password) {
+            return \Response::json([
+                'type'  =>  'error',
+                'message'   =>  \Lang::get('error.securityPasswordError')
+            ]);
+        }
+
+        if (!$target = $this->MemberRepository->findByUsername(trim($data['u']))) {
+            return \Response::json([
+                'type'  =>  'error',
+                'message'   => \Lang::get('error.memberNotFound')
+            ]);
+        }
+
+        if ($target->level <= $member->level && $member->username != $target->username) {
+            return \Response::json([
+                'type'  =>  'error',
+                'message'   =>  \Lang::get('error.memberNotFound')
+            ]);
+        }
+
+        return \Response::json([
+            'type'  =>  'success',
+            'redirect'  =>  route('network.unilevel', ['lang' => \App::getLocale()]) . '?rid=' . $target->id
+        ]);
+    }
+
+    /**
+     * Search Unilevel Tree - JSTree
      * @return array [array of children]
      */
     public function getUnilevel () {
         $user = \Sentinel::getUser();
         $member = $user->member;
+        $data = [];
 
-        $data = [
-            'nodes' => [],
-            'edges' => []
-        ];
-
-        if (\Input::has('data')) {
-            $formData = \Input::get('data');
-            if (trim($formData['s']) != $member->secret_password) {
-                return \Response::json([
-                    'type'  =>  'error',
-                    'message'   =>  \Lang::get('error.securityPasswordError')
-                ]);
-            }
-
-            if (!$target = $this->MemberRepository->findByUsername(trim($formData['u']))) {
-                return \Response::json([
-                    'type'  =>  'error',
-                    'message'   => \Lang::get('error.memberNotFound')
-                ]);
-            }
-
-            if ($target->level <= $member->level && $member->username != $target->username) {
-                return \Response::json([
-                    'type'  =>  'error',
-                    'message'   =>  \Lang::get('error.memberNotFound')
-                ]);
-            }
-        } else $target = $member;
-
-        array_push($data['nodes'], [
-            'id' => $target->id,
-            'group' => 'main',
-            'label' => $target->username
-        ]);
-
-        $children = $this->MemberRepository->findDirect($target);
-
-        if (count($children) > 0) {
-            foreach ($children as $child) {
-                array_push($data['nodes'], [
-                    'id' => $child->id,
-                    'label' =>  $child->username,
-                    'group' => 'child'
-                ]);
-
-                array_push($data['edges'], [
-                    'from' => $target->id,
-                    'to' => $child->id
-                ]);
-
-                // $grandChildren = $this->MemberRepository->findDirect($child);
-
-                // if (count($grandChildren) > 0) {
-                //     foreach ($grandChildren as $gc) {
-                //         array_push($data['nodes'], [
-                //             'id' => $gc->id,
-                //             'label' =>  $gc->username,
-                //             'group' => 'child'
-                //         ]);
-
-                //         array_push($data['edges'], [
-                //             'from' => $child->id,
-                //             'to' => $gc->id
-                //         ]);
-                //     }
-                // }
-            }
+        if (\Input::has('pid')) {
+            $id = trim(\Input::get('pid'));
+            if (!$target = $this->MemberRepository->findById($id)) return $data;
+            if ($target->level <= $member->level) return $data;
+        } else if (\Input::has('rid') && \Input::get('rid') != 0) {
+            $id = trim(\Input::get('rid'));
+            if (!$target = $this->MemberRepository->findById($id)) return $data;
+            if ($target->level <= $member->level && $target->username != $member->username) return $data;
+        } else {
+            $target = $member;
         }
 
-        return \Response::json([
-            'type' => 'success',
-            'data' => $data
-        ]);
+        $children = $this->MemberRepository->findDirect($target);
+        if (count($children) > 0) {
+            foreach ($children as $child) {
+                array_push($data, [
+                    'id' => $child->id,
+                    'text'  =>  $child->username . ' <button class="mrg10L btn-xs btn btn-danger" data-toggle="modal" data-target="#showModal" data-id="' . $child->id . '"><span>Detail</span> <span class="glyph-icon icon-eye"></span></button>',
+                    'icon'  =>  'glyph-icon icon-search-plus',
+                    'children'  =>  true
+                ]);
+            }
+        }
+        return $data;
     }
 
     /**

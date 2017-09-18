@@ -85,9 +85,9 @@ Route::group(['prefix' => '{lang?}', 'where' => ['lang' => '(en|chs|cht)'], 'mid
     Route::get('shares/split-list', ['as' => 'shares.splitList', 'uses' => 'SharesController@getSplitList']);
 
     Route::post('login', ['as' => 'login.post', 'uses' => 'MemberController@postLogin']);
-    Route::post('member/unilevel-search', ['as' => 'member.unilevelSearch', 'uses' => 'MemberController@getUnilevel']);
-    Route::get('member/unilevel-modal', ['as' => 'member.unilevel.modal', 'uses' => 'MemberController@getUnilevelModal']);
-
+    Route::post('member/get-unilevel', ['as' => 'member.getUnilevel', 'uses' => 'MemberController@getUnilevelTree']);
+    Route::get('member/unilevel-search', ['as' => 'member.unilevelSearch', 'uses' => 'MemberController@getUnilevel']);
+    Route::get('member/unilevel-detail', ['as' => 'member.unilevel.modal', 'uses' => 'MemberController@getUnilevelModal']);
 });
 
 /**
@@ -103,6 +103,8 @@ Route::post('shares/sell', ['as' => 'shares.postSell', 'uses' => 'SharesControll
 Route::post('shares/graph', ['as' => 'shares.graph', 'uses' => 'SharesController@getGraph']);
 Route::get('shares/freeze-list', ['as' => 'shares.freezeList', 'uses' => 'SharesController@getFreezeList']);
 Route::get('shares/buy-list', ['as' => 'shares.buyList', 'uses' => 'SharesController@getBuyList']);
+
+Route::post('shares/graph', ['as' => 'shares.graph', 'uses' => 'SharesController@getGraph']);
 
 /**
  * Below is all admin routes

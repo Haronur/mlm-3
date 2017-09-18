@@ -157,4 +157,47 @@ class SharesController extends Controller
         $member = $user->member;
         return $this->SharesRepository->splitList($member);
     }
+
+    /**
+     * Get Graph Data - D3/C3
+     * @return array
+     */
+    public function getGraph () {
+        $user = \Sentinel::getUser();
+        $member = $user->member;
+
+        if (!\Input::has('min')) {
+            $state = $this->SharesRepository->getCurrentShareState();
+            $min = $state->current_price;
+        } else {
+            $min = trim(\Input::get('min'));
+        }
+
+        $max = $min + 0.020;
+        $sales = $this->SharesRepository->getSalesByMember($min, $max);
+        $data = [0 => ['amount'], 1 => ['price']];
+        $total = 0;
+        // prepare price array
+        for ($i=$min; $i<=$max; $i+=0.001) {
+            array_push($data[0], 0);
+            array_push($data[1], number_format($i, 3));
+        }
+
+        if (count($sales) > 0) {
+            foreach ($sales as $sale) {
+                $check = number_format($sale->price, 3);
+                $index = array_search($check, $data[1]);
+                if (isset($data[0][$index])) {
+                    $total += $sale->amount;
+                    $data[0][$index] = $sale->amount;
+                }
+            }
+        }
+
+        return \Response::json([
+            'type'  => 'success',
+            'data'  => $data,
+            'total' => number_format($total, 0)
+        ]);
+    }
 }
