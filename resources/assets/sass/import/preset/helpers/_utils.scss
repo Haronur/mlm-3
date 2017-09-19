@@ -737,7 +737,7 @@ input[readonly], select[readonly], textarea[readonly] {
 }
 
 .fc-icon {
-  font-family: FontAwesome;
+  font-family: 'FontAwesome';
   font-weight: normal;
   font-style: normal;
   display: inline-block;
@@ -751,7 +751,7 @@ input[readonly], select[readonly], textarea[readonly] {
 
 #page-sidebar li {
   ul li a:before, a.sf-with-ul:after {
-    font-family: FontAwesome;
+    font-family: 'FontAwesome';
     font-weight: normal;
     font-style: normal;
     display: inline-block;
@@ -765,7 +765,7 @@ input[readonly], select[readonly], textarea[readonly] {
 }
 
 .search-choice-close:before, .ui-dialog-titlebar-close:before, .glyph-icon:before, .ui-icon:before, .dataTables_paginate a i:before {
-  font-family: FontAwesome;
+  font-family: 'FontAwesome';
   font-weight: normal;
   font-style: normal;
   display: inline-block;

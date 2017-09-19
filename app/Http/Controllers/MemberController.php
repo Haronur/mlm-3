@@ -332,7 +332,7 @@ class MemberController extends Controller
                 array_push($data, [
                     'id' => $child->id,
                     'text'  =>  $child->username . ' <button class="mrg10L btn-xs btn btn-danger" data-toggle="modal" data-target="#showModal" data-id="' . $child->id . '"><span>Detail</span> <span class="glyph-icon icon-eye"></span></button>',
-                    'icon'  =>  'glyph-icon icon-search-plus',
+                    'icon'  =>  'glyph-icon icon-user-circle-o',
                     'children'  =>  true
                 ]);
             }

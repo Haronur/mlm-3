@@ -16,7 +16,7 @@ return [
 		'sellValue' => [ // all values in percent
 	        'cash'  =>  60,
 	        'buyBack'   =>  20,
-	        'promo' =>  15,
+	        'promotion' =>  15,
 	        'fee'   =>  5,
 	    ]
 	],

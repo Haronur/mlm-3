@@ -224,6 +224,7 @@ class SharesRepository extends BaseRepository
 
         // record sales
         \DB::table('Shares_Sell_Statement')->insert([
+            'username' => $member->username,
             'member_id' => $member->id,
             'sell_id' => $share->id,
             'amount' => $quantity,
@@ -336,8 +337,8 @@ class SharesRepository extends BaseRepository
         $sharesToBuy = $this->modelSell->where('has_process', 0)
             ->where('member_id', '!=', $member->id)
             ->orderBy('is_admin', 'desc')
-            ->orderBy('created_at', 'asc')
             ->orderBy('share_price', 'desc')
+            ->orderBy('created_at', 'asc')
             ->get();
         $quantity = 0;
         if (count($sharesToBuy) <= 0 || $state->always_company) { // no shares to buy
@@ -421,7 +422,7 @@ class SharesRepository extends BaseRepository
                 }
 
                 // process the shares sales, if it is not admin
-                if (!$shares->is_admin) {
+                if (!$shares->is_admin && !$shares->is_follow) {
                     $this->processSalesShares($shares, $quantityToBuy);
                 }
 
@@ -486,8 +487,8 @@ class SharesRepository extends BaseRepository
         // sort from lowest price
         $sharesToBuy = $sharesToBuy
             ->orderBy('is_admin', 'desc')
-            ->orderBy('created_at', 'asc')
             ->orderBy('share_price', 'asc')
+            ->orderBy('created_at', 'asc')
             ->get();
 
         $quantity = 0;
@@ -604,7 +605,7 @@ class SharesRepository extends BaseRepository
 
                 }
                 // process the shares sales, if it is not admin
-                if (!$shares->is_admin) {
+                if (!$shares->is_admin && !$shares->is_follow) {
                     $this->processSalesShares($shares, $quantityToBuy);
                 }
                 $amount -= $amountToSell;
@@ -763,19 +764,22 @@ class SharesRepository extends BaseRepository
             $state = \DB::table('Shares_Centre')->first();
         }
 
-        $currentAmount = $state->current_accumulate + $quantity;
-
-        if ($currentAmount > $state->raise_limit) {
-            $updateSharesData =  [
-                'current_accumulate' => $currentAmount - $state->raise_limit,
-                'current_price'  =>  $state->current_price + $state->raise_by
-            ];
+        if ($quantity > $state->raise_limit) {
+            $left = $quantity;
+            $price = $state->current_price;
+            while ($left >= $state->raise_limit) {
+                $price += $state->raise_by;
+                $left -= $state->raise_limit;
+            }
+            \DB::table('Shares_Centre')->update([
+                'current_price' => $price,
+                'current_accumulate' => $left
+            ]);
         } else {
-            $updateSharesData =  [
-                'current_accumulate' => $currentAmount
-            ];
+            \DB::table('Shares_Centre')->update([
+                'current_accumulate' => $state->current_accumulate + $quantity
+            ]);
         }
-        \DB::table('Shares_Centre')->update($updateSharesData);
         \Cache::forget('shares.state');
         return true;
     }

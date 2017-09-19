@@ -29,7 +29,7 @@ $packages = Package::all();
                   {{ number_format($member->wallet->register_point, 0) }}
                 </div>
                 <div class="tile-content-wrapper text-uppercase">
-                  <i class="glyph-icon icon-money opacity-80 font-size-20"></i> @lang('common.register')
+                  <i class="glyph-icon icon-life-buoy opacity-80 font-size-20"></i> @lang('common.register')
                 </div>
               </a>
             </div>
@@ -40,7 +40,7 @@ $packages = Package::all();
                   {{ number_format($member->wallet->promotion_point, 0) }}
                 </div>
                 <div class="tile-content-wrapper text-uppercase">
-                  <i class="glyph-icon icon-money opacity-80 font-size-20"></i> @lang('common.promotion')
+                  <i class="glyph-icon icon-life-buoy opacity-80 font-size-20"></i> @lang('common.promotion')
                 </div>
               </a>
             </div>
@@ -119,6 +119,18 @@ $packages = Package::all();
                   </div>
 
                   <div class="form-group">
+                    <label class="control-label" for="inputDirect">@lang('register.direct')</label>
+                    <input type="text" class="form-control" required="" name="direct_id" id="inputDirect">
+                    <span class="help-block">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-success btn-show" data-toggle="modal" data-target="#showModal" data-url="{{ route('member.showModal', ['lang' => \App::getLocale()]) }}">
+                          <span class="glyph-icon icon-question-circle"></span> @lang('register.checkID')
+                        </button>
+                      </div>
+                    </span>
+                  </div>
+
+                  <div class="form-group">
                     <label class="control-label" for="inputPoint">@lang('register.registerPoint')</label>
                     <div class="input-group">
                       <select class="form-control" name="point_amount" id="inputPoint">
@@ -166,4 +178,34 @@ $packages = Package::all();
   </div>
 </div>
 
+<div class="modal fade" id="showModal" tabindex="-1" role="dialog" aria-labelledby="showModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="showModalLabel">
+          <span class="md md-accessibility"></span> @lang('register.modal.title')
+        </h4>
+      </div>
+      <div class="modal-body">
+        <div class="loading text-center">
+          <img src="{{ asset('assets/img/loading.gif') }}" alt="Network Loading">
+          <br>
+          <small class="text-primary">@lang('common.modal.load')</small>
+        </div>
+
+        <div class="error text-center">
+          <i class="md md-error"></i>
+          <br>
+          <small class="text-danger">@lang('common.modal.error')</small>
+        </div>
+
+        <div id="modalContent"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger btn-raised" data-dismiss="modal">@lang('common.close')</button>
+      </div>
+    </div>
+  </div>
+</div>
 @stop

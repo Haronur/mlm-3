@@ -219,3 +219,40 @@ a.btn {
 .jstree-themeicon-custom {
   color: #d6ab57;
 }
+
+.ui-accordion-header-icon.ui-icon-triangle-1-s:before {
+  content: "\f0d7";
+}
+
+.ui-icon-triangle-1-e:before {
+  content: "\f0da";
+}
+
+.dataTable {
+  .sorting .glyph-icon:before, .ui-icon-carat-2-n-s:before {
+    content: "\f0dc";
+  }
+  .sorting_asc .glyph-icon:before {
+    content: "\f0dd";
+  }
+  .sorting_desc .glyph-icon:before, .ui-icon-triangle-1-n:before {
+    content: "\f0de";
+  }
+}
+
+#page-sidebar li {
+  a.sf-with-ul:after {
+    content: "\f105";
+  }
+  ul li a:before {
+    content: "\f111";
+  }
+}
+
+.ui-icon-circle-triangle-w:before {
+  content: "\f137";
+}
+
+.ui-icon-circle-triangle-e:before {
+  content: "\f138";
+}

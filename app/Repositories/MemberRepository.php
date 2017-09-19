@@ -167,6 +167,15 @@ class MemberRepository extends BaseRepository
             return false;
         }
 
+        if ($data['direct_id'] == $currentMember->username) {
+            $direct = $currentMember;
+        } else {
+            if (!$direct = $this->findByUsername($data['direct_id'])) {
+                throw new \Exception(\Lang::get('error.memberNotFound'), 1);
+                return false;
+            }
+        }
+
         $user = \Sentinel::registerAndActivate([
             'email'   => $data['email'],
             'username'  =>  $data['username'],
@@ -183,7 +192,7 @@ class MemberRepository extends BaseRepository
             'secret_password' => $data['secret'],
             'user_id'   =>  $user->id,
             'package_id'    =>  $package->id,
-            'direct_id' =>  $currentMember->id,
+            'direct_id' =>  $direct->id,
             'direct_percent'    =>  $package->direct_percent,
             'group_level'   =>  $package->group_level,
             'original_amount' =>  $package->package_amount,
@@ -195,12 +204,12 @@ class MemberRepository extends BaseRepository
         }
 
         // add to network
-        $member->setChildOf($currentMember);
+        $member->setChildOf($direct);
 
         if (!$this->saveModel($this->walletModel, [
             'member_id' =>  $member->id,
             'register_point'    =>  0,
-            'purchase_point'    =>  ($package->purchase_point / 100) * $currentMember->package_amount,
+            'purchase_point'    =>  ($package->purchase_point / 100) * $package->package_amount,
             'promotion_point'   =>  0,
             'cash_point'    =>  0,
         ])) {
@@ -232,7 +241,7 @@ class MemberRepository extends BaseRepository
 
         // add direct and override bonus
         $repo = new BonusRepository();
-        $repo->calculateDirect($member, $currentMember);
+        $repo->calculateDirect($member, $direct);
         $repo->calculateOverride($member);
 
         return $member;

@@ -77,7 +77,7 @@
             <div class="col-md-4">
               <div class="row">
                 <div class="col-md-6">
-                  <a class="tile-box tile-box-shortcut btn-danger">
+                  <a class="tile-box tile-box-shortcut btn-danger" href="#" id="btnMaintenance" data-url="{{ route('mt.toggle') }}">
                     <span class="bs-badge badge-absolute">@if ($mt) <span style="color:#f00;">ON</span> @else <span style="color:#239c1d;">OFF</span> @endif</span>
                     <div class="tile-header">Maintenance</div>
 
@@ -124,7 +124,7 @@
             <div class="col-md-2">
               <a href="{{ route('admin.shares.split') }}" title="Share Price" class="tile-box tile-box-alt btn-black">
                 <div class="tile-header">
-                  0.200 <small>/ share</small>
+                  {{ $state->current_price }} <small>/ share</small>
                 </div>
                 <div class="tile-content-wrapper">
                   Share Price

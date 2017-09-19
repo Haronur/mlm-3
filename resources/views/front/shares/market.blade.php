@@ -30,7 +30,7 @@ $buyPrices = $repo->getAvailableBuyPrice();
             <div class="col-md-4">
               <a href="#" title="Share Price" class="tile-box tile-box-alt btn-black">
                 <div class="tile-header">
-                  0.200 <small>/ {{ trans_choice('common.share', 1) }}</small>
+                  {{ number_format($state->current_price, 3) }} <small>/ {{ trans_choice('common.share', 1) }}</small>
                 </div>
                 <div class="tile-content-wrapper text-uppercase">
                   <i class="glyph-icon icon-dollar opacity-80 font-size-20"></i> @lang('common.currentShareTitle')

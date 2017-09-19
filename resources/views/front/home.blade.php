@@ -1,3 +1,8 @@
+<?php
+  use App\Repositories\SharesRepository;
+  $sharesRepo = new SharesRepository;
+?>
+
 @extends('front.app')
 
 @section('title')
@@ -21,7 +26,7 @@
                       {{ number_format($member->wallet->cash_point, 2) }}
                     </div>
                     <div class="tile-content-wrapper text-uppercase">
-                      <i class="glyph-icon icon-money opacity-80 font-size-20"></i> @lang('common.cash')
+                      <i class="glyph-icon icon-life-buoy opacity-80 font-size-20"></i> @lang('common.cash')
                     </div>
                   </a>
                 </div>
@@ -32,7 +37,7 @@
                       {{ number_format($member->wallet->register_point, 0) }}
                     </div>
                     <div class="tile-content-wrapper text-uppercase">
-                      <i class="glyph-icon icon-money opacity-80 font-size-20"></i> @lang('common.register')
+                      <i class="glyph-icon icon-life-buoy opacity-80 font-size-20"></i> @lang('common.register')
                     </div>
                   </a>
                 </div>
@@ -43,7 +48,7 @@
                       {{ number_format($member->wallet->promotion_point, 2) }}
                     </div>
                     <div class="tile-content-wrapper text-uppercase">
-                      <i class="glyph-icon icon-money opacity-80 font-size-20"></i> @lang('common.promotion')
+                      <i class="glyph-icon icon-life-buoy opacity-80 font-size-20"></i> @lang('common.promotion')
                     </div>
                   </a>
                 </div>
@@ -54,7 +59,7 @@
                       {{ number_format($member->wallet->purchase_point, 2) }}
                     </div>
                     <div class="tile-content-wrapper text-uppercase">
-                      <i class="glyph-icon icon-money opacity-80 font-size-20"></i> @lang('common.purchase')
+                      <i class="glyph-icon icon-life-buoy opacity-80 font-size-20"></i> @lang('common.purchase')
                     </div>
                   </a>
                 </div>
@@ -163,10 +168,11 @@
               </div>
             </div>
 
+            <?php $currentShares = $sharesRepo->getCurrentShareState(); ?>
             <div class="col-md-2">
               <a href="#" title="Share Price" class="tile-box tile-box-alt btn-black">
                 <div class="tile-header">
-                  0.200 <small>/ {{ trans_choice('common.share', 1) }}</small>
+                  {{ number_format($currentShares->current_price, 3) }} <small>/ {{ trans_choice('common.share', 1) }}</small>
                 </div>
                 <div class="tile-content-wrapper text-uppercase">
                   <i class="glyph-icon icon-dollar opacity-80 font-size-20"></i> @lang('common.currentShareTitle')

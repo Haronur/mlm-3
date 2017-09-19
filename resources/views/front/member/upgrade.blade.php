@@ -28,7 +28,7 @@ $packages = Package::all();
                   8,999.99
                 </div>
                 <div class="tile-content-wrapper text-uppercase">
-                  <i class="glyph-icon icon-money opacity-80 font-size-20"></i> @lang('common.register')
+                  <i class="glyph-icon icon-life-buoy opacity-80 font-size-20"></i> @lang('common.register')
                 </div>
               </a>
             </div>

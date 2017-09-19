@@ -17,9 +17,9 @@
 */
 
 // Route::get('test', function () {
-//     $member = \App\Models\Member::where('id', 10)->first();
-//     $repo = new BonusRepository;
-//     $repo->calculateOverride($member);
+//     $repo = new SharesRepository;
+//     $state = $repo->getCurrentShareState();
+//     $repo->accumulateSharesState($state, 100000);
 // });
 
 Route::get('', function() {

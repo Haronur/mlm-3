@@ -135,3 +135,57 @@ function pageTransitions() {
     }
   }
 }
+
+$('.btn-cron').on('click', function () {
+  if (confirm('Run command? Cannot be undo')) {
+    var $this = $(this)
+    $this.disable(true)
+    $.post($this.data('url')).done(function (e) {
+      $this.disable(false)
+      noty({
+        type: e.type,
+        text: e.message
+      })
+    })
+  }
+})
+
+if ($('#bonusStatementForm').length) {
+  var $form = $('#bonusStatementForm')
+  var $cash = $form.find('[name="cash"]')
+  var $promotion = $form.find('[name="promotion"]')
+  var $total = $form.find('[name="total"]')
+  $cash.on('input', function () {
+    $total.val(parseFloat($(this).val()) + parseFloat($promotion.val()))
+  })
+
+  $promotion.on('input', function () {
+    $total.val(parseFloat($(this).val()) + parseFloat($cash.val()))
+  })
+}
+
+if ($('#btnMaintenance').length) {
+  var $mt = $('#btnMaintenance')
+  $mt.on('click', function (e) {
+    e.preventDefault()
+    if (confirm('Toggle Maintenance?')) {
+      $mt.disable(false)
+      $.post($mt.data('url')).done(function (e) {
+        noty({
+          text: e.message,
+          type: e.type
+        })
+      })
+    }
+  })
+}
+
+if ($('.dd-icon').length) {
+  $('.dd-icon').each(function() {
+    $(this).ddslick({
+      width: '100%',
+      defaultSelectedIndex: $(this).prop('selectedIndex')
+    })
+  })
+}
+

@@ -348,7 +348,8 @@ class BonusRepository extends BaseRepository
         $calculation = $this->calculation;
         $time = Carbon::today()->subDays(30);
 
-        $members = $member->children()
+        $members = $member->findDescendants()
+            ->where('id', '!=', $member->id)
             ->where('level', '<=', $member->level + $member->group_level)
             ->where('created_at', '>=', $time->format('Y-m-d') . ' 00:00:00')
             ->where('created_at', '<=', $time->format('Y-m-d') . ' 23:59:59')
@@ -397,7 +398,7 @@ class BonusRepository extends BaseRepository
         $time = Carbon::today()->subDays(30);
         $modifier = $this->groupModifier / 100;
 
-        $query = $member->children()->where('level', '<=', $member->level + $member->group_level);
+        $query = $member->findDescendants()->where('id', '!=', $member->id)->where('level', '<=', $member->level + $member->group_level);
         $data = Datatables::eloquent($query)
             ->editColumn('created_at', function ($model) {
                 return $model->created_at->format('Y-m-d H:i A');
@@ -406,7 +407,7 @@ class BonusRepository extends BaseRepository
                 return $model->created_at->addDays(30)->format('Y-m-d');
             })
             ->editColumn('amount', function ($model) use ($modifier) {
-                return number_format($modifier * $model->original_amount, 0);
+                return number_format($modifier * $model->original_amount, 2);
             })
             ->make(true);
 

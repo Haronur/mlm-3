@@ -324,11 +324,11 @@ class SharesController extends Controller
             foreach ($amounts as $amount) {
                 \DB::table('Shares_Sell')->insert([
                     'amount' => $amount,
-                    'amount_left' => 0,
+                    'amount_left' => $amount,
                     'username' => $faker->username,
                     'share_price' => $share->share_price,
                     'is_follow' => 1,
-                    'has_process' => 1,
+                    'has_process' => 0,
                     'is_admin' => 0,
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now()
@@ -337,6 +337,8 @@ class SharesController extends Controller
 
             $share->is_queued = 1;
             $share->save();
+
+            $this->SharesRepository->accumulateSharesState(null, $amount);
         }
 
         return \Response::json([
