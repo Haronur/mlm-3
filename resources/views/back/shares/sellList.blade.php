@@ -13,7 +13,7 @@
       <div id="page-content">
         <div class="container">
           <div class="page-title">
-            <h2>Locked Shares Statement</h2>
+            <h2>Sales Shares Statement</h2>
           </div>
 
           <div class="panel">
@@ -23,7 +23,7 @@
                   <thead>
                     <tr>
                       <th data-id="created_at">Created Date</th>
-                      <th data-id="member.username" data-name="member.username">Username</th>
+                      <th data-id="username">Username</th>
                       <th data-id="amount">Amount</th>
                       <th data-id="amount_left">Left</th>
                       <th data-id="share_price">Shares Price</th>

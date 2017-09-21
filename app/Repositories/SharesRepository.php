@@ -1017,12 +1017,7 @@ class SharesRepository extends BaseRepository
      * @return object
      */
     public function adminSellList () {
-        return Datatables::eloquent(\App\Models\SharesSell::with('member')->select(['id', 'member_id', 'amount', 'amount_left', 'total', 'share_price', 'created_at']))
-            ->addColumn('username', function ($model) {
-                if ($member = $model->member) {
-                    return $member->username;
-                } else return 'Member Not Found.';
-            })
+        return Datatables::eloquent(\App\Models\SharesSell::query())
             ->editColumn('created_at', function ($model) {
                 return'<input type="text" class="form-control datepicker" name="created_at" value="' . $model->created_at . '" />';
             })
