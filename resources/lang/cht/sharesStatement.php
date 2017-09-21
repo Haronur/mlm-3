@@ -18,6 +18,7 @@ return [
 	'total' => '總額',
     'cash' => '現金積分',
     'purchase' => '購買積分',
+    'promotion' => 'Promotion Point',
     'md' => 'MD 消費積分',
     'fee' => '管理費',
     'modalHeader' => 'MD積分已出售報表',

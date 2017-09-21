@@ -24,6 +24,7 @@ return [
     'splitMoreThan'     =>  'Split is more than current price.',
     'splitSellStillExists'      =>  'There is still shares data on database.',
     'transferMemberError'   =>  'Cannot transfer to this member.',
+    'transferAmountError' =>  'Transfer amount must be divisible by 10.',
     'transferTypeError' =>  'Transfer type not recognized.',
     'uplineNotFound'    =>  'Upline not found.',
     'userBan'   =>  'Account is banned.',

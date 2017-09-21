@@ -24,6 +24,7 @@ return [
     'splitMoreThan'     =>  '拆分後MD積分價格大於當前MD積分價格。',
     'splitSellStillExists'      =>  '仍有MD積分掛賣與MD積分交易市場。',
     'transferMemberError'   =>  '無法轉移至該賬戶。',
+    'transferAmountError' =>  'Transfer amount must be divisible by 10.',
     'transferTypeError' =>  '不存在該種轉移類型。',
     'uplineNotFound'    =>  '用戶不存在。',
     'userBan'   =>  '該用戶已被封鎖',

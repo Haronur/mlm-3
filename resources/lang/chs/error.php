@@ -24,6 +24,7 @@ return [
     'splitMoreThan'     =>  '拆分后MD积分价格大于当前MD积分价格。',
     'splitSellStillExists'      =>  '仍有MD积分挂卖于MD积分交易市场。',
     'transferMemberError'   =>  '无法转移至该账户。',
+    'transferAmountError' =>  'Transfer amount must be divisible by 10.',
     'transferTypeError' =>  '不存在该种转移类型。',
     'uplineNotFound'    =>  '用户不存在。',
     'userBan'   =>  '该用户已被封锁。',

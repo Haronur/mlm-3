@@ -93,6 +93,12 @@ class TransferRepository extends BaseRepository
      * @return boolean
      */
     public function makeTransfer ($from, $to, $amount, $type) {
+        $amount = (float) $amount;
+        if ($amount % 10 != 0) {
+            throw new \Exception(\Lang::get('error.transferAmountError'), 1);
+            return false;
+        }
+
         if (!$this->checkCanTransfer($from, $to)) {
             throw new \Exception(\Lang::get('error.transferMemberError'), 1);
             return false;
@@ -100,7 +106,6 @@ class TransferRepository extends BaseRepository
 
         $walletFrom = $from->wallet;
         $walletTo = $to->wallet;
-        $amount = (float) $amount;
 
         switch ($type) {
             case 'cash':
@@ -183,12 +188,11 @@ class TransferRepository extends BaseRepository
      */
     public function checkCanTransfer ($from, $to) {
         if ($from->id == $to->id) return true;
-        $childs = $from->findDescendants()->pluck('id')->toArray();
+        $childs = $from->findDescendants()->where('id', '!=', $from->id)->pluck('id')->toArray();
         if (in_array($to->id, $childs)) return true;
 
-        $root = $from->findRoot();
-        $childs = $root->findDescendants()->pluck('id')->toArray();
-        if (in_array($from->id, $childs)) return true;
+        $parents = $from->findAncestors()->where('id', '!=', $from->id)->pluck('id')->toArray();
+        if (in_array($to->id, $parents)) return true;
         return false;
     }
 

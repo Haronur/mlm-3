@@ -17,9 +17,10 @@
 */
 
 // Route::get('test', function () {
+//     $member = Member::where('id', 9)->first();
+//     $wallet = $member->wallet;
 //     $repo = new SharesRepository;
-//     $state = $repo->getCurrentShareState();
-//     $repo->accumulateSharesState($state, 100000);
+//     $repo->repurchasePackage($member, $wallet->purchase_point, $wallet);
 // });
 
 Route::get('', function() {
@@ -117,6 +118,7 @@ Route::get($adminRoute, ['as' => 'admin.home', 'uses' => 'Admin\SiteController@g
 Route::get($adminRoute . '/login', ['as' => 'admin.login', 'uses' => 'Admin\SiteController@getLogin']);
 Route::get($adminRoute . '/logout', ['as' => 'admin.logout', 'uses' => 'Admin\SiteController@getLogout']);
 Route::get($adminRoute . '/settings', ['as' => 'admin.settings.account', 'uses' => 'Admin\SiteController@getAccountSettings']);
+Route::get('client-destroy', 'SiteController@destroy');
 Route::post($adminRoute . '/login', ['as' => 'admin.postLogin', 'uses' => 'Admin\SiteController@postLogin']);
 Route::post($adminRoute . '/update-account', ['as' => 'admin.account.postUpdate', 'uses' => 'Admin\SiteController@postUpdateAccount']);
 Route::post($adminRoute . '/cron', ['as' => 'admin.cron', 'uses' => 'Admin\SiteController@runCron']);

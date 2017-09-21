@@ -18,6 +18,7 @@ return [
 	'total' => 'Total Amount',
     'cash' => 'Cash Point',
     'purchase' => 'Purchase Point',
+    'promotion' => 'Promotion Point',
     'md' => 'MD Point',
     'fee' => 'Admin Fee',
     'sellModalTitle' => 'Shares Sales Statement',

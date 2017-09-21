@@ -18,6 +18,7 @@ return [
 	'total' => '总额',
     'cash' => '现金积分',
     'purchase' => '购买积分',
+    'promotion' => 'Promotion Point',
     'md' => 'MD 消费积分',
     'fee' => '管理费',
     'modalHeader' => 'MD积分已出售报表 ',

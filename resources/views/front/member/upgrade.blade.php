@@ -25,7 +25,7 @@ $packages = Package::all();
             <div class="col-md-4">
               <a href="#" title="Wallet" class="tile-box tile-box-alt">
                 <div class="tile-header">
-                  8,999.99
+                  {{ number_format($member->wallet->register_point, 0) }}
                 </div>
                 <div class="tile-content-wrapper text-uppercase">
                   <i class="glyph-icon icon-life-buoy opacity-80 font-size-20"></i> @lang('common.register')
