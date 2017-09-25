@@ -38,7 +38,7 @@ Register New Member | {{ config('app.name') }}
                     @endforeach
                     @endif
                   </select>
-                  <span class="input-group-addon">USD</span>
+                  <span class="input-group-addon">GBP</span>
                 </div>
               </div>
 

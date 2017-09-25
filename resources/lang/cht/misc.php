@@ -7,7 +7,7 @@ return [
 	'summarySubtitle' => '您的獎勵，積分轉移與提現報表。',
 	'direct' => '推薦獎勵',
 	'override' => '級差獎勵',
-	'pairing' => '培育獎勵',
+	'pairing' => '獎勵',
 	'group' => '見點獎勵',
 	'create' => '創立日期',
 	'cash' => '現金積分',

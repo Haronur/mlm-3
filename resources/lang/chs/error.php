@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'buySharesProcessError'     =>  'MD积分买入过程错误。',
+    'buySharesProcessError'     =>  'CH-I股票买入过程错误。',
     'cashPointNotEnough'    =>  '现金积分余额不足。',
     'login' =>  '请先登录。',
     'loginError'    =>  '账号 / 密码不一致。',
@@ -17,14 +17,13 @@ return [
     'purchasePointNotEnough'    =>  '购买积分余额不足。',
     'registerError' =>  '账号注册过程发生错误，请再尝试注册。',
     'registerPointNotEnough'    =>  '注册积分余额不足。',
-    'sellSharesProcessError'    =>  'MD积分卖出过程错误。',
-    'shareNotFound'     =>  '该MD积分资料并不存在。',
+    'sellSharesProcessError'    =>  'CH-I股票卖出过程错误。',
+    'shareNotFound'     =>  '该CH-I股票资料并不存在。',
     'sharesQuantityError'   =>  '数量不符合。',
     'sharesLimitError'  =>  '该积分价位已达极限。',
-    'splitMoreThan'     =>  '拆分后MD积分价格大于当前MD积分价格。',
-    'splitSellStillExists'      =>  '仍有MD积分挂卖于MD积分交易市场。',
+    'splitMoreThan'     =>  '拆分后CH-I股票价格大于当前CH-I股票价格。',
+    'splitSellStillExists'      =>  '仍有CH-I股票挂卖于CH-I股票交易市场。',
     'transferMemberError'   =>  '无法转移至该账户。',
-    'transferAmountError' =>  'Transfer amount must be divisible by 10.',
     'transferTypeError' =>  '不存在该种转移类型。',
     'uplineNotFound'    =>  '用户不存在。',
     'userBan'   =>  '该用户已被封锁。',

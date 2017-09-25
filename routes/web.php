@@ -30,7 +30,7 @@ Route::get('', function() {
 /**
  * Language specific routes
  */
-Route::group(['prefix' => '{lang?}', 'where' => ['lang' => '(en|chs|cht)'], 'middleware' => 'locale'], function () {
+Route::group(['prefix' => '{lang?}', 'where' => ['lang' => '(en|id|chs|cht)'], 'middleware' => 'locale'], function () {
     Route::get('login', ['as' => 'login', 'uses' => 'SiteController@getLogin']);
     Route::get('logout', ['as' => 'logout', 'uses' => 'SiteController@getLogout']);
 

@@ -1,6 +1,6 @@
 <?php
 use App\Models\Package;
-$packages = Package::all();
+$packages = Package::where('package_amount', '!=', 0)->get();
 ?>
 
 @extends('front.app')
@@ -64,7 +64,7 @@ $packages = Package::all();
                         @endforeach
                         @endif
                       </select>
-                      <span class="input-group-addon">USD</span>
+                      <span class="input-group-addon">GBP</span>
                     </div>
                   </div>
 
@@ -86,6 +86,11 @@ $packages = Package::all();
                   <div class="form-group">
                     <label class="control-label" for="inputMobile">@lang('register.mobile')</label>
                     <input type="text" class="form-control" required="" name="mobile_phone" id="inputMobile">
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label">@lang('settings.id')</label>
+                    <input type="text" name="identification_number" class="form-control" required="">
                   </div>
 
                   <?php $countries = config('misc.countries'); ksort($countries); ?>

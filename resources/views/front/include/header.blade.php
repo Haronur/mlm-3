@@ -3,10 +3,12 @@
   if (is_null($route)) $route = 'home';
   if ($route == 'announcement.read') {
     $routeEN = route($route, ['lang' => 'en', 'id' => $model->id]);
+    $routeID = route($route, ['lang' => 'id', 'id' => $model->id]);
     $routeCHS = route($route, ['lang' => 'chs', 'id' => $model->id]);
     $routeCHT = route($route, ['lang' => 'cht', 'id' => $model->id]);
   } else {
     $routeEN = route($route, ['lang' => 'en']);
+    $routeID = route($route, ['lang' => 'id']);
     $routeCHS = route($route, ['lang' => 'chs']);
     $routeCHT = route($route, ['lang' => 'cht']);
   }
@@ -42,7 +44,7 @@
           <div class="login-box clearfix">
             <div class="user-info">
               <span>
-                USD {{ number_format($member->package_amount, 0) }}
+                GBP {{ number_format($member->package_amount, 0) }}
                 <i>@lang('common.member')</i>
               </span>
               <a href="{{ route('settings.account', ['lang' => $lang]) }}" title="Edit profile">@lang('sidebar.settingsLink1')</a>
@@ -50,11 +52,12 @@
               <a href="{{ $routeEN }}">
                 English
               </a>
-
+              <a href="{{ $routeID }}">
+                Indonesia
+              </a>
               <a href="{{ $routeCHS }}">
                 简体中文
               </a>
-
               <a href="{{ $routeCHT }}">
                 繁體中文
               </a>
@@ -89,6 +92,13 @@
                 <i class="glyph-icon icon-language opacity-80 font-size-20"></i>
               </span>
               English
+            </a>
+
+            <a href="{{ $routeID }}" class="btn vertical-button remove-border btn-success" title="">
+              <span class="glyph-icon icon-separator-vertical pad0A medium">
+                <i class="glyph-icon icon-language opacity-80 font-size-20"></i>
+              </span>
+              Indonesia
             </a>
 
             <a href="{{ $routeCHS }}" class="btn vertical-button remove-border btn-warning" title="">

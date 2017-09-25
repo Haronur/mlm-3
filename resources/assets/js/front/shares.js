@@ -120,7 +120,7 @@ export class Shares {
         let $form = $(this).parents('form')
         let total = $form.find('[name=price] option:selected').val() * $(this).val()
         $form.find('.total-text').text(total.toFixed(3))
-        let netTotal = total - (0.1 * total)
+        let netTotal = total - (0.05 * total)
         $form.find('.net-total-text').text(netTotal.toFixed(3))
       })
 
@@ -128,14 +128,14 @@ export class Shares {
         let $form = $(this).parents('form')
         let total = $(this).find(':selected').val() * $('[name=quantity]').val()
         $form.find('.total-text').text(total.toFixed(3))
-        let netTotal = total - (0.1 * total)
+        let netTotal = total - (0.05 * total)
         $form.find('.net-total-text').text(netTotal.toFixed(3))
       })
     }
 
     if ($('#sharesBuyForm').length) {
       var $buyForm = $('#sharesBuyForm')
-      $sellForm.find('[name=quantity]').on('input', function () {
+      $buyForm.find('[name=quantity]').on('input', function () {
         let $form = $(this).parents('form')
         let total = $form.find('[name=price] option:selected').val() * $(this).val()
         $form.find('.total-text').text(total.toFixed(3))

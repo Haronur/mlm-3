@@ -2,7 +2,7 @@
 
 return [
 	'title' => '注册新会员',
-	'notice' => '<span class="text-red bold">支付0-50%</span> 优惠积分, <span class="text-red bold"> 并支付50-100%</span> 注册积分。', // don't remove the <span></span>
+	'notice' => '<span class="text-red bold">支付0-30%</span> 优惠积分, <span class="text-red bold"> 并支付70-100%</span> 注册积分。', // don't remove the <span></span>
 	'package' => '配套',
 	'name' => '全名',
 	'username' => '账号',
@@ -16,7 +16,7 @@ return [
 	'mobile' => '移动电话',
 	'uplineNotice' => '请区分大小写',
 	'uplineLink' => '培育人架构',
-	'upline' => 'Upline ID',
+	'upline' => '推荐人ID',
 	'registerPoint' => '选择用优惠积分支付',
 	'checkID' => '检查ID',
 	'registerNeed' => '需支付注册积分：',

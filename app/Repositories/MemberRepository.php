@@ -219,6 +219,7 @@ class MemberRepository extends BaseRepository
 
         if (!$this->saveModel($this->detailModel, [
             'member_id' =>  $member->id,
+            'identification_number' => $data['identification_number'],
             'mobile_phone' => $data['mobile_phone'],
             'nationality' =>  $data['nationality'],
         ])) {

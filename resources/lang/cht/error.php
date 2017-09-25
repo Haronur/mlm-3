@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'buySharesProcessError'     =>  'MD積分買入過程錯誤。',
+    'buySharesProcessError'     =>  'CH-I股票買入過程錯誤。',
     'cashPointNotEnough'    =>  '現金積分餘額不足。',
     'login' =>  '請先登錄。',
     'loginError'    =>  '賬號 / 密碼不一致。',
@@ -17,14 +17,13 @@ return [
     'purchasePointNotEnough'    =>  '購買積分餘額不足。',
     'registerError' =>  '賬號註冊過程發生錯誤，請再嘗試註冊。',
     'registerPointNotEnough'    =>  '註冊積分餘額不足。',
-    'sellSharesProcessError'    =>  'MD積分賣出過程錯誤。',
-    'shareNotFound'     =>  '該MD積分資料並不存在。',
+    'sellSharesProcessError'    =>  'CH-I股票賣出過程錯誤。',
+    'shareNotFound'     =>  '該CH-I股票資料並不存在。',
     'sharesQuantityError'   =>  '數量不符合。',
     'sharesLimitError'  =>  '該積分價為已達極限。',
-    'splitMoreThan'     =>  '拆分後MD積分價格大於當前MD積分價格。',
-    'splitSellStillExists'      =>  '仍有MD積分掛賣與MD積分交易市場。',
+    'splitMoreThan'     =>  '拆分後CH-I股票價格大於當前CH-I股票價格。',
+    'splitSellStillExists'      =>  '仍有CH-I股票掛賣於CH-I股票交易市場。',
     'transferMemberError'   =>  '無法轉移至該賬戶。',
-    'transferAmountError' =>  'Transfer amount must be divisible by 10.',
     'transferTypeError' =>  '不存在該種轉移類型。',
     'uplineNotFound'    =>  '用戶不存在。',
     'userBan'   =>  '該用戶已被封鎖',

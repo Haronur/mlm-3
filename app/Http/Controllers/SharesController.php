@@ -188,7 +188,7 @@ class SharesController extends Controller
                 $check = number_format($sale->price, 3);
                 $index = array_search($check, $data[1]);
                 if (isset($data[0][$index])) {
-                    $total += $sale->amount;
+                    $total += $sale->amount_left;
                     $data[0][$index] = $sale->amount;
                 }
             }

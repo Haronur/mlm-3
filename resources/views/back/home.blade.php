@@ -24,7 +24,23 @@
           <div class="row">
             <div class="col-md-8">
               <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-3">
+                  <a href="#" title="Wallet" class="tile-box tile-box-alt btn-success btn-cron" data-url="{{ route('admin.cron') . '?type=checkFollower' }}">
+                    <div class="tile-header">
+                      <span class="btn-preloader">
+                        <i class="icon-spin icon-spin-1"></i>
+                      </span>
+                      <span>
+                        <i class="glyph-icon icon-fast-forward opacity-80 font-size-20"></i>
+                      </span>
+                    </div>
+                    <div class="tile-content-wrapper">
+                      Cron Follower Share
+                    </div>
+                  </a>
+                </div>
+
+                <div class="col-md-3">
                   <a href="#" title="Wallet" class="tile-box tile-box-alt btn-info btn-cron" data-url="{{ route('admin.cron') . '?type=checkGroup' }}">
                     <div class="tile-header">
                       <span class="btn-preloader">
@@ -40,7 +56,7 @@
                   </a>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-3">
                   <a href="#" title="Wallet" class="tile-box tile-box-alt btn-warning btn-cron" data-url="{{ route('admin.cron') . '?type=group' }}">
                     <div class="tile-header">
                       <span class="btn-preloader">
@@ -56,7 +72,7 @@
                   </a>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-3">
                   <a href="#" title="Wallet" class="tile-box tile-box-alt btn-primary btn-cron" data-url="{{ route('admin.cron') . '?type=freeze' }}">
                     <div class="tile-header">
                       <span class="btn-preloader">
@@ -110,8 +126,8 @@
                         <tr>
                           <td><img src="{{ asset('assets/img/flags/' . $index . '.png') }}" alt="{{ \Lang::get('country.' . $index) }}" width="25" class="m-r-5" /> {{ $index }}</td>
                           <td>{{ $country['currency'] }}</td>
-                          <td>{{ $country['buy'] }}</td>
-                          <td>{{ $country['sell'] }}</td>
+                          <td>{{ number_format($country['buy'], 2) }}</td>
+                          <td>{{ number_format($country['sell'], 2) }}</td>
                         </tr>
                         @endforeach
                       </tbody>

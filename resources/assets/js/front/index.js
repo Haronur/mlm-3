@@ -142,6 +142,9 @@ if ($('#withdrawForm').length) {
     let grossTotal = $(this).val()
     let adminFee = $adminFeePercent * grossTotal
     let total = parseFloat(grossTotal) + parseFloat(adminFee)
+
+    if (isNaN(adminFee)) adminFee = 0
+    if (isNaN(total)) total = 0
     $adminFeeLabel.text(adminFee.toFixed(2))
     $totalLabel.text(total.toFixed(2))
   })

@@ -23,8 +23,8 @@ return [
 	'countries' => [
 		'Cambodia' => [
 			'currency'	=>	'KHR',
-			'buy'	=>	'5100.00',
-			'sell'	=>	'4000.00',
+			'buy'	=>	'5700.00',
+			'sell'	=>	'4500.00',
 			'banks'	=>	[
 				'Public Bank',
 				'MayBank',
@@ -33,8 +33,8 @@ return [
 		],
 		'Indonesia'	=>	[
 			'currency'	=>	'IDR',
-			'buy'	=>	'14000.00',
-			'sell'	=>	'11500.00',
+			'buy'	=>	'18200.00',
+			'sell'	=>	'15000.00',
 			'banks'	=>	[
 				'BCA Bank',
 				'Mandiri Bank'
@@ -42,8 +42,8 @@ return [
 		],
 		'Philippines'	=>	[
 			'currency'	=>	'PHP',
-			'buy'	=>	'48.00',
-			'sell'	=>	'41.00',
+			'buy'	=>	'70.00',
+			'sell'	=>	'60.00',
 			'banks'	=>	[
 				'RCBC Bank',
 				'BPI Bank',
@@ -55,8 +55,8 @@ return [
 		],
 		'Thailand'	=>	[
 			'currency'	=>	'THB',
-			'buy'	=>	'40.00',
-			'sell'	=>	'32.00',
+			'buy'	=>	'46.00',
+			'sell'	=>	'37.00',
 			'banks'	=>	[
 				'TMB Bank',
 				'Krungsri Bank',
@@ -68,8 +68,8 @@ return [
 		],
 		'Vietnam'	=>	[
 			'currency'	=>	'VND',
-			'buy'	=>	'25000.00',
-			'sell'	=>	'21000.00',
+			'buy'	=>	'32000.00',
+			'sell'	=>	'26500.00',
 			'banks'	=>	[
 				'ABC Asia Pacific',
 				'VietComBank',
@@ -78,8 +78,8 @@ return [
 		],
 		'China'	=>	[
 			'currency'	=>	'CNY',
-			'buy'	=>	'7.00',
-			'sell'	=>	'6.00',
+			'buy'	=>	'9.00',
+			'sell'	=>	'7.80',
 			'banks'	=>	[
 				'ICBC Bank (工商银行)',
 				'CMB Bank (招商银行)',
@@ -89,16 +89,16 @@ return [
 		],
 		'Singapore'	=>	[
 			'currency'	=>	'SGD',
-			'buy'	=>	'1.60',
-			'sell'	=>	'1.30',
+			'buy'	=>	'2.00',
+			'sell'	=>	'1.65',
 			'banks'	=>	[
 				'UOB Bank'
 			]
 		],
 		'Malaysia'	=>	[
 			'currency'	=>	'MYR',
-			'buy'	=>	'4.50',
-			'sell'	=>	'4.00',
+			'buy'	=>	'6.00',
+			'sell'	=>	'5.20',
 			'banks'	=>	[
 				'Maybank',
 				'Public Bank',
@@ -108,8 +108,8 @@ return [
 		],
 		'Taiwan'	=>	[
 			'currency'	=>	'TWD',
-			'buy'	=>	'35.00',
-			'sell'	=>	'30.00',
+			'buy'	=>	'42.00',
+			'sell'	=>	'36.00',
 			'banks'	=>	[
 				'CTBC Bank (中国信托商业银行)',
 				'Bank of Taiwan (台湾银行)',

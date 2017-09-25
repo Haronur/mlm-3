@@ -52,7 +52,7 @@ $packages = Package::all();
                         @endforeach
                         @endif
                       </select>
-                      <span class="input-group-addon">USD</span>
+                      <span class="input-group-addon">GBP</span>
                     </div>
                   </div>
 

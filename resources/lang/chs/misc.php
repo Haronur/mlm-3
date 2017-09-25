@@ -7,7 +7,7 @@ return [
 	'summarySubtitle' => '您的奖励，积分转移与提现报表。',
 	'direct' => '推荐奖励',
 	'override' => '级差奖励',
-	'pairing' => '培育奖励',
+	'pairing' => '奖励',
 	'group' => '见点奖励',
 	'create' => '创立日期',
 	'cash' => '现金积分',

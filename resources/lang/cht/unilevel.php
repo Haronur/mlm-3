@@ -6,11 +6,11 @@ return [
 	'member' => '賬號',
 	'secret' => '安全密碼',
 	'notice' => '請先輸入賬戶名。',
-    'modal.title' => 'Member Detail',
-    'modal.info' => 'Member Information',
-    'modal.id' => 'User ID',
-    'modal.join' => 'Join Date',
-    'modal.package' => 'Package',
-    'modal.sponsor' => 'Sponsor',
-    'modal.totalSales' => 'Total Sales'
+    'modal.title' => '會員資訊',
+    'modal.info' => '會員資料',
+    'modal.id' => '用戶名',
+    'modal.join' => '加入日期',
+    'modal.package' => '配套',
+    'modal.sponsor' => '推薦人',
+    'modal.totalSales' => '總業績'
 ];

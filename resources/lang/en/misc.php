@@ -6,7 +6,7 @@ return [
 	'summaryTitle' => 'Summary Statement',
 	'summarySubtitle' => 'Your bonus, transfer, and withdraw statement.',
 	'direct' => 'Direct Bonus',
-	'override' => 'Override Bonus',
+	'override' => 'Overriding Bonus',
 	'pairing' => 'Pairing Bonus',
 	'group' => 'Group Bonus',
 	'create' => 'Created Date',

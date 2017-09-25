@@ -1,9 +1,9 @@
 <?php
 
 return [
-	'title' => 'MD积分交易市场',
-	'subTitle' => 'ALL sales in market.',
-	'next' => 'MD积分库存',
+	'title' => 'CH-I股票交易市场',
+	'subTitle' => '市场上的所有待售股票.',
+	'next' => 'CH-I股票库存',
 	'today' => '今日交易量',
 	'sales' => '挂卖平台',
 	'totalSales' => '总挂卖量',
@@ -12,10 +12,9 @@ return [
 	'sell' => '卖出 <span class="text-warning">OUT</span>', // don't remove <span></span>
 	'price' => '价位',
 	'quantity' => '数量',
-	'quantityNotice' => '必须被10整除。10到1000之间。',
-	'netTotal' => '净总额（已扣除10%管理费）',
+	'quantityNotice' => '最低数量为1。',
+	'netTotal' => '净总额（已扣除5%管理费）',
 	'total' => '总额',
 	'security' => '安全密码',
-	'noBuy' => '目前市场上并没有挂卖MD积分。',
-	'searchPrice' => '搜索价格从'
+	'noBuy' => '目前市场上并没有挂卖CH-I股票交易市场。'
 ];

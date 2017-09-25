@@ -21,7 +21,8 @@
             <div class="col-md-8">
               <div class="row">
                 <div class="col-md-3">
-                  <a href="#" title="Wallet" class="tile-box tile-box-alt">
+                  <p class="font-gray">@lang('home.clickTile')</p>
+                  <a href="#" class="tile-box tile-box-alt" data-placement="bottom" data-toggle="popover" title="{{ \Lang::get('common.cash') }}" data-content="{{ \Lang::get('common.cashDetail') }}">
                     <div class="tile-header">
                       {{ number_format($member->wallet->cash_point, 2) }}
                     </div>
@@ -32,7 +33,8 @@
                 </div>
 
                 <div class="col-md-3">
-                  <a href="#" title="Wallet" class="tile-box tile-box-alt">
+                  <p class="font-gray">@lang('home.clickTile')</p>
+                  <a href="#" class="tile-box tile-box-alt" data-placement="bottom" data-toggle="popover" title="{{ \Lang::get('common.register') }}" data-content="{{ \Lang::get('common.registerDetail') }}">
                     <div class="tile-header">
                       {{ number_format($member->wallet->register_point, 0) }}
                     </div>
@@ -43,7 +45,8 @@
                 </div>
 
                 <div class="col-md-3">
-                  <a href="#" title="Wallet" class="tile-box tile-box-alt">
+                  <p class="font-gray">@lang('home.clickTile')</p>
+                  <a href="#" class="tile-box tile-box-alt" data-placement="bottom" data-toggle="popover" title="{{ \Lang::get('common.promotion') }}" data-content="{{ \Lang::get('common.promotionDetail') }}">
                     <div class="tile-header">
                       {{ number_format($member->wallet->promotion_point, 2) }}
                     </div>
@@ -54,7 +57,8 @@
                 </div>
 
                 <div class="col-md-3">
-                  <a href="#" title="Wallet" class="tile-box tile-box-alt">
+                  <p class="font-gray">@lang('home.clickTile')</p>
+                  <a href="#" class="tile-box tile-box-alt" data-placement="bottom" data-toggle="popover" title="{{ \Lang::get('common.purchase') }}" data-content="{{ \Lang::get('common.purchaseDetail') }}">
                     <div class="tile-header">
                       {{ number_format($member->wallet->purchase_point, 2) }}
                     </div>
@@ -157,8 +161,8 @@
                         <tr>
                           <td><img src="{{ asset('assets/img/flags/' . $index . '.png') }}" alt="{{ \Lang::get('country.' . $index) }}" width="25" class="m-r-5" /> @lang('country.' . $index)</td>
                           <td>{{ $country['currency'] }}</td>
-                          <td>{{ $country['buy'] }}</td>
-                          <td>{{ $country['sell'] }}</td>
+                          <td>{{ number_format($country['buy'], 2) }}</td>
+                          <td>{{ number_format($country['sell'], 2) }}</td>
                         </tr>
                         @endforeach
                       </tbody>

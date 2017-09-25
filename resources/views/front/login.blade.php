@@ -6,10 +6,10 @@ Login - {{ config('app.name') }}
 
 @section('content')
 
-<div class="center-vertical full-bg-4" style="-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover">
+<div class="center-vertical" style="background:url({{ asset('assets/img/login-bg.jpg') }});-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover">
   <div class="center-content row">
     <form onsubmit="return false;" http-type="post" data-url="{{ route('login.post', ['lang' => $lang]) }}" id="login-validation" class="action-form col-md-4 col-sm-5 col-xs-11 col-lg-3 center-margin">
-      <h3 class="text-center pad25B font-gray text-transform-upr font-size-23"><span class="opacity-80"><a href="{{ route('login', ['lang' => 'en']) }}" class="font-white">English</a> | <a href="{{ route('login', ['lang' => 'chs']) }}" class="font-white">简体中文</a> | <a class="font-white" href="{{ route('login', ['lang' => 'cht']) }}">繁體中文</a></span></h3>
+      <h3 class="text-center pad25B font-gray text-transform-upr"><span class="opacity-80"><a href="{{ route('login', ['lang' => 'en']) }}" class="font-white">English</a> | <a href="{{ route('login', ['lang' => 'id']) }}" class="font-white">Indonesia</a> | <a href="{{ route('login', ['lang' => 'chs']) }}" class="font-white">简体中文</a> | <a class="font-white" href="{{ route('login', ['lang' => 'cht']) }}">繁體中文</a></span></h3>
       <div id="login-form" class="content-box bg-default">
         <div class="content-box-wrapper pad20A">
           <img class="mrg25B center-margin radius-all-100 display-block" src="{{ asset('assets/img/logo.png') }}" alt="">

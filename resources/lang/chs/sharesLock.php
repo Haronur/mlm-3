@@ -1,8 +1,8 @@
 <?php
 
 return [
-	'title' => 'MD积分（锁）报表',
-	'subTitle' => 'MD积分（锁）.',
+	'title' => 'CH-I股票（锁）报表',
+	'subTitle' => 'CH-I股票（锁）.',
 	'create' => '创立日期',
 	'active' => '开通日期',
 	'amount' => '数额',

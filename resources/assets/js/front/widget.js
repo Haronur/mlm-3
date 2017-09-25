@@ -3,6 +3,8 @@ export class Widget {
 		$('a[href="#"]').click(function(event) {
 			event.preventDefault()
 		})
+
+		$('[data-toggle="popover"]').popover()
 		
 		$(".todo-box li input").on('click', function() {
 			$(this).parent().toggleClass('todo-done')

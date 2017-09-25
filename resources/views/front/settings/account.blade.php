@@ -33,7 +33,7 @@
 
                   <div class="form-group">
                     <label class="control-label" for="inputId">@lang('settings.id')</label>
-                    <input type="text" name="identification_number" class="form-control" id="inputId" required="" value="{{ $member->detail->identification_number }}">
+                    <input type="text" disabled="" readonly="" class="form-control" value="{{ $member->detail->identification_number }}">
                   </div>
 
                   <div class="form-group">

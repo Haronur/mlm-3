@@ -1,0 +1,32 @@
+<?php
+
+return [
+	'memberTopLabel'	=>	'member',
+	'settingsTopLabel'	=>	'pengaturan',
+	'logout'	=>	'Keluar',
+	'home'		=>	'Halaman Utama',
+	'package'	=>	'PAKET',
+	'registerTitle'	=>	'Registrasi',
+	'registerLink1'	=>	'Daftar Member Baru',
+	'registerLink2'	=>	'Histori Registrasi',
+	'registerLink3'	=>	'Pembaruan Paket',
+	'settingsTitle'	=>	'Pengaturan',
+	'settingsLink1'	=>	'Info Pribadi',
+	'settingsLink2'	=>	'Info Bank',
+	'networkTitle'	=>	'Jaringan',
+	'networkLink2'	=>	'Unilevel',
+	'sharesTitle'	=>	'Saham CH-I',
+	'sharesLink1'	=>	'Market CH-I',
+	'sharesLink2'	=>	'Saham CH-I Terkunci',
+	'sharesLink3'	=>	'Laporan Saham CH-I',
+	'sharesLink4'	=>	'Penjualan Saham CH-I Market',
+	'transactionTitle'	=>	'Transaksi',
+	'transactionLink1'	=>	'Transfer Poin',
+	'transactionLink2'	=>	'Pengambilan',
+	'transactionLink3'	=>	'Laporan Pengambilan',
+	'statementTitle'	=>	'Laporan Lainnya',
+	'statementLink1'	=>	'Laporan Bonus',
+	'statementLink2'	=>	'Ringkasan Laporan',
+	'statementLink3'	=>	'Laporan Pending Group',
+	'announcementTitle' =>	'Pengumuman'
+];

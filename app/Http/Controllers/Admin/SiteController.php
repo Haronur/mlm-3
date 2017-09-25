@@ -183,8 +183,8 @@ class SiteController extends Controller
     }
 
     public function runCron () {
-        if (\Input::get('type') == 'pairing') {
-            \Artisan::call('bonus:pairing');
+        if (\Input::get('type') == 'checkFollower') {
+            \Artisan::call('shares:follow');
         } else if (\Input::get('type') == 'checkGroup') {
             \Artisan::call('member:group');
         } else if (\Input::get('type') == 'group') {

@@ -9,7 +9,7 @@ return [
 	'bank'	=> '银行名字',
 	'bank.account' => '银行户口资讯',
 	'amount' => '数额',
-	'amountNotice' => '最低提现额为300，必须是100的倍数。',
+	'amountNotice' => '最低提现额为20，必须是10的倍数。',
 	'fee' => '手续费 (5%)', //this calculation method is if i want withdraw 1000, then add in 5%, so total become 1050.
 	'total' => '总额',
 	'security' => '安全密码',
