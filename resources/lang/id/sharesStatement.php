@@ -23,6 +23,7 @@ return [
     'fee' => 'Biaya Admin',
     'sellModalTitle' => 'Laporan Penjualan Saham CH-I.',
     'detail' => 'Lihat Laporan',
+    'promotion' => 'Poin Promosi',
     'modalHeader' => 'Laporan Penjualan Saham CH-I',
     'noStatement' => 'Belum ada laporan pada saham CH-I ini.',
     'modal.createdDate' => 'Tanggal Dibuat',

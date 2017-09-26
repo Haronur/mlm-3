@@ -782,8 +782,9 @@ class SharesRepository extends BaseRepository
             $state = \DB::table('Shares_Centre')->first();
         }
 
-        if ($quantity > $state->raise_limit) {
-            $left = $quantity;
+        $total = $state->current_accumulate + $quantity;
+        if ($total > $state->raise_limit) {
+            $left = $total;
             $price = $state->current_price;
             while ($left >= $state->raise_limit) {
                 $price += $state->raise_by;
@@ -801,7 +802,7 @@ class SharesRepository extends BaseRepository
         \Cache::forget('shares.state');
         return true;
     }
-
+    
     /**
      * Remove all shares in queue, add back to member
      * Used when split

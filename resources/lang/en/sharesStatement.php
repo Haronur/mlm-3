@@ -22,6 +22,7 @@ return [
     'fee' => 'Admin Fee',
     'sellModalTitle' => 'CH-I Shares Sales Statement',
     'detail' => 'See Statement',
+    'promotion' => 'Promotion Point',
     'modalHeader' => 'Sales for CH-I Shares',
     'noStatement' => 'No statement in this CH-I shares yet.',
     'modal.createdDate' => 'Created Date',

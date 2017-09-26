@@ -23,6 +23,7 @@ return [
     'modalHeader' => 'CH-I股票已出售报表 ',
     'sellModalTitle' => 'CH-I股票已出售报表',
     'detail' => '查看已出售报表',
+    'promotion' => ' 优惠积分',
     'modal.createdDate' => '创立日期',
     'modal.quantity'=>'数量（已售出数量）',
     'modal.price' => '价钱',
